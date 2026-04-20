@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- htmlaunch:enhanced:v2 -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22hsl(194%2C72%25%2C58%25)%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22hsl(224%2C72%25%2C44%25)%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2246%22%20text-anchor%3D%22middle%22%20font-family%3D%22ui-sans-serif%2Csystem-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EC%3C%2Ftext%3E%3C%2Fsvg%3E">
-<meta name="theme-color" content="#7b1429">
-<meta name="description" content="Cevian Shortlist — Three Continental Activist Theses | deployed with HTMLaunch">
-<link rel="canonical" href="https://jbarry0803.github.io/cevian-shortlist-three-continental-activ/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Cevian Shortlist — Three Continental Activist Theses">
-<meta property="og:title" content="Cevian Shortlist — Three Continental Activist Theses">
-<meta property="og:description" content="Cevian Shortlist — Three Continental Activist Theses | deployed with HTMLaunch">
-<meta property="og:url" content="https://jbarry0803.github.io/cevian-shortlist-three-continental-activ/">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fjbarry0803.github.io%2Fcevian-shortlist-three-continental-activ%2F?w=1200&h=630">
-<meta property="og:image:alt" content="Cevian Shortlist — Three Continental Activist Theses">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cevian Shortlist — Three Continental Activist Theses">
-<meta name="twitter:description" content="Cevian Shortlist — Three Continental Activist Theses | deployed with HTMLaunch">
-<meta name="twitter:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fjbarry0803.github.io%2Fcevian-shortlist-three-continental-activ%2F?w=1200&h=630">
-<meta name="twitter:image:alt" content="Cevian Shortlist — Three Continental Activist Theses">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cevian Shortlist — Three Continental Activist Theses</title>
@@ -59,6 +38,7 @@
  --bayer-teal: #5fb98c;    /* Bayer brand green — medical/life-science */
  --ahold-green: #d4944a;   /* Warm amber/bronze — retail */
  --dhl-amber: #e5786c;     /* Coral-red — DHL brand red */
+ --vw-blue: #8aa8c8;       /* Cool steel-blue — auto / industrial */
  --red: #e55a5a;
  --red-soft: #c44040;
  --green: #5fb98c;
@@ -97,7 +77,7 @@ body::before {
 .masthead::before {
  content: '';
  position: absolute; top: 0; left: 0; right: 0; height: 2px;
- background: linear-gradient(90deg, transparent 0%, var(--gold-dim) 15%, var(--bayer-teal) 35%, var(--ahold-green) 55%, var(--dhl-amber) 75%, var(--gold-dim) 90%, transparent 100%);
+ background: linear-gradient(90deg, transparent 0%, var(--gold-dim) 10%, var(--ahold-green) 30%, var(--dhl-amber) 50%, var(--bayer-teal) 70%, var(--vw-blue) 85%, var(--gold-dim) 95%, transparent 100%);
 }
 .masthead-inner {
  max-width: 1520px; margin: 0 auto; padding: 24px 32px 20px;
@@ -150,6 +130,8 @@ body::before {
 .tab-btn.bayer.active { color: var(--bayer-teal); border-bottom-color: var(--bayer-teal); }
 .tab-btn.ahold.active { color: var(--ahold-green); border-bottom-color: var(--ahold-green); }
 .tab-btn.dhl.active { color: var(--dhl-amber); border-bottom-color: var(--dhl-amber); }
+.tab-btn.vw.active { color: var(--vw-blue); border-bottom-color: var(--vw-blue); }
+.tab-btn.theme.active { color: var(--nordic-blue); border-bottom-color: var(--nordic-blue); }
 
 /* SOURCED NUMBER TOOLTIPS */
 .src {
@@ -181,6 +163,8 @@ body::before {
 .section-label.bayer { color: var(--bayer-teal); }
 .section-label.ahold { color: var(--ahold-green); }
 .section-label.dhl { color: var(--dhl-amber); }
+.section-label.vw { color: var(--vw-blue); }
+.section-label.theme { color: var(--nordic-blue); }
 .section h2 {
  font-family: 'Playfair Display', serif; font-size: 22px;
  color: var(--text-bright); margin-bottom: 4px;
@@ -240,6 +224,8 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 .badge-blue { background: rgba(74,138,217,0.15); color: #7ab8f0; border: 1px solid rgba(74,138,217,0.25); }
 .badge-amber { background: rgba(212,134,11,0.15); color: #d4a00b; border: 1px solid rgba(212,134,11,0.25); }
 .badge-teal { background: rgba(46,168,138,0.15); color: #3ec8a8; border: 1px solid rgba(46,168,138,0.25); }
+.badge-vw { background: rgba(138,168,200,0.15); color: #a8c3dc; border: 1px solid rgba(138,168,200,0.25); }
+.badge-theme { background: rgba(107,154,196,0.15); color: #89b3d1; border: 1px solid rgba(107,154,196,0.25); }
 .badge-red { background: rgba(212,68,68,0.15); color: #e06060; border: 1px solid rgba(212,68,68,0.25); }
 .badge-purple { background: rgba(147,112,219,0.15); color: #b090e0; border: 1px solid rgba(147,112,219,0.25); }
 
@@ -251,6 +237,8 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 .synth.bayer { border-color: var(--bayer-teal); }
 .synth.ahold { border-color: var(--ahold-green); }
 .synth.dhl { border-color: var(--dhl-amber); }
+.synth.vw { border-color: var(--vw-blue); }
+.synth.theme { border-color: var(--nordic-blue); }
 .synth h3 {
  font-family: 'Playfair Display', serif; font-size: 16px;
  color: var(--gold); margin-bottom: 10px;
@@ -258,6 +246,8 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 .synth.bayer h3 { color: var(--bayer-teal); }
 .synth.ahold h3 { color: var(--ahold-green); }
 .synth.dhl h3 { color: var(--dhl-amber); }
+.synth.vw h3 { color: var(--vw-blue); }
+.synth.theme h3 { color: var(--nordic-blue); }
 .synth p { color: var(--text); line-height: 1.7; margin-bottom: 8px; }
 .synth p:last-child { margin-bottom: 0; }
 
@@ -277,6 +267,8 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 .tier-bayer { border-left: 3px solid var(--bayer-teal); }
 .tier-ahold { border-left: 3px solid var(--ahold-green); }
 .tier-dhl { border-left: 3px solid var(--dhl-amber); }
+.tier-vw { border-left: 3px solid var(--vw-blue); }
+.tier-theme { border-left: 3px solid var(--nordic-blue); }
 .tier-fortress { border-left: 3px solid var(--fortress); }
 .tier-exposed { border-left: 3px solid var(--exposed); }
 
@@ -395,10 +387,10 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 <div class="masthead">
 <div class="masthead-inner">
  <div class="classification">Private · Cevian Capital Interview Preparation · April 2026</div>
- <h1>Cevian Shortlist — <span class="t">Bayer</span>, <span class="e">Ahold Delhaize</span>, <span class="a">DHL Group</span></h1>
- <div class="subtitle">Three continental-European activist ideas calibrated to Cevian's downside-first, collaborative-engagement style</div>
+ <h1>Cevian Shortlist — <span class="t">Bayer</span>, <span class="e">Ahold Delhaize</span>, <span class="a">DHL Group</span>, <span style="color:var(--vw-blue);">Volkswagen</span></h1>
+ <div class="subtitle">Four continental-European activist ideas, ranked by fit to Cevian's downside-first, collaborative-engagement style</div>
  <div class="meta-row">
- <span>Joe Barry · April 2026 · Three Theses · Combined MC €134bn · Combined EV €203bn</span>
+ <span>Joe Barry · April 2026 · Four Theses · Combined MC €188bn · Combined EV €381bn</span>
  </div>
 </div>
 </div>
@@ -410,8 +402,10 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
  <button class="tab-btn bayer" onclick="switchTab(event,'bayer')">② Bayer — Conglomerate Unlock</button>
  <button class="tab-btn ahold" onclick="switchTab(event,'ahold')">③ Ahold Delhaize — US Separation</button>
  <button class="tab-btn dhl" onclick="switchTab(event,'dhl')">④ DHL Group — Express Spin</button>
- <button class="tab-btn" onclick="switchTab(event,'fit')">⑤ Cevian Fit</button>
- <button class="tab-btn" onclick="switchTab(event,'sources')">⑥ Sources</button>
+ <button class="tab-btn vw" onclick="switchTab(event,'vw')">⑤ Volkswagen — SOTP Colossus</button>
+ <button class="tab-btn theme" onclick="switchTab(event,'theme')">⑥ Defence Theme — ThyssenKrupp</button>
+ <button class="tab-btn" onclick="switchTab(event,'fit')">⑦ Cevian Fit &amp; Ranking</button>
+ <button class="tab-btn" onclick="switchTab(event,'sources')">⑧ Sources</button>
 </div>
 </div>
 
@@ -422,32 +416,86 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 <div class="section">
 <div class="section-label">Opening</div>
 <h2 style="font-size:20px; line-height:1.55; max-width:1180px;">
-Three continental-European companies where the <span style="color:var(--gold)">market is paying a conglomerate multiple for a collection of separately-valuable businesses</span> — and where an active, collaborative shareholder with a 5-year horizon can drive the structural change required to close the gap. Each fits Cevian's stated filter: <span style="color:var(--bayer-teal)">strong market positions</span>, <span style="color:var(--ahold-green)">cash-generative downside</span>, <span style="color:var(--dhl-amber)">board-able governance</span>, and a path to <span style="color:var(--text-bright)">double the equity in three to five years</span>.
+Four continental-European companies where the <span style="color:var(--gold)">market is paying a conglomerate multiple for a collection of separately-valuable businesses</span>. Three are high-conviction Cevian fits; one is deliberately included as a <span style="color:var(--vw-blue)">calibration counter-example</span> — the textbook activist-SOTP setup that nevertheless <strong>fails Cevian's structural filter</strong> for reasons worth being able to articulate in the interview. Ranked by fit, the shortlist is: <strong><span style="color:var(--ahold-green)">Ahold Delhaize</span></strong>, <strong><span style="color:var(--dhl-amber)">DHL Group</span></strong>, <strong><span style="color:var(--bayer-teal)">Bayer</span></strong>, <strong><span style="color:var(--vw-blue)">Volkswagen</span></strong>.
 </h2>
 </div>
 
 <div class="section">
-<div class="section-label">The Three Ideas</div>
-<div class="sub">Continental European. Minimum €35bn market cap — the size range where Elliott, Cevian, and Trian are the only credible activists. Each thesis centres on a structural breakup or separation that Cevian's collaborative-engagement playbook is designed to deliver.</div>
+<div class="section-label">Ranking — Attractiveness to Cevian</div>
+<div class="sub">Five-factor scoring: (i) entry valuation headroom, (ii) downside protection, (iii) governance workability, (iv) activist-register crowding, (v) structural fit to Cevian's published filter. Composite score 1-5, where 5 = ideal fit.</div>
 
-<div class="grid-3">
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:60px">Rank</th>
+ <th style="width:180px">Idea</th>
+ <th style="text-align:center;width:80px">Entry px</th>
+ <th style="text-align:center;width:85px">Downside</th>
+ <th style="text-align:center;width:90px">Governance</th>
+ <th style="text-align:center;width:85px">Register</th>
+ <th style="text-align:center;width:85px">Filter fit</th>
+ <th style="text-align:center;width:80px;color:var(--gold)">Composite</th>
+ <th>One-line verdict</th>
+</tr></thead>
+<tbody>
+<tr style="background:rgba(108,184,108,0.06)">
+ <td style="text-align:center; font-size:20px; color:var(--ahold-green);"><strong>1</strong></td>
+ <td style="color:var(--ahold-green);"><strong>Ahold Delhaize</strong><br><span style="font-size:9px;color:var(--text-dim);">AMS: AD</span></td>
+ <td style="text-align:center" class="cell-val">4</td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center; color:var(--ahold-green); font-weight:700; font-size:16px">4.8</td>
+ <td><strong>The cleanest process.</strong> No incumbent activist, no state owner, no family control, grocery-defensive downside, US dual-listing is an achievable ask, Dutch channel open via Akzo Nobel.</td>
+</tr>
+<tr style="background:rgba(229,120,108,0.06)">
+ <td style="text-align:center; font-size:20px; color:var(--dhl-amber);"><strong>2</strong></td>
+ <td style="color:var(--dhl-amber);"><strong>DHL Group</strong><br><span style="font-size:9px;color:var(--text-dim);">XETRA: DHL</span></td>
+ <td style="text-align:center" class="cell-val">4</td>
+ <td style="text-align:center" class="cell-val">4</td>
+ <td style="text-align:center" class="cell-val">4</td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center; color:var(--dhl-amber); font-weight:700; font-size:16px">4.4</td>
+ <td><strong>The best structural template.</strong> Direct ABB/ThyssenKrupp analogue — crown jewel trapped in a regulated legacy. KfW / Verdi / German Mitbestimmung is exactly the environment where Cevian wins over Elliott.</td>
+</tr>
+<tr style="background:rgba(95,185,140,0.06)">
+ <td style="text-align:center; font-size:20px; color:var(--bayer-teal);"><strong>3</strong></td>
+ <td style="color:var(--bayer-teal);"><strong>Bayer</strong><br><span style="font-size:9px;color:var(--text-dim);">XETRA: BAYN</span></td>
+ <td style="text-align:center" class="cell-val">2</td>
+ <td style="text-align:center" class="cell-val">4</td>
+ <td style="text-align:center" class="cell-val">4</td>
+ <td style="text-align:center" class="cell-val">2</td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center; color:var(--bayer-teal); font-weight:700; font-size:16px">3.4</td>
+ <td><strong>Strongest thesis, worst entry.</strong> +94% rally off lows; Bluebell + Inclusive Capital already on the register; CEO publicly resistant. Still a 3-way SOTP story — but no longer a bargain.</td>
+</tr>
+<tr style="background:rgba(138,168,200,0.06)">
+ <td style="text-align:center; font-size:20px; color:var(--vw-blue);"><strong>4</strong></td>
+ <td style="color:var(--vw-blue);"><strong>Volkswagen</strong><br><span style="font-size:9px;color:var(--text-dim);">XETRA: VOW3</span></td>
+ <td style="text-align:center" class="cell-val">5</td>
+ <td style="text-align:center" class="cell-val">2</td>
+ <td style="text-align:center" class="cell-val">1</td>
+ <td style="text-align:center" class="cell-val">4</td>
+ <td style="text-align:center" class="cell-val">1</td>
+ <td style="text-align:center; color:var(--vw-blue); font-weight:700; font-size:16px">2.6</td>
+ <td><strong>The biggest discount that activism cannot unlock.</strong> Porsche SE 53% voting + Lower Saxony 20% with VW-Law veto + Qatar 14.6% = no minority activist has any realistic path to the board. Plus Chinese competition risk. Included as a calibration counter-example.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
- <!-- BAYER CARD -->
- <div class="idea-card" style="border-top:3px solid var(--bayer-teal);">
- <div class="idea-num">IDEA 01 · DE · XETRA: BAYN</div>
- <div class="idea-name" style="color:var(--bayer-teal);">Bayer AG</div>
- <div class="idea-tkr">Life sciences conglomerate · Leverkusen</div>
- <div class="idea-thesis">Three separately great businesses (<strong>Pharma</strong>, <strong>Crop Science</strong>, <strong>Consumer Health</strong>) trapped inside one balance sheet, one litigation overhang, and one patent cliff. All three overhangs clear in 2026-27: <strong>Xarelto cliff ends</strong>, Roundup settlement reaches the Supreme Court with the administration on Bayer's side, and the new pharma cycle (Nubeqa +77%, Kerendia +86%) starts contributing. CEO Bill Anderson publicly resists a break-up "for now." Cevian's role: collaborative push for a credible Consumer Health separation by end of 2027.</div>
- <div class="idea-metrics">
- <div class="idea-metric"><div class="v">€41.10</div><div class="l">Share px</div></div>
- <div class="idea-metric"><div class="v">€40bn</div><div class="l">Market cap</div></div>
- <div class="idea-metric"><div class="v">7.3×</div><div class="l">EV/EBITDA</div></div>
- </div>
- </div>
+<div class="section">
+<div class="section-label">The Four Ideas</div>
+<div class="sub">Continental European. Market caps from €36bn to €58bn (all four are €35bn+ — the "where only Elliott or Cevian can invest" size range). Each thesis centres on a structural separation that a five-year collaborative-engagement mandate is specifically designed to deliver.</div>
 
- <!-- AHOLD CARD -->
+<div class="grid-2" style="gap:16px;">
+
+ <!-- AHOLD CARD (RANKED 1) -->
  <div class="idea-card" style="border-top:3px solid var(--ahold-green);">
- <div class="idea-num">IDEA 02 · NL · AMS: AD</div>
+ <div class="idea-num">RANK 1 · NL · AMS: AD</div>
  <div class="idea-name" style="color:var(--ahold-green);">Ahold Delhaize</div>
  <div class="idea-tkr">Food retail · Zaandam</div>
  <div class="idea-thesis">Dutch-listed holding company where <strong>~60% of revenue and EBITDA comes from a US grocery business</strong> (Stop &amp; Shop, Food Lion, Hannaford, Giant) that would trade at a meaningful premium on the NYSE. Food Lion has posted <strong>53 consecutive quarters of comp growth</strong>. Group trades at 6.9× EV/EBITDA against Kroger at 8.0× and Costco at 25×. Cevian's role: push for a US dual-listing or IPO of 15-20% of the US business. Downside is flat — grocery is the most defensive large sector in Europe.</div>
@@ -458,9 +506,9 @@ Three continental-European companies where the <span style="color:var(--gold)">m
  </div>
  </div>
 
- <!-- DHL CARD -->
+ <!-- DHL CARD (RANKED 2) -->
  <div class="idea-card" style="border-top:3px solid var(--dhl-amber);">
- <div class="idea-num">IDEA 03 · DE · XETRA: DHL</div>
+ <div class="idea-num">RANK 2 · DE · XETRA: DHL</div>
  <div class="idea-name" style="color:var(--dhl-amber);">DHL Group</div>
  <div class="idea-tkr">Logistics / postal · Bonn</div>
  <div class="idea-thesis"><strong>DHL Express is one of three global integrated express carriers</strong> (with FedEx and UPS) and earns an 11-12% EBIT margin — but sits inside a holding company containing a declining German letter-mail business, a volatile freight-forwarding division, and regulated parcel operations. FedEx / UPS trade at 10-11× EV/EBITDA. DHL Group at 7.2×. Cevian's role: push for separation of DHL Express (crown jewel) from Post &amp; Parcel Germany (run-off). Precedent: <strong>Cevian did exactly this at ThyssenKrupp and at ABB</strong> (Power Grids sale, 2018).</div>
@@ -468,6 +516,32 @@ Three continental-European companies where the <span style="color:var(--gold)">m
  <div class="idea-metric"><div class="v">€50.14</div><div class="l">Share px</div></div>
  <div class="idea-metric"><div class="v">€58bn</div><div class="l">Market cap</div></div>
  <div class="idea-metric"><div class="v">7.2×</div><div class="l">EV/EBITDA</div></div>
+ </div>
+ </div>
+
+ <!-- BAYER CARD (RANKED 3) -->
+ <div class="idea-card" style="border-top:3px solid var(--bayer-teal);">
+ <div class="idea-num">RANK 3 · DE · XETRA: BAYN</div>
+ <div class="idea-name" style="color:var(--bayer-teal);">Bayer AG</div>
+ <div class="idea-tkr">Life sciences conglomerate · Leverkusen</div>
+ <div class="idea-thesis">Three separately great businesses (<strong>Pharma</strong>, <strong>Crop Science</strong>, <strong>Consumer Health</strong>) trapped inside one balance sheet, one litigation overhang, and one patent cliff. All three overhangs clear in 2026-27: <strong>Xarelto cliff ends</strong>, Roundup settlement reaches the Supreme Court with the administration on Bayer's side, and the new pharma cycle (Nubeqa +77%, Kerendia +86%) starts contributing. CEO Bill Anderson publicly resists a break-up "for now." Entry <strong>+94% off last year's low</strong> — thesis remains but entry is no longer a bargain.</div>
+ <div class="idea-metrics">
+ <div class="idea-metric"><div class="v">€41.10</div><div class="l">Share px</div></div>
+ <div class="idea-metric"><div class="v">€40bn</div><div class="l">Market cap</div></div>
+ <div class="idea-metric"><div class="v">7.3×</div><div class="l">EV/EBITDA</div></div>
+ </div>
+ </div>
+
+ <!-- VW CARD (RANKED 4 - COUNTER-EXAMPLE) -->
+ <div class="idea-card" style="border-top:3px solid var(--vw-blue); background:linear-gradient(180deg, var(--surface) 0%, rgba(138,168,200,0.03) 100%);">
+ <div class="idea-num" style="color:var(--vw-blue);">RANK 4 · COUNTER-EXAMPLE · DE · XETRA: VOW3</div>
+ <div class="idea-name" style="color:var(--vw-blue);">Volkswagen Group</div>
+ <div class="idea-tkr">Auto / luxury / trucks · Wolfsburg</div>
+ <div class="idea-thesis">The deepest SOTP discount on the European large-cap board — <strong>VW's 75% stake in Porsche AG plus 87.5% of Traton plus Financial Services book value broadly equals its own market cap</strong>, meaning the market values all of Audi, VW, Skoda, SEAT/Cupra, Bentley, Lamborghini, Ducati, Bugatti, and the €27bn auto net-cash at <strong>zero</strong>. The classic activist trap. Included here precisely because the discount is so visible, and because <strong>the reasons it persists — ownership structure, China exposure, capital intensity — are exactly the reasons Cevian should stay away</strong>. The "why not" answer is as important to have as the "why."</div>
+ <div class="idea-metrics">
+ <div class="idea-metric"><div class="v">€102.50</div><div class="l">Share px (VOW3)</div></div>
+ <div class="idea-metric"><div class="v">€53bn</div><div class="l">Market cap</div></div>
+ <div class="idea-metric"><div class="v">3.6×</div><div class="l">EV/EBITDA</div></div>
  </div>
  </div>
 
@@ -479,89 +553,77 @@ Three continental-European companies where the <span style="color:var(--gold)">m
 <div class="table-wrap">
 <table class="ct">
 <thead><tr>
- <th style="width:140px">Metric</th>
- <th style="text-align:right">Bayer</th>
- <th style="text-align:right">Ahold Delhaize</th>
- <th style="text-align:right">DHL Group</th>
+ <th style="width:160px">Metric</th>
+ <th style="text-align:right;color:var(--ahold-green)">Ahold D.</th>
+ <th style="text-align:right;color:var(--dhl-amber)">DHL</th>
+ <th style="text-align:right;color:var(--bayer-teal)">Bayer</th>
+ <th style="text-align:right;color:var(--vw-blue)">Volkswagen</th>
  <th>Commentary</th>
 </tr></thead>
 <tbody>
 <tr>
  <td>Market cap</td>
- <td style="text-align:right" class="cell-val">€40.4bn</td>
  <td style="text-align:right" class="cell-val">€36.2bn</td>
  <td style="text-align:right" class="cell-val">€57.7bn</td>
- <td>All three above Cevian's minimum size; DHL is at the upper end of Cevian's typical check-size range.</td>
+ <td style="text-align:right" class="cell-val">€40.4bn</td>
+ <td style="text-align:right" class="cell-val">€53.3bn</td>
+ <td>All four sit well above Cevian's minimum; VW is the only one where the <strong>equity market cap is roughly its listed-subsidiary-stake value</strong>.</td>
 </tr>
 <tr>
  <td>Enterprise value</td>
- <td style="text-align:right" class="cell-val">€73bn</td>
  <td style="text-align:right" class="cell-val">€50.7bn</td>
  <td style="text-align:right" class="cell-val">€79bn</td>
- <td>Bayer's EV is inflated by €33bn of legacy Monsanto-linked debt and glyphosate provisions — the activist story is the fix, not the starting point.</td>
+ <td style="text-align:right" class="cell-val">€73bn</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--vw-blue)">€178bn</td>
+ <td>VW's EV is inflated by €125bn of Financial Services debt — captive auto-finance that is matched by a receivables book of similar size. EV/EBITDA ex-FS looks more like 2-3×.</td>
 </tr>
 <tr>
  <td>FY2025 EBITDA</td>
- <td style="text-align:right" class="cell-val">~€10.0bn</td>
  <td style="text-align:right" class="cell-val">~€7.3bn</td>
  <td style="text-align:right" class="cell-val">~€10.9bn</td>
- <td>All three generate above €7bn of EBITDA — scale necessary for multi-year compounding, and material enough that segment-level multiples really move equity value.</td>
+ <td style="text-align:right" class="cell-val">~€10.0bn</td>
+ <td style="text-align:right" class="cell-val">~€50.9bn</td>
+ <td>VW's EBITDA is 5× the others — but comes with 5× the capital intensity. Each EBITDA euro in auto is worth much less than in grocery or pharma.</td>
 </tr>
 <tr>
  <td>EV/EBITDA</td>
- <td style="text-align:right" class="cell-val" style="color:var(--gold)">7.3×</td>
  <td style="text-align:right" class="cell-val" style="color:var(--gold)">6.9×</td>
  <td style="text-align:right" class="cell-val" style="color:var(--gold)">7.2×</td>
- <td>Cluster of 6.9-7.3× for assets that on a sum-of-parts basis contain component businesses worth 10-15×.</td>
-</tr>
-<tr>
- <td>Cash conversion</td>
- <td style="text-align:right">Weak (litigation drag)</td>
- <td style="text-align:right">Strong (FCF €2.3bn)</td>
- <td style="text-align:right">Strong (FCF ~€3bn)</td>
- <td>Ahold and DHL are already returning capital aggressively. Bayer's FCF is suppressed by the glyphosate settlement payout schedule — that releases as litigation resolves.</td>
-</tr>
-<tr>
- <td>Dividend yield</td>
- <td style="text-align:right" class="cell-val">0.2% (cut)</td>
- <td style="text-align:right" class="cell-val">3.0%</td>
- <td style="text-align:right" class="cell-val">3.8%</td>
- <td>Bayer cut the dividend to the legal minimum to fund deleveraging — a feature, not a bug, of the restructuring.</td>
-</tr>
-<tr>
- <td>52-week range vs today</td>
- <td style="text-align:right">€21 → €41 (+94%)</td>
- <td style="text-align:right">€32 → €41 (+27%)</td>
- <td style="text-align:right">€36 → €50 (+40%)</td>
- <td><strong>Bayer has run hard.</strong> Entry is less compelling than three months ago. Still in Cevian's range but upside now leans on the break-up, not the re-rating.</td>
-</tr>
-<tr>
- <td>Geography</td>
- <td style="text-align:right">Germany (HQ), global</td>
- <td style="text-align:right">Netherlands (HQ), US 60%</td>
- <td style="text-align:right">Germany (HQ), global</td>
- <td>All squarely inside Cevian's "Nordics / UK / Germany / Switzerland / Netherlands" comfort zone. No southern European exposure.</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--gold)">7.3×</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--vw-blue)">3.6×</td>
+ <td>VW's 3.6× is at face value a huge discount; in reality it's the "auto-plus-bank" structure creating a misleading denominator.</td>
 </tr>
 <tr>
  <td>China commoditisation risk</td>
- <td style="text-align:right" class="cell-val" style="color:var(--ahold-green)">Low</td>
  <td style="text-align:right" class="cell-val" style="color:var(--ahold-green)">None</td>
- <td style="text-align:right" class="cell-val" style="color:var(--dhl-amber)">Some (freight)</td>
- <td>The explicit exclusion in Nikola's transcript. Bayer Crop Science competes with Chinese generics in glyphosate but the brand + royalty economics in seeds are defensible. Grocery is domestic. DHL Global Forwarding sees Chinese trade flows.</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--dhl-amber)">Some (fwd)</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--ahold-green)">Low</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--red)">HIGH</td>
+ <td>The Nikola test. <strong>VW fails it clearly</strong> — China is ~30% of volumes; BYD and local brands have taken material share; 2025 profit halved partly on Chinese competition.</td>
+</tr>
+<tr>
+ <td>Governance workability</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--ahold-green)">Clean</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--dhl-amber)">KfW + Verdi</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--dhl-amber)">Co-determination</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--red)">BLOCKED</td>
+ <td>VW has Porsche SE (53% voting), Lower Saxony (20% with VW-Law veto), Qatar (14.6%). <strong>No activist has ever secured a board seat at VW.</strong> Cevian's collaborative model has no counterparty here.</td>
 </tr>
 <tr>
  <td>Activist precedent</td>
- <td style="text-align:right">Bluebell, Inclusive (2023-)</td>
  <td style="text-align:right">None active</td>
  <td style="text-align:right">BlackRock 6.6% (passive)</td>
- <td>Ahold is <strong>the cleanest board</strong>: no incumbent activist. DHL has a substantial state-linked shareholder (KfW ~16%) — political complexity is a feature for Cevian's style, not a bug.</td>
+ <td style="text-align:right">Bluebell, Inclusive</td>
+ <td style="text-align:right">None successful</td>
+ <td>Ahold is the cleanest register. VW has seen 20+ years of activist interest without a single board concession.</td>
 </tr>
 <tr>
  <td>Break-up catalyst window</td>
- <td style="text-align:right">2026-27 (litigation clears)</td>
  <td style="text-align:right">2027-28 (US list)</td>
  <td style="text-align:right">2027-29 (Strategy 2030)</td>
- <td>All three have a natural management-led catalyst window in the next 12-36 months that a Cevian-scale position can amplify.</td>
+ <td style="text-align:right">2026-27 (litigation clears)</td>
+ <td style="text-align:right">n/a</td>
+ <td>Three have natural management-led inflection points. VW has no catalyst other than the families deciding, in which case an activist is redundant.</td>
 </tr>
 </tbody>
 </table>
@@ -573,29 +635,33 @@ Three continental-European companies where the <span style="color:var(--gold)">m
 <h2>Max-Loss Sizing (20% Downside Rule)</h2>
 <div class="sub">Cevian's published risk framework requires that even in the worst reasonable scenario, a position should not lose more than ~20%. Applied to each idea:</div>
 
-<div class="grid-3">
- <div class="card tier-bayer">
- <div class="card-top" style="background:var(--bayer-teal)"></div>
- <div class="card-label" style="color:var(--bayer-teal)">Bayer — Downside</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>Base floor: €33/share (-20%).</strong> Assumes Roundup Supreme Court ruling goes against Bayer <em>and</em> 2027 pharma growth disappoints <em>and</em> no break-up emerges. Even then, Pharma alone (~€4.5bn EBITDA × 8× = €36bn EV) plus Consumer Health (~€1.4bn × 12× = €17bn) broadly covers the €33bn of net debt and pension. Crop Science becomes effectively free equity.<br><br>
- <strong>The structural protection:</strong> three different business cycles (pharma, ag, OTC), three different customer types, and three different regulatory environments. Correlated shock requires all three to miss simultaneously.
- </div>
- </div>
+<div class="grid-4">
  <div class="card tier-ahold">
  <div class="card-top" style="background:var(--ahold-green)"></div>
- <div class="card-label" style="color:var(--ahold-green)">Ahold Delhaize — Downside</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>Base floor: €33/share (-20%).</strong> Would require US gross margin to collapse (Aldi / Walmart price war intensifies materially) and European margin pressure in CSE to compound. Even so, the group would still generate €1.5-2bn of FCF and return ~€1bn/year via buyback. Multiple floor around 6× EBITDA in that scenario. <br><br>
- <strong>The structural protection:</strong> grocery is the most defensive large-cap sector in Europe. Comparable drawdowns during GFC and COVID were single-digit. Food Lion's 53 consecutive quarters of comp growth is the hard data behind the soft claim.
+ <div class="card-label" style="color:var(--ahold-green)">Ahold — €33 floor</div>
+ <div class="card-body" style="font-size:11.5px; line-height:1.7;">
+ Would require US gross margin to collapse + European pressure. Even so, €1.5-2bn FCF, €1bn/yr buyback, multiple floor 6× EBITDA. Grocery sector drawdowns in GFC and COVID were single-digit. <strong>Structural protection is category, not execution.</strong>
  </div>
  </div>
  <div class="card tier-dhl">
  <div class="card-top" style="background:var(--dhl-amber)"></div>
- <div class="card-label" style="color:var(--dhl-amber)">DHL Group — Downside</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>Base floor: €40/share (-20%).</strong> Assumes a deeper global trade recession + Trump tariffs on parcels escalate + Verdi-driven wage settlement above plan in Post &amp; Parcel Germany. Even in that case, the Express margin is protected by the duopoly structure (with UPS) against FedEx on transatlantic lanes, and the "Fit for Growth" €1bn cost programme releases in 2027.<br><br>
- <strong>The structural protection:</strong> letter mail decline is a known, priced, multi-decade structural trend. Post &amp; Parcel Germany can raise prices by government decree when volumes fall — the regulator approved a <strong>+4.4%</strong> letter-mail price increase for 2025-27, and that mechanism continues.
+ <div class="card-label" style="color:var(--dhl-amber)">DHL — €40 floor</div>
+ <div class="card-body" style="font-size:11.5px; line-height:1.7;">
+ Trade recession + Trump tariff escalation + Verdi wage settlement above plan. Express duopoly with UPS holds transatlantic margin; Fit for Growth €1bn cost programme releases 2027. Letter mail runoff is priced and regulated.
+ </div>
+ </div>
+ <div class="card tier-bayer">
+ <div class="card-top" style="background:var(--bayer-teal)"></div>
+ <div class="card-label" style="color:var(--bayer-teal)">Bayer — €33 floor</div>
+ <div class="card-body" style="font-size:11.5px; line-height:1.7;">
+ Requires Roundup Supreme Court loss + 2027 pharma disappointment + no break-up. Even then, Pharma (€4.5bn EBITDA × 8×) + Consumer Health (€1.4bn × 12×) covers net debt; Crop Science becomes free option.
+ </div>
+ </div>
+ <div class="card tier-vw">
+ <div class="card-top" style="background:var(--vw-blue)"></div>
+ <div class="card-label" style="color:var(--vw-blue)">Volkswagen — €75 floor</div>
+ <div class="card-body" style="font-size:11.5px; line-height:1.7;">
+ <strong>This is where VW fails the test.</strong> Porsche AG already at €43 (close to all-time low); China share loss has permanent and cumulative features; EV capex does not ease. A -30% scenario is not extraordinary — it's a mid-case if two of three known headwinds compound. <strong>20% downside discipline cannot be maintained.</strong>
  </div>
  </div>
 </div>
@@ -607,8 +673,9 @@ Three continental-European companies where the <span style="color:var(--gold)">m
 
 <div class="synth">
 <h3>The style I'm trying to show</h3>
-<p>These three names are chosen specifically to <strong>blend four influences</strong>: (i) my own preference for SOTP-driven stories with verifiable segment-level EBITDA (the same analytical spine as the Amadeus pitch); (ii) Cevian's <strong>"neglected or misunderstood in out-of-favour industries"</strong> filter (Förberg / Hedge Fund Journal, 2007); (iii) Andrew's emphasis on the <strong>governance mechanism</strong> — activism only works when there is a plausible board-level intervention, not a press release; and (iv) my dad's long-held view that the best European activist opportunities come from <strong>German industrial and Dutch holding-company structures</strong>, where the conglomerate discount is both durable and, when it finally closes, violent.</p>
-<p style="margin-top:10px;"><strong>All three ideas have the same structural shape:</strong> (a) a crown-jewel business that would trade at 10-15× on its own, (b) one or more encumbering legacy / declining / regulated businesses dragging the multiple down, (c) an incumbent CEO publicly resistant to breakup, (d) a credible catalyst window in 24-36 months. This is the ABB (2012-18) playbook with Power Grids; the ThyssenKrupp (2013-) playbook with the elevator spin; the Pearson playbook with the Penguin Random House exit. Cevian has run this exact pattern <strong>seven times</strong> in the last fifteen years.</p>
+<p>The four names blend <strong>four influences</strong>: (i) my own preference for SOTP-driven stories with verifiable segment-level EBITDA (same analytical spine as the Amadeus pitch); (ii) Cevian's <strong>"neglected or misunderstood in out-of-favour industries"</strong> filter (Förberg / Hedge Fund Journal, 2007); (iii) Andrew's emphasis on the <strong>governance mechanism</strong> — activism only works when there is a plausible board-level intervention, not a press release; and (iv) my dad's long-held view that the best European activist opportunities come from <strong>German industrial and Dutch holding-company structures</strong>, where the conglomerate discount is both durable and, when it finally closes, violent.</p>
+<p style="margin-top:10px;"><strong>The first three ideas share a structural shape:</strong> (a) a crown-jewel business that would trade at 10-15× on its own, (b) one or more encumbering legacy / declining / regulated businesses dragging the multiple down, (c) an incumbent CEO publicly resistant to breakup, (d) a credible catalyst window in 24-36 months. This is the ABB (2012-18) playbook with Power Grids; the ThyssenKrupp (2013-) playbook with the elevator spin; the Pearson playbook with the Penguin Random House exit. Cevian has run this exact pattern <strong>seven times</strong> in the last fifteen years.</p>
+<p style="margin-top:10px;"><strong>Volkswagen is included deliberately as a counter-example.</strong> On pure SOTP math it looks like the single best idea on this page. In practice, its three-way ownership lock (Porsche SE + Lower Saxony + Qatar) means <strong>Cevian cannot buy a board seat even with a €3bn stake</strong> — the voting control simply does not move. The discipline of rejecting a visibly-cheap name because the unlock mechanism does not work is, in my view, the single most important thing to get right in a Cevian interview.</p>
 </div>
 
 </div>
@@ -1444,12 +1511,609 @@ No other activist has both playbooks in their portfolio. Elliott has done German
 </div>
 </div>
 
+<!-- TAB 5: VOLKSWAGEN (COUNTER-EXAMPLE) -->
+<div id="tab-vw" class="tab-panel">
+<div class="container">
+
+<div class="section">
+<div class="section-label vw">§ 5.1 — The Setup</div>
+<h2 style="color:var(--vw-blue);">Volkswagen — The SOTP That Cannot Be Unlocked</h2>
+<div class="sub">Included in this document as a <strong>calibration counter-example</strong>, not as a Cevian recommendation. VW has the deepest SOTP discount on the European large-cap board — the kind of valuation that would make any first-year associate reach for the "buy" button. It is worth being able to explain to Fabian, in about 90 seconds, <strong>exactly why it is cheap and why Cevian cannot fix it</strong>. The answer covers three topics Cevian cares about: ownership structure, Chinese competitive dynamics, and the general auto-OEM returns profile.</div>
+
+<div class="metric-strip grid-5" style="margin-bottom:16px;">
+ <div class="metric-cell"><div class="mc-val" style="color:var(--vw-blue)">€102.50</div><div class="mc-label">VOW3 pref share (Apr 2026)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€53.3bn</div><div class="mc-label">Market cap (pref + ord)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--gold)">€125bn</div><div class="mc-label">Auto-FS book debt (est.)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€50.9bn</div><div class="mc-label">Group EBITDA (TTM)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--vw-blue)">3.6×</div><div class="mc-label">EV/EBITDA (cheapest of 4)</div></div>
+</div>
+<div class="metric-strip grid-5">
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€326bn</div><div class="mc-label">Revenue (TTM)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--red)">-50%</div><div class="mc-label">FY2025 profit decline</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-dim)">€85</div><div class="mc-label">Analyst low target</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--vw-blue)">€112</div><div class="mc-label">Analyst avg target</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">662,940</div><div class="mc-label">Employees</div></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label vw">§ 5.2 — The Asset Base</div>
+<h2>What You Actually Own</h2>
+<div class="sub">The SOTP math is extraordinary. VW's stake in listed subsidiaries (Porsche AG + Traton) is worth close to its entire market cap — implying the market values ten more car brands, the world's second-largest captive bank, and €27bn of auto net cash at, roughly, zero.</div>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:200px">Asset</th>
+ <th style="width:110px">VW's stake</th>
+ <th style="text-align:right;width:130px">Listed / book value</th>
+ <th style="text-align:right;width:130px">VW's share</th>
+ <th>What it is</th>
+</tr></thead>
+<tbody>
+<tr style="background:rgba(138,168,200,0.05)">
+ <td><span class="badge badge-vw">LISTED STAKE</span><br><strong>Porsche AG</strong><br><span style="font-size:9px;color:var(--text-dim);">XETRA: P911</span></td>
+ <td>75.4%</td>
+ <td style="text-align:right" class="cell-val">€38bn MC</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--vw-blue)">~€28bn</td>
+ <td>Luxury sports car brand. 279k deliveries in 2025, €130k avg price. Op margin 1.1% in 2025 (down from historical 15%+), guided to recover to 5.5-7.5% in 2026. China weakness is the overhang.</td>
+</tr>
+<tr style="background:rgba(138,168,200,0.05)">
+ <td><span class="badge badge-vw">LISTED STAKE</span><br><strong>Traton Group</strong><br><span style="font-size:9px;color:var(--text-dim);">XETRA: 8TRA</span></td>
+ <td>87.5%</td>
+ <td style="text-align:right" class="cell-val">~€15bn MC</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--vw-blue)">~€13bn</td>
+ <td>Trucks holding: Scania, MAN, International Motors (ex-Navistar), VW Truck &amp; Bus. Scania is the crown jewel (12%+ op margin). Group op margin ~8%. VW sold down ~2% of Traton in March 2025 for €393m.</td>
+</tr>
+<tr style="background:rgba(138,168,200,0.03)">
+ <td><span class="badge badge-vw">UNLISTED</span><br><strong>Volkswagen Financial Services</strong></td>
+ <td>100%</td>
+ <td style="text-align:right" class="cell-val">€40bn book</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--vw-blue)">€40bn</td>
+ <td>Captive auto-finance bank. Historically high-single-digit RoE. Book value is substantial but auto-captive banks typically trade ~0.5× P/B in public markets.</td>
+</tr>
+<tr style="background:rgba(138,168,200,0.03)">
+ <td><span class="badge badge-vw">UNLISTED</span><br><strong>Automotive net cash</strong></td>
+ <td>n/a</td>
+ <td style="text-align:right" class="cell-val">€27bn</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--vw-blue)">€27bn</td>
+ <td>Net cash on the Automotive balance sheet (excluding Porsche AG and FS). Large, but eroding — €10bn+ capex per year on EV transition, software and battery investments.</td>
+</tr>
+<tr style="background:rgba(138,168,200,0.03)">
+ <td><span class="badge badge-vw">UNLISTED</span><br><strong>All other brands &amp; ops</strong></td>
+ <td>100%</td>
+ <td style="text-align:right" class="cell-val">???</td>
+ <td style="text-align:right" class="cell-val" style="color:var(--red)">???</td>
+ <td><strong>VW, Audi, Skoda, SEAT/Cupra, Bentley, Lamborghini, Bugatti, Ducati, PowerCo (batteries), CARIAD (software), Scout Motors (US EV startup), Chinese JVs (SAIC-VW, FAW-VW, VW Anhui).</strong> This is where the activism thesis lives — if it lives anywhere.</td>
+</tr>
+<tr style="background:rgba(212,68,68,0.04)">
+ <td>Less: Hybrid capital</td>
+ <td colspan="3" style="text-align:right">Subordinated claims</td>
+ <td style="color:var(--red)">(€14bn)</td>
+</tr>
+<tr style="background:var(--surface2); border-top:2px solid var(--border-bright)">
+ <td style="color:var(--gold)"><strong>SUM of stakes + cash (ex-Finco adj)</strong></td>
+ <td colspan="3"></td>
+ <td style="text-align:right; color:var(--gold); font-weight:700; font-size:15px">~€55-75bn</td>
+</tr>
+<tr style="background:rgba(212,68,68,0.06)">
+ <td style="color:var(--red)"><strong>CURRENT MARKET CAP</strong></td>
+ <td colspan="3"></td>
+ <td style="text-align:right; color:var(--red); font-weight:700; font-size:16px">€53.3bn</td>
+</tr>
+<tr style="background:rgba(138,168,200,0.08)">
+ <td style="color:var(--vw-blue); font-size:13px"><strong>IMPLIED VALUE OF CORE AUTO ("STUB")</strong></td>
+ <td colspan="3" style="color:var(--vw-blue)">Residual value placed on VW-brand, Audi, Skoda, SEAT/Cupra, Bentley, Lamborghini, Ducati, Bugatti, PowerCo, CARIAD, Scout, China JVs, synergies, and €10bn+ of annual R&amp;D spend.</td>
+ <td style="text-align:right; color:var(--vw-blue); font-weight:700; font-size:16px">~€0 to -€20bn</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="synth vw">
+<h3>Why the "stub value is zero" math is both real and misleading</h3>
+<p><strong>It is real</strong> in that the arithmetic is undeniable. The listed stakes are liquid, the book value is audited, the discount to any reasonable SOTP is ~50-70%, and this discount has persisted and widened for over a decade. <strong>It is misleading</strong> in that the standard activist interpretation — "the market is leaving money on the table, intervene and collect it" — assumes the discount is correctable. In VW's case the discount reflects <strong>three features of the asset itself</strong> that no board-seat Cevian could obtain is going to change.</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label vw">§ 5.3 — Why the Discount Persists</div>
+<h2>Three Structural Reasons, Each of Which Fails the Cevian Filter</h2>
+
+<div class="grid-3">
+
+ <!-- REASON 1: OWNERSHIP -->
+ <div class="card" style="border-top:3px solid var(--red)">
+ <div class="card-label" style="color:var(--red)">Reason 1 — Ownership structure is locked</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ VW's voting register is <strong>effectively a triple lock</strong>:<br><br>
+ • <strong>Porsche SE (Piëch / Porsche families)</strong> — 31.9% of economic interest but <strong>53.3% of voting rights</strong> in VW AG. Porsche SE is itself family-controlled.<br>
+ • <strong>State of Lower Saxony</strong> — 20% stake, preserved under the <strong>Volkswagen Act of 1960</strong> which grants the state veto rights over major strategic decisions (plant closures, takeovers, significant restructurings).<br>
+ • <strong>Qatar Investment Authority</strong> — 14.6% economic interest, 17% voting rights.<br><br>
+ <strong>Combined, these three hold &gt;90% of voting rights.</strong> A Cevian 3% stake is a rounding error at the AGM. There is no minority-shareholder path to the supervisory board that goes through the voting register. <strong>Activism at VW has been attempted for 20+ years without a single board concession.</strong> The family, the state, and the sovereign have aligned incentives on structural continuity.
+ </div>
+ </div>
+
+ <!-- REASON 2: CHINA -->
+ <div class="card" style="border-top:3px solid var(--red)">
+ <div class="card-label" style="color:var(--red)">Reason 2 — China exposure is structural</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ VW is the <strong>largest single-country Western auto OEM in China</strong>. Three joint ventures — SAIC-Volkswagen, FAW-Volkswagen, Volkswagen Anhui — historically delivered ~40% of group profit. That profit base has collapsed over 2023-26 as <strong>BYD, Geely, Xiaomi, Li Auto, Xpeng, and the broader domestic EV ecosystem have taken share on a massive scale</strong>.<br><br>
+ Porsche AG deliveries in China fell 28% in FY2025. VW Q1 2026 deliveries -4% globally, with China the largest contributor.<br><br>
+ This is <strong>exactly the "Chinese commoditisation" risk Nikola called out</strong> as a Cevian-excluded category — and arguably the most important of his explicit filters. Even the CEO's own 2026 strategy (the Xpeng software partnership announced April 2026) is a defensive move, not an offensive one. Cevian does not do defensive.
+ </div>
+ </div>
+
+ <!-- REASON 3: AUTO OEM RETURNS -->
+ <div class="card" style="border-top:3px solid var(--red)">
+ <div class="card-label" style="color:var(--red)">Reason 3 — Auto OEMs don't earn returns</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ Auto OEMs are, as a category, <strong>structurally low-return businesses</strong>. VW spends &gt;€18bn/year on R&amp;D and &gt;€15bn/year on capex. Capex &gt;&gt; D&amp;A for most of the last decade. <strong>Reported earnings systematically overstate true owner earnings</strong>; the only return that ultimately reaches shareholders is the dividend.<br><br>
+ Currently 10%+ dividend yield — which sounds attractive — but dividends have been cut or held in most stress periods since 2015 (diesel scandal, COVID, 2024-25 China reset). <strong>Cevian's portfolio has no auto OEM in it</strong> (Autoliv is a safety-component supplier — auto-adjacent, much higher return, not an OEM).<br><br>
+ Even if Cevian could get a board seat (which it can't) and force an optimal portfolio restructuring (which it can't), the residual cash-generating core would still be a mass-market auto OEM fighting Chinese competition on home turf. The <strong>return on capital</strong> problem does not go away with a governance fix.
+ </div>
+ </div>
+
+</div>
+</div>
+
+<div class="section">
+<div class="section-label vw">§ 5.4 — The "If You Had To" Pitch</div>
+<h2>What a Bull Would Argue — and the Rebuttals</h2>
+<div class="sub">In the spirit of being able to defend both sides in an interview: here is the strongest version of the "buy VW" pitch, and my counter to each point.</div>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:280px">Bull argument</th>
+ <th>Rebuttal (why Cevian should still pass)</th>
+</tr></thead>
+<tbody>
+<tr>
+ <td><strong>"The SOTP discount is 50-70%. Even a partial unlock is enormous."</strong> Sell down Porsche SE stake, IPO Traton fully, monetise FS book — any one of these unlocks €10bn+ of equity value.</td>
+ <td>The Porsche AG float in 2022 was already a Cevian-style unlock, executed by management, and VW's equity has <strong>fallen</strong> since then from €135 to €103 — not because the unlock failed, but because the auto cycle deteriorated. The discount persists because the auto business itself is cyclical and structurally challenged. Partial unlocks do not solve that.</td>
+</tr>
+<tr>
+ <td><strong>"German defense pivot"</strong> — Citi upgraded VW in March 2026 on the argument that Germany's €100bn+ defense spending package could be tapped for industrial retooling (VW has truck and engineering capacity).</td>
+ <td>Speculative. Even if true, defense revenue would at best become a small addition to €326bn of existing revenue. It doesn't change the structural characteristics — and Cevian's mandate is consumer / industrial, not defense.</td>
+</tr>
+<tr>
+ <td><strong>"The dividend yield is 10%."</strong> Even with no re-rating, total return equals yield. Current yield > Bund. You get paid to wait.</td>
+ <td>Dividend at 10% yield reflects market uncertainty the dividend holds. VW has cut dividends three times since 2015 (diesel, COVID, 2024). The <strong>sustainable</strong> yield is probably closer to 4-6%. A Cevian position sized at €1bn would earn €40-60m/yr in dividends — before any capital loss in a scenario that requires only ~15% downside to erase two years of yield. This is not how Cevian positions itself.</td>
+</tr>
+<tr>
+ <td><strong>"Porsche AG is the crown jewel — just own VW as a levered way to own Porsche AG."</strong> You get ~€28bn of Porsche exposure for a €53bn VW market cap — effectively half-price Porsche.</td>
+ <td>If the view is "own Porsche AG," own P911 directly. The VW wrapper adds the auto-OEM complex, the Chinese JVs, and the governance lock. The arbitrage is available in both directions — Porsche SE (PAH3) trades at a further ~30% discount to its VW-and-Porsche-AG NAV. If anyone were to do this trade, it would be at the PAH3 level. <strong>Not at VW.</strong></td>
+</tr>
+<tr>
+ <td><strong>"Elliott or someone eventually takes a stake and forces change."</strong> The value is too visible to stay uncaptured forever.</td>
+ <td>The value has been visible for 15+ years. Elliott, Cevian, Icahn, TCI, ValueAct have all looked. <strong>None have taken a position of consequence.</strong> The pattern suggests the activist community has already concluded the voting structure is unworkable. That conclusion doesn't change because someone decided to pitch it at a Cevian interview.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="synth vw">
+<h3>The one-sentence verdict</h3>
+<p><strong>Volkswagen is a permanently-cheap stock that Cevian is permanently not a fundholder of — and being able to say that clearly, with the ownership-structure arithmetic on hand, is a better answer than pretending it's a buy.</strong> If the Fabian conversation goes to "what's the cheapest large-cap European stock you can think of and why isn't it in your portfolio?", VW is the most useful name to be able to field. The answer is the governance lock, the Chinese secular headwind, and the auto-OEM returns profile — three of Cevian's published exclusions, stacked.</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label vw">§ 5.5 — The Comparative Angle</div>
+<h2>How VW Stacks Against the Three Cevian-Fit Ideas</h2>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:190px">Dimension</th>
+ <th>Ahold, DHL, Bayer</th>
+ <th>Volkswagen</th>
+</tr></thead>
+<tbody>
+<tr>
+ <td><strong>Ownership structure</strong></td>
+ <td>Free float dominant; board seats achievable through 2-5% stakes and collaborative engagement.</td>
+ <td><strong>Triple lock.</strong> Porsche SE + Lower Saxony + Qatar hold &gt;90% of voting rights. No activist board seat achievable at any realistic stake size.</td>
+</tr>
+<tr>
+ <td><strong>Catalyst for change</strong></td>
+ <td>Management-led or board-approvable: dual listing (Ahold), Fit for Growth / separation (DHL), Consumer Health carve-out (Bayer).</td>
+ <td>Change requires <strong>family consent</strong>. The Porsche AG float in 2022 happened when the family wanted it, not when activists did. There is no trigger outside the family's internal capital-allocation preference.</td>
+</tr>
+<tr>
+ <td><strong>Cyclicality of core</strong></td>
+ <td>Grocery (acyclical), logistics (mildly cyclical), pharma + ag (counter-cyclical).</td>
+ <td>Auto OEM — <strong>highly cyclical</strong>, capex-heavy, earnings overstated relative to cash. Downside in a full cycle is -40%+.</td>
+</tr>
+<tr>
+ <td><strong>China exposure</strong></td>
+ <td>Ahold: none. DHL: ~15% via freight flows. Bayer: Crop Science glyphosate some exposure, but sees recovering prices.</td>
+ <td>~30% of volumes; profit collapse through 2024-26 directly attributable to Chinese domestic EV share gain.</td>
+</tr>
+<tr>
+ <td><strong>Return on capital</strong></td>
+ <td>All three earn &gt; cost of capital through cycle.</td>
+ <td>RoE 3.6% TTM; RoA 1.9%. <strong>Below cost of capital.</strong></td>
+</tr>
+<tr>
+ <td><strong>Cevian precedent?</strong></td>
+ <td>ABB, ThyssenKrupp, Pearson, SKF, Autoliv — multiple direct templates.</td>
+ <td><strong>None.</strong> No European activist has successfully engaged with VW at the board level in the firm's 30-year history.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label vw">§ 5.6 — The Answer to "Why Not VW?"</div>
+<div class="card" style="background:var(--surface2); padding:20px 24px; border-left:3px solid var(--vw-blue);">
+<div class="card-body" style="font-size:12.5px; line-height:1.8; color:var(--text);">
+If Fabian asks <em>"what about Volkswagen — that's cheap, surely that's an activist situation?"</em> the answer in a coffee chat is approximately:<br><br>
+<em>"I looked at it. The SOTP gap is the largest on the European large-cap board and it's superficially a Cevian idea, but it fails three of your stated filters simultaneously. One: the voting register is locked — Porsche SE controls 53% voting with the family, Lower Saxony has veto rights under the VW Act, and Qatar has 14.6% — that combination means no minority shareholder has ever secured a supervisory-board seat. Two: China is structurally adverse rather than opportunistic — BYD and the domestic EV ecosystem have taken material share and VW's response, the Xpeng partnership, is defensive. That's a Chinese-commoditisation story in all but name, which Nikola flagged as an explicit exclusion. Three: auto OEMs earn below cost of capital through the cycle and Cevian's portfolio reflects that — Autoliv is the closest you come to auto and that's a component supplier. Put the three together and VW is cheap for reasons a Cevian stake cannot fix. The thing to own is the discipline of passing."</em>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- TAB 6: DEFENCE THEME -->
+<div id="tab-theme" class="tab-panel">
+<div class="container">
+
+<div class="section">
+<div class="section-label theme">§ 6.1 — The Setup</div>
+<h2 style="color:var(--nordic-blue);">Defence Theme — German Political-Economy Subsidy &amp; ThyssenKrupp</h2>
+<div class="sub">An addendum to the core four ideas. If the VW question ("isn't German defence spending a tailwind?") leads into a broader thematic discussion, this is the ground prepared: the macro setup, the exercise of screening continental Europe for activist-shaped plays on €500bn of German industrial subsidy, and the one name that actually fits — <strong>ThyssenKrupp AG</strong>, post the October 2025 TKMS spin-off.</div>
+
+<div class="metric-strip grid-5" style="margin-bottom:16px;">
+ <div class="metric-cell"><div class="mc-val" style="color:var(--nordic-blue)">€82.6bn</div><div class="mc-label">Germany 2026 defence budget</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€108bn</div><div class="mc-label">Total incl. Sondervermögen</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--gold)">€162bn</div><div class="mc-label">Run-rate target 2029</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--nordic-blue)">€500bn</div><div class="mc-label">Infrastructure fund (2025-2035)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">3.5%</div><div class="mc-label">GDP target by 2029</div></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label theme">§ 6.2 — Why It's Specifically German</div>
+<h2>The Subsidy Is Politically Coded, Not EU-Wide</h2>
+<div class="sub">The thematic instinct — "Germans will overpay to keep Germans making rolling metal, while the French industrial base won't get the same treatment" — is structurally correct, and the data underwrites it.</div>
+
+<div class="grid-2">
+
+ <div class="card" style="border-top:3px solid var(--nordic-blue)">
+ <div class="card-label" style="color:var(--nordic-blue)">The Fiscal Capacity</div>
+ <div class="card-body" style="font-size:12.5px; line-height:1.8;">
+ Germany 2026 defence budget €82.6bn (+32% vs €62.4bn in 2025), plus ~€25bn from the Sondervermögen = <strong>€108bn of total defence spend in 2026</strong>. Trajectory out to 2029: €117bn → €162bn (Charles Schwab / German Finance Ministry projections). Chancellor Merz secured a <strong>constitutional debt-brake exemption for defence in early 2025</strong> — it is now a structurally privileged spending category.<br><br>
+ Separately, the <strong>€500bn "Infrastructure Special Fund"</strong> runs 2025-2035, off-budget, and can be legally deployed for defence-adjacent industrial build-out, energy security and the Zeitenwende-era strategic autonomy programme. Q4 2025 German factory orders rose <strong>+40% on a three-month annualised basis</strong>, with heavy machinery (including arms and electronics) a major contributor.
+ </div>
+ </div>
+
+ <div class="card" style="border-top:3px solid var(--nordic-blue)">
+ <div class="card-label" style="color:var(--nordic-blue)">Why France Doesn't Match It</div>
+ <div class="card-body" style="font-size:12.5px; line-height:1.8;">
+ France runs structural deficits of 5%+ of GDP, debt/GDP at 112%+ and rising, and <strong>no equivalent debt-brake-exemption mechanism</strong>. France's defence industry (Thales, Dassault, Safran, Naval Group) receives DGA procurement support but the <strong>scale of the cheque is maybe half Germany's</strong>, and it's spread across a more crowded domestic supplier base.<br><br>
+ The EU-level defence spending framework (ReArm Europe / SAFE) is a €150bn loan facility — useful, but small relative to Germany's unilateral spend, and not capable of cross-subsidising French employment in the way Germany's own budget will cross-subsidise German employment. <strong>Your "Germans will pay to keep Germans employed" instinct is precisely the political economy at work.</strong>
+ </div>
+ </div>
+
+</div>
+
+<div class="synth theme">
+<h3>The signal in the index</h3>
+<p><strong>MSCI EMU Aerospace &amp; Defence Index +78% YTD through October 2025</strong>. That's the market already capitalising the obvious primes. The question for Cevian isn't whether to buy Rheinmetall at today's price — it's whether there is an activist-shaped industrial name where the defence kicker is still underpriced because the market is looking at the parent as a steel/materials/auto-supply conglomerate rather than as the holder of a newly-listed maritime-defence franchise.</p>
+</div>
+
+</div>
+
+<div class="section">
+<div class="section-label theme">§ 6.3 — Why VW Isn't the Expression</div>
+<h2>Real Defence Exposure, Wrong Scale</h2>
+
+<div class="grid-2">
+
+ <div class="card" style="border-top:3px solid var(--red)">
+ <div class="card-label" style="color:var(--red)">The Exposure Is Real...</div>
+ <div class="card-body" style="font-size:12.5px; line-height:1.8;">
+ VW has meaningful military-adjacent capacity via Traton (87.5% owned):<br><br>
+ • <strong>Rheinmetall MAN Military Vehicles (RMMV)</strong> — JV between Rheinmetall and MAN Truck &amp; Bus. Makes the HX-series 6×6/8×8 logistics trucks, the German army's standard tactical lorry. Orderbook has expanded materially post-Zeitenwende.<br>
+ • <strong>Scania</strong> — military truck contracts, smaller than MAN but growing.<br>
+ • <strong>VW Commercial Vehicles (Hanover)</strong> — tactical vehicle work.<br>
+ • <strong>PowerCo</strong> (battery venture) — potential for military EV drivetrain and drone-grid power contracts.<br><br>
+ The direction is correct; German defence procurement favours German-owned manufacturing capacity. Citi's March 2026 "defence pivot" note to VW was directionally not wrong.
+ </div>
+ </div>
+
+ <div class="card" style="border-top:3px solid var(--red)">
+ <div class="card-label" style="color:var(--red)">...But the Scale Is Wrong</div>
+ <div class="card-body" style="font-size:12.5px; line-height:1.8;">
+ VW Group revenue is <strong>€326bn</strong>. Estimated direct military-vehicle revenue across RMMV + Scania defence + VWCV tactical is probably <strong>&lt;€1bn</strong>. Even tripling that over five years, it's rounding-error at group level.<br><br>
+ The "shed the EMs, keep the German core" reframing is structurally unworkable: the Chinese JV interest (SAIC-VW, FAW-VW) cannot be cleanly divested — JV partners are state-owned, have right of first refusal at book value, and no buyer would pay market for a losing-share franchise. A €25-30bn write-down would be the price of exit. Meanwhile "German-core VW" is the <strong>lowest-margin part of the group</strong> — the profitable brands sit in Czech Republic (Škoda), Italy (Lamborghini, Ducati), UK (Bentley), and non-German parts of Audi/Porsche supply chains. Stripping to "pure German" makes the company worse, not better.<br><br>
+ <strong>Conclusion:</strong> VW benefits marginally from the German subsidy wave. It does not become a defence-themed investment. The governance, China, and auto-OEM-returns reasons for passing are unchanged.
+ </div>
+ </div>
+
+</div>
+</div>
+
+<div class="section">
+<div class="section-label theme">§ 6.4 — Why Airbus Fails on Governance</div>
+<h2>The Airbus-Shaped VW Problem</h2>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:220px">Airbus SE — at first glance</th>
+ <th>What it looks like</th>
+ <th style="width:280px">Why it doesn't work for Cevian</th>
+</tr></thead>
+<tbody>
+<tr>
+ <td><strong>Defence &amp; Space division</strong></td>
+ <td>~€12-13bn revenue / ~€700m EBIT. A400M military transport, Eurofighter, space, satellites. Direct beneficiary of European defence ramp.</td>
+ <td style="color:var(--red)">Real, but &lt;15% of group revenue. Commercial Aerospace (A320 family, A350) dominates both earnings and narrative.</td>
+</tr>
+<tr>
+ <td><strong>Ownership structure</strong></td>
+ <td>Listed Paris/Frankfurt/Madrid, registered as Airbus SE (Netherlands).</td>
+ <td style="color:var(--red)"><strong>Tri-state shareholder pact.</strong> France ~11%, Germany (via KfW) ~11%, Spain ~4% = combined ~26% with contractual special rights blocking strategic changes. <strong>Same structural problem as VW.</strong> A Cevian 3% stake has no path to meaningful board influence.</td>
+</tr>
+<tr>
+ <td><strong>Entry price</strong></td>
+ <td>Market cap €130bn+. A320 orderbook ~10 years deep. Trades at premium multiples on consensus.</td>
+ <td style="color:var(--red)">Fails Cevian's <strong>"neglected or misunderstood in out-of-favour industries"</strong> filter. Airbus is a consensus long — exactly the opposite of Cevian's usual entry point.</td>
+</tr>
+<tr>
+ <td><strong>Catalyst</strong></td>
+ <td>Defence spending tailwind; Boeing share loss in commercial aero.</td>
+ <td style="color:var(--red)">Both already in consensus. No <strong>structural change</strong> Cevian could drive — the commercial + defence split is the stated long-term strategy; there is no pressure for separation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="synth theme">
+<h3>The Airbus verdict</h3>
+<p>Right theme, wrong structure, wrong entry price. Airbus is a defence-themed growth stock, not an activist-shaped value stock. If Fabian pushes on it, the honest answer is: <em>"Airbus has the same tri-state shareholder lock I described on VW — France, Germany and Spain hold combined special rights that would make a Cevian board-engagement essentially performative. Plus it's at a premium multiple and consensus long. The defence narrative is real but already priced and structurally unactionable."</em></p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label theme">§ 6.5 — European Defence-Exposed Names, Screened</div>
+<h2>The Candidates, Ranked</h2>
+<div class="sub">Screening the continental European defence universe against Cevian's filter (geography, size, governance, entry price, structural-change catalyst). Composite fit 1-5; 5 = Cevian-shaped.</div>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:180px">Name</th>
+ <th style="width:100px">MC</th>
+ <th style="width:130px">Geo / Listing</th>
+ <th style="width:180px">Defence profile</th>
+ <th style="text-align:center;width:80px;color:var(--gold)">Fit</th>
+ <th>Verdict</th>
+</tr></thead>
+<tbody>
+<tr style="background:rgba(107,154,196,0.08)">
+ <td style="color:var(--nordic-blue);"><strong>ThyssenKrupp AG</strong><br><span style="font-size:9px;color:var(--text-dim);">XETRA: TKA</span></td>
+ <td class="cell-val">€5-6bn</td>
+ <td>Germany 🇩🇪</td>
+ <td>Holds 51% of newly-listed TKMS (€6.5bn MC). Steel Europe (Jindal bid in play). Decarbon / Auto Tech / Materials.</td>
+ <td style="text-align:center; color:var(--nordic-blue); font-weight:700;">5</td>
+ <td><strong>The pick.</strong> Cevian has historical involvement. TKMS stake alone covers ~60-70% of TKAG market cap. Stub is a nearly-free option on German infrastructure &amp; steel recovery.</td>
+</tr>
+<tr>
+ <td><strong>Daimler Truck</strong><br><span style="font-size:9px;color:var(--text-dim);">XETRA: DTG</span></td>
+ <td class="cell-val">~€30bn</td>
+ <td>Germany 🇩🇪</td>
+ <td>Mercedes-Benz defence-vehicle heritage. Growing military truck contracts.</td>
+ <td style="text-align:center;">3</td>
+ <td>Cevian-geo, Cevian-size, post-2022 spin from Mercedes-Benz Group. Defence is small piece. Second-tier option if TKAG is over-concentrated.</td>
+</tr>
+<tr>
+ <td>Rheinmetall</td>
+ <td class="cell-val">~€85bn</td>
+ <td>Germany 🇩🇪</td>
+ <td>Pure-play: tanks, ammunition, air defence. The archetypal German defence name.</td>
+ <td style="text-align:center;">1</td>
+ <td><strong>Priced.</strong> +~1,000% since early 2022. Not a value setup. Still great company; not a Cevian entry.</td>
+</tr>
+<tr>
+ <td>Hensoldt</td>
+ <td class="cell-val">~€10bn</td>
+ <td>Germany 🇩🇪</td>
+ <td>Defence electronics, radar, avionics.</td>
+ <td style="text-align:center;">2</td>
+ <td>Too small for Cevian check size (a €500m-1bn stake = 5-10%, triggers disclosure and concentration issues). Already re-rated.</td>
+</tr>
+<tr>
+ <td>Renk Group</td>
+ <td class="cell-val">~€6bn</td>
+ <td>Germany 🇩🇪</td>
+ <td>Tank transmissions. IPO'd 2024.</td>
+ <td style="text-align:center;">1</td>
+ <td>Pure-play defence, already re-rated. Post-IPO not the usual Cevian shape (needs governance change).</td>
+</tr>
+<tr>
+ <td>MTU Aero Engines</td>
+ <td class="cell-val">~€25bn</td>
+ <td>Germany 🇩🇪</td>
+ <td>Jet engines (military + civil). Eurofighter EJ200 engine.</td>
+ <td style="text-align:center;">2</td>
+ <td>German, right size, but already re-rated. Dual-use means dilution of pure-defence thesis.</td>
+</tr>
+<tr>
+ <td>Airbus SE</td>
+ <td class="cell-val">~€130bn</td>
+ <td>NL/FR/DE/ES 🇳🇱</td>
+ <td>Commercial + Defence &amp; Space + Helicopters.</td>
+ <td style="text-align:center; color:var(--red);">1</td>
+ <td><strong>Tri-state governance lock + premium multiple + consensus long.</strong> Not actionable.</td>
+</tr>
+<tr>
+ <td>Saab AB</td>
+ <td class="cell-val">~€15bn</td>
+ <td>Sweden 🇸🇪</td>
+ <td>Pure-play: Gripen fighter, missiles, naval. Wallenberg family control.</td>
+ <td style="text-align:center;">2</td>
+ <td>Cevian-geo, but Investor AB (Wallenberg) holds significant voting control. Already up ~400% since 2022.</td>
+</tr>
+<tr>
+ <td>Kongsberg Gruppen</td>
+ <td class="cell-val">~€30bn</td>
+ <td>Norway 🇳🇴</td>
+ <td>Defence (NSM missile) + Maritime. Norwegian state 50.1% owner.</td>
+ <td style="text-align:center;">1</td>
+ <td>State majority-owned. Outside Cevian's typical minority-activist shape.</td>
+</tr>
+<tr>
+ <td>Thales</td>
+ <td class="cell-val">~€55bn</td>
+ <td>France 🇫🇷</td>
+ <td>Defence electronics, avionics, cyber.</td>
+ <td style="text-align:center; color:var(--red);">1</td>
+ <td><strong>French — outside Cevian's explicit geographic comfort zone.</strong> French state 26% owner. Pass.</td>
+</tr>
+<tr>
+ <td>Leonardo</td>
+ <td class="cell-val">~€35bn</td>
+ <td>Italy 🇮🇹</td>
+ <td>Helicopters, defence electronics, aerospace.</td>
+ <td style="text-align:center; color:var(--red);">1</td>
+ <td>Italian state 30% owner. Outside Cevian's geography.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label theme">§ 6.6 — ThyssenKrupp AG — The Cevian-Shaped Play</div>
+<h2 style="color:var(--nordic-blue);">The Setup</h2>
+<div class="sub"><strong>This is the only name on the defence-exposed board that works as a Cevian idea.</strong> Everything that makes it unattractive to a momentum defence investor — the Steel Europe drag, the industrial cyclicality, the ThyssenKrupp-brand stigma — is the reason the TKMS stake is getting no multiple inside the parent. Classic stub situation with an already-listed crown-jewel benchmark.</div>
+
+<div class="metric-strip grid-5" style="margin-bottom:16px;">
+ <div class="metric-cell"><div class="mc-val" style="color:var(--nordic-blue)">€8.00-9.26</div><div class="mc-label">TKA share price range (Apr 2026)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€5.0-5.8bn</div><div class="mc-label">Market cap (TKAG)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--gold)">51%</div><div class="mc-label">Retained TKMS stake</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--nordic-blue)">€18.6bn</div><div class="mc-label">TKMS order backlog (Jun 2025)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€32.2bn</div><div class="mc-label">TKAG revenue TTM</div></div>
+</div>
+
+<h2 style="margin-top:20px;">The Math</h2>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:220px">Component</th>
+ <th style="text-align:right;width:140px">Value</th>
+ <th>How it is derived / why it matters</th>
+</tr></thead>
+<tbody>
+<tr style="background:rgba(107,154,196,0.06)">
+ <td><span class="badge badge-theme">CROWN JEWEL</span><br><strong>51% of TKMS</strong><br>(XETRA: TKMS)</td>
+ <td style="text-align:right; color:var(--nordic-blue); font-weight:700;" class="cell-val">~€3.3bn</td>
+ <td>TKMS market cap ~€6.5bn (post-Oct 2025 IPO, shares up +50% on day one). World leader in non-nuclear submarines and MEKO frigates. €18.6bn backlog, targeting 10% rev CAGR and &gt;7% EBIT margin medium-term. <strong>Direct beneficiary of every European naval-defence contract of the next decade</strong> — including the pending Canadian Patrol Submarine Project and Indian submarine programme.</td>
+</tr>
+<tr style="background:rgba(107,154,196,0.05)">
+ <td><span class="badge badge-theme">LEGACY CORE</span><br><strong>Steel Europe</strong></td>
+ <td style="text-align:right; color:var(--text)" class="cell-val">€0.5-1.5bn?</td>
+ <td><strong>Jindal Steel &amp; Power submitted an offer in September 2025.</strong> Deal uncertain but the fact of a live process means the market has a bid floor. Direct beneficiary of €500bn German infrastructure fund on residual operations.</td>
+</tr>
+<tr style="background:rgba(107,154,196,0.05)">
+ <td><span class="badge badge-theme">LEGACY</span><br><strong>Automotive Tech</strong></td>
+ <td style="text-align:right; color:var(--text)" class="cell-val">€0.5-1.0bn?</td>
+ <td>Axle assemblies, steering, chassis components. Cyclical with European auto; but lean, cash-generative, would trade at 5-6× standalone.</td>
+</tr>
+<tr style="background:rgba(107,154,196,0.05)">
+ <td><span class="badge badge-theme">GROWTH SEG</span><br><strong>Decarbon Technologies</strong></td>
+ <td style="text-align:right; color:var(--text)" class="cell-val">€0.5-1.0bn?</td>
+ <td>Electrolysers (hydrogen), green ammonia/methanol plants, plant engineering for battery manufacturers. Benefits from €500bn infrastructure fund's climate-neutrality component.</td>
+</tr>
+<tr style="background:rgba(107,154,196,0.05)">
+ <td><span class="badge badge-theme">SERVICES</span><br><strong>Materials Services</strong></td>
+ <td style="text-align:right; color:var(--text)" class="cell-val">€0.3-0.7bn?</td>
+ <td>Stockholding / distribution for 250k+ SME customers. Low-margin but cash-generative.</td>
+</tr>
+<tr style="background:var(--surface2); border-top:2px solid var(--border-bright)">
+ <td style="color:var(--gold)"><strong>IMPLIED SOTP (conservative)</strong></td>
+ <td style="text-align:right; color:var(--gold); font-weight:700; font-size:15px">€5-7bn</td>
+ <td>TKMS stake alone closes most of the gap. Any meaningful valuation on the other four divisions creates upside.</td>
+</tr>
+<tr style="background:rgba(212,68,68,0.05)">
+ <td style="color:var(--red)">Less: Net debt &amp; pension</td>
+ <td style="text-align:right; color:var(--red); font-weight:700;">(€3-4bn)</td>
+ <td>ThyssenKrupp's large pension deficit is the traditional SOTP-case objection. Real; but also already in the €5.5bn equity price.</td>
+</tr>
+<tr style="background:rgba(107,154,196,0.08)">
+ <td style="color:var(--nordic-blue); font-size:13px"><strong>SOTP EQUITY (unlock case)</strong></td>
+ <td style="text-align:right; color:var(--nordic-blue); font-weight:700; font-size:16px">€5-6bn ≈ today</td>
+ <td>At today's market cap, TKMS stake plus pension-adjusted industrial core broadly ties out. <strong>The unlock is Jindal closing on Steel Europe</strong> at anything &gt;€0 — that crystallises the stub value and leaves TKMS in the remaining entity as the narrative driver.</td>
+</tr>
+<tr style="background:rgba(107,154,196,0.08)">
+ <td style="color:var(--nordic-blue); font-size:13px"><strong>SOTP EQUITY (stretch: TKMS re-rate)</strong></td>
+ <td style="text-align:right; color:var(--nordic-blue); font-weight:700; font-size:16px">€8-10bn</td>
+ <td>If TKMS runs to €10bn MC on continued defence procurement (easily possible given backlog), TKAG's 51% = €5.1bn alone, with the stub becoming free option. <strong>+50-80% upside over 2-3 years.</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="synth theme">
+<h3>Why this is Cevian-shaped</h3>
+<p><strong>Five things align:</strong> (1) <strong>Cevian has historical engagement at TKAG</strong> — they were on the register years ago, know the Aufsichtsrat, know IG Metall. The board dialogue infrastructure already exists. (2) <strong>The crown jewel is already publicly priced</strong> — TKMS trades on XETRA; no "trust me on the multiple" risk. (3) <strong>Two active catalysts</strong> — Jindal Steel process on Steel Europe, and a management-stated "focused holding company" strategy that implies further portfolio simplification. (4) <strong>Cheque size fits</strong> — a 5-10% stake at current prices is €250-600m, below Cevian's floor but extendable to 10-15% (€550m-900m) which reaches their preferred range. (5) <strong>German political-economy subsidy tailwind</strong> — both TKMS (naval defence direct beneficiary) and the residual Decarbon / Steel / Materials / Auto Tech mix (infrastructure-fund and industrial-capacity beneficiary).</p>
+<p style="margin-top:10px;"><strong>The position this gives in the interview:</strong> "I didn't include TKAG in my main four because Ahold / DHL / Bayer fit more cleanly as board-engagement stories today, but if the conversation gets thematic, TKAG is the name where your ThyssenKrupp precedent, your German-industrial comfort, and the European defence tailwind all converge. Plus it's cheap enough that the TKMS stake alone roughly covers the market cap."</p>
+</div>
+
+</div>
+
+<div class="section">
+<div class="section-label theme">§ 6.7 — Key Risks</div>
+
+<div class="grid-3">
+ <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
+ <div class="card-label" style="color:var(--red)">Risk — TKMS multiple compression</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ If defence stocks de-rate (peace scenario, Trump-era procurement cuts), TKMS could give back its IPO pop. TKAG's 51% stake scales linearly with TKMS multiple. <strong>Mitigant:</strong> TKMS backlog is multi-year; signed contracts carry forward earnings even in a thematic pullback. The downside is probably -20-25% at TKMS, translating to -10-15% at TKAG.
+ </div>
+ </div>
+ <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
+ <div class="card-label" style="color:var(--red)">Risk — Steel Europe deal collapses</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ Jindal offer may not close; German state may insist on local ownership; European steel market remains difficult. <strong>Mitigant:</strong> Steel Europe is valued at close to zero in today's price anyway; downside is muted. Upside comes from <em>any</em> monetisation event, which crystallises the stub.
+ </div>
+ </div>
+ <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
+ <div class="card-label" style="color:var(--red)">Risk — Pension deficit</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ TKAG carries a historically large German pension liability which swings with Bund yields. <strong>Mitigant:</strong> Already a known, provisioned liability. Rising rates 2022-25 have actually shrunk the present-value deficit — the tailwind that's been flowing for three years continues in Bund yields at 3%+.
+ </div>
+ </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label theme">§ 6.8 — What NOT to Buy</div>
+<div class="card" style="background:var(--surface2); padding:20px 24px;">
+<div class="card-body" style="font-size:12.5px; line-height:1.8; color:var(--text);">
+The pure-play defence primes (<strong>Rheinmetall</strong>, <strong>Hensoldt</strong>, <strong>Renk</strong>, <strong>Saab</strong>, <strong>Leonardo</strong>) are all up between 300% and 1,000% since the February 2022 invasion of Ukraine. They are still great companies and the German defence ramp is real — but they are <strong>momentum names at consensus multiples</strong>, not activist value situations. Cevian's portfolio does not contain pure defence names and probably never will; the firm's style is value-and-governance, not thematic-growth.<br><br>
+The more sophisticated answer to "why not buy defence" is: <em>"because the most obvious names are priced for the current environment, and the Cevian value comes from being in the right structural setup before the obvious narrative — ThyssenKrupp is an industrial conglomerate where the newly-listed defence subsidiary is worth 60% of the parent market cap and the market hasn't repriced the holding company yet. That's the activist edge; buying Rheinmetall at 15× EBITDA isn't."</em>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
 <!-- TAB 5: CEVIAN FIT -->
 <div id="tab-fit" class="tab-panel">
 <div class="container">
 
 <div class="section">
-<div class="section-label">§ 5.1 — Calibration Against the Current Portfolio</div>
+<div class="section-label">§ 7.1 — Calibration Against the Current Portfolio</div>
 <h2>Where These Three Names Sit in Cevian's World</h2>
 <div class="sub">Cevian's 14 disclosed current positions as of Q1 2026. The table shows how Bayer, Ahold Delhaize and DHL Group compare on size, geography, sector, and strategic situation.</div>
 
@@ -1484,93 +2148,112 @@ No other activist has both playbooks in their portfolio. Elliott has done German
 <div class="synth">
 <h3>The portfolio tells you the filter</h3>
 <p>Fourteen positions. <strong>Five in the Nordics</strong> (Autoliv, Ericsson, Metso, Nordea, SKF). <strong>Three in the UK</strong> (Pearson, Smith+Nephew, Vodafone). <strong>Three in Switzerland</strong> (ABB, UBS, Baloise). <strong>One each in Ireland, France, and the Netherlands</strong>. Every single name is a mature industrial or services company with a defensible market position, operating in a sector with clear peers, and a strategic situation that involves some form of portfolio change or capital return. <strong>No southern Europe. No technology start-ups. No pure commodity exposure.</strong></p>
-<p style="margin-top:10px;"><strong>The three ideas in this document fit the filter.</strong> Bayer extends the existing German industrial exposure (comparable to the ThyssenKrupp / Bilfinger history). Ahold Delhaize extends the recently-opened Dutch channel (alongside Akzo Nobel). DHL is the strongest match to Cevian's ABB / ThyssenKrupp precedent — carve-out of a legacy unit to re-rate a crown jewel.</p>
+<p style="margin-top:10px;"><strong>Three of the four ideas in this document fit the filter; the fourth (VW) deliberately does not.</strong> Bayer extends the existing German industrial exposure (comparable to the ThyssenKrupp / Bilfinger history). Ahold Delhaize extends the recently-opened Dutch channel (alongside Akzo Nobel). DHL is the strongest match to Cevian's ABB / ThyssenKrupp precedent — carve-out of a legacy unit to re-rate a crown jewel. <strong>Volkswagen fails on ownership structure, China exposure, and auto-OEM return on capital</strong> — the value of including it is to be able to articulate <em>why</em> the name that looks cheapest on a screen is excluded on a filter.</p>
 </div>
 </div>
 
 <div class="section">
-<div class="section-label">§ 5.2 — The Cevian Filter, Line by Line</div>
-<h2>Testing the Three Ideas Against the Published Criteria</h2>
+<div class="section-label">§ 7.2 — The Cevian Filter, Line by Line</div>
+<h2>Testing the Four Ideas Against the Published Criteria</h2>
 
 <div class="table-wrap">
 <table class="ct">
 <thead><tr>
  <th style="width:240px">Cevian criterion</th>
- <th style="text-align:center;width:120px">Bayer</th>
- <th style="text-align:center;width:120px">Ahold Delhaize</th>
- <th style="text-align:center;width:120px">DHL Group</th>
+ <th style="text-align:center;width:105px;color:var(--ahold-green);">Ahold D.</th>
+ <th style="text-align:center;width:105px;color:var(--dhl-amber);">DHL</th>
+ <th style="text-align:center;width:105px;color:var(--bayer-teal);">Bayer</th>
+ <th style="text-align:center;width:105px;color:var(--vw-blue);">Volkswagen</th>
  <th>Comment</th>
 </tr></thead>
 <tbody>
 <tr>
  <td><strong>Cheque size (€500m–1.5bn)</strong></td>
- <td style="text-align:center">✓ 2-3% = €800m-1.2bn</td>
- <td style="text-align:center">✓ 2-3% = €720m-1.1bn</td>
- <td style="text-align:center">✓ 2-3% = €1.1-1.7bn</td>
- <td>All three sit at Cevian's natural check size.</td>
+ <td style="text-align:center">✓ €720m-1.1bn</td>
+ <td style="text-align:center">✓ €1.1-1.7bn</td>
+ <td style="text-align:center">✓ €800m-1.2bn</td>
+ <td style="text-align:center">✓ €1.0-1.6bn</td>
+ <td>All four sit at Cevian's natural check size.</td>
 </tr>
 <tr>
  <td><strong>Geographic focus (Nordics, UK, DACH, BeNe)</strong></td>
- <td style="text-align:center" class="cell-val" style="color:var(--bayer-teal)">✓ DE</td>
  <td style="text-align:center" class="cell-val" style="color:var(--ahold-green)">✓ NL</td>
  <td style="text-align:center" class="cell-val" style="color:var(--dhl-amber)">✓ DE</td>
- <td>All in-zone. No southern Europe exposure.</td>
+ <td style="text-align:center" class="cell-val" style="color:var(--bayer-teal)">✓ DE</td>
+ <td style="text-align:center" class="cell-val" style="color:var(--vw-blue)">✓ DE</td>
+ <td>All in-zone on geography.</td>
 </tr>
 <tr>
  <td><strong>Mature / out-of-favour industry</strong></td>
- <td style="text-align:center">✓ Pharma+Ag</td>
  <td style="text-align:center">✓ Grocery</td>
- <td style="text-align:center">✓ Logistics / Post</td>
- <td>All three are in unfashionable sectors with clear competitors.</td>
+ <td style="text-align:center">✓ Logistics</td>
+ <td style="text-align:center">✓ Pharma+Ag</td>
+ <td style="text-align:center">✓ Auto</td>
+ <td>All four in unfashionable sectors.</td>
 </tr>
 <tr>
  <td><strong>Strong market position</strong></td>
- <td style="text-align:center">✓ Top-3 all 3 segs</td>
  <td style="text-align:center">✓ Regional leader</td>
- <td style="text-align:center">✓ Global integrator trio</td>
- <td>Each has a defended position in its primary markets.</td>
+ <td style="text-align:center">✓ Global trio</td>
+ <td style="text-align:center">✓ Top-3 all segs</td>
+ <td style="text-align:center" style="color:var(--dhl-amber)">◐ Losing share China</td>
+ <td>VW's position is eroding in its largest single market.</td>
 </tr>
 <tr>
  <td><strong>No China-commoditisation risk</strong></td>
- <td style="text-align:center" class="cell-val" style="color:var(--ahold-green)">✓ Mostly</td>
  <td style="text-align:center" class="cell-val" style="color:var(--ahold-green)">✓ None</td>
- <td style="text-align:center" class="cell-val" style="color:var(--dhl-amber)">◐ Freight fwd</td>
- <td>Bayer Crop has glyphosate-generic exposure (offset by seeds). DHL Global Forwarding moves Chinese trade but is not priced by Chinese capacity.</td>
+ <td style="text-align:center" class="cell-val" style="color:var(--dhl-amber)">◐ Fwd only</td>
+ <td style="text-align:center" class="cell-val" style="color:var(--ahold-green)">✓ Mostly</td>
+ <td style="text-align:center" class="cell-val" style="color:var(--red)">✗ HIGH</td>
+ <td><strong>VW clearly fails.</strong> BYD and local Chinese EV makers have taken material share; Porsche China -28% FY25.</td>
 </tr>
 <tr>
  <td><strong>Plausible board engagement</strong></td>
- <td style="text-align:center">✓ Aufsichtsrat</td>
  <td style="text-align:center">✓ Supervisory Board</td>
  <td style="text-align:center">✓ Aufsichtsrat + KfW</td>
- <td>All three are dual-board-structure companies where Cevian's collaborative model works.</td>
+ <td style="text-align:center">✓ Aufsichtsrat</td>
+ <td style="text-align:center" class="cell-val" style="color:var(--red)">✗ BLOCKED</td>
+ <td><strong>VW's triple voting lock (Porsche SE + Lower Saxony + Qatar = &gt;90%) is the structural disqualifier.</strong></td>
 </tr>
 <tr>
  <td><strong>Catalyst in next 24-36 months</strong></td>
- <td style="text-align:center">✓ 2027 inflection</td>
  <td style="text-align:center">✓ CEO transition</td>
  <td style="text-align:center">✓ Strategy 2030</td>
- <td>Each has a natural management-led inflection point for engagement.</td>
+ <td style="text-align:center">✓ 2027 inflection</td>
+ <td style="text-align:center" style="color:var(--red)">✗ Family-only</td>
+ <td>Change at VW requires family consent; no external catalyst.</td>
 </tr>
 <tr>
  <td><strong>5:1 upside / 20% max loss</strong></td>
  <td style="text-align:center">✓ €33 floor</td>
- <td style="text-align:center">✓ €33 floor</td>
  <td style="text-align:center">✓ €40 floor</td>
- <td>All three clear the max-loss test (see § 1.3).</td>
+ <td style="text-align:center">✓ €33 floor</td>
+ <td style="text-align:center" class="cell-val" style="color:var(--red)">✗ &gt;30% risk</td>
+ <td>VW's cyclical downside cannot be bounded at -20% given Chinese secular trend.</td>
 </tr>
 <tr>
  <td><strong>5-year hold horizon fits</strong></td>
- <td style="text-align:center">✓ Break-up timeline</td>
  <td style="text-align:center">✓ Listing timeline</td>
  <td style="text-align:center">✓ Separation timeline</td>
- <td>All three need 3-5 years to execute — Cevian-shaped, not Elliott-shaped.</td>
+ <td style="text-align:center">✓ Break-up timeline</td>
+ <td style="text-align:center" style="color:var(--dhl-amber)">◐ No catalyst</td>
+ <td>5 years is enough time at the first three; infinite time does not help at VW without a governance shift.</td>
 </tr>
 <tr>
  <td><strong>Competitors analysable in 2 weeks</strong></td>
- <td style="text-align:center">✓ Sanofi / Corteva / Haleon</td>
  <td style="text-align:center">✓ Kroger / Tesco</td>
  <td style="text-align:center">✓ FedEx / UPS / DSV</td>
- <td>Each has a clean, well-disclosed comp set.</td>
+ <td style="text-align:center">✓ Sanofi / Corteva</td>
+ <td style="text-align:center">✓ BYD / Stellantis / Toyota</td>
+ <td>All comp sets clean.</td>
+</tr>
+<tr style="background:rgba(138,168,200,0.06); border-top:2px solid var(--border-bright)">
+ <td><strong>COMPOSITE FIT</strong></td>
+ <td style="text-align:center;color:var(--ahold-green);font-weight:700">10/10</td>
+ <td style="text-align:center;color:var(--dhl-amber);font-weight:700">9/10</td>
+ <td style="text-align:center;color:var(--bayer-teal);font-weight:700">10/10</td>
+ <td style="text-align:center;color:var(--red);font-weight:700">5/10</td>
+ <td>VW fails on 4 of 10 criteria — three of which are Cevian's hardest-coded exclusions (ownership, China, downside bound).</td>
 </tr>
 </tbody>
 </table>
@@ -1578,7 +2261,7 @@ No other activist has both playbooks in their portfolio. Elliott has done German
 </div>
 
 <div class="section">
-<div class="section-label">§ 5.3 — Why These Three, Not Others</div>
+<div class="section-label">§ 7.3 — Why These Four, Not Others</div>
 <h2>The Other European Names Considered</h2>
 <div class="sub">Explicitly not on this page — and the reasoning for each. Showing the rejected names is part of the thinking.</div>
 
@@ -1630,18 +2313,19 @@ No other activist has both playbooks in their portfolio. Elliott has done German
 </div>
 
 <div class="section">
-<div class="section-label">§ 5.4 — Portfolio Fit</div>
+<div class="section-label">§ 7.4 — Portfolio Fit</div>
 <div class="synth">
-<h3>Three shapes, one playbook</h3>
-<p>Each of Bayer, Ahold Delhaize and DHL Group represents a different <strong>degree</strong> of the same activist pattern: a crown-jewel business held down by a structural encumbrance. Bayer is the <strong>most extreme</strong> version — three separately valuable units, with the CEO publicly resistant to change and the litigation overhang providing political cover. Ahold Delhaize is the <strong>simplest</strong> — a listing-venue arbitrage, no break-up required, friendly board environment. DHL is the <strong>most structurally analogous to ABB</strong> — a genuinely world-class franchise (Express) trapped inside a regulated German legacy (Post &amp; Parcel), with a five-year political process required to separate them.</p>
-<p style="margin-top:10px;">If I could only pitch one in a coffee chat, I would pitch <strong>Ahold Delhaize</strong> — it is the most actionable, has the fewest overhangs, and fits the Dutch channel Cevian has just opened with Akzo Nobel. If the chat extended into a structural discussion of activist mechanism, I would pivot to <strong>DHL Group</strong> — it is the best illustration of how Cevian's collaborative style works where Elliott's would not. I would <strong>mention Bayer as a counter-point</strong> — the idea that should be in the portfolio but isn't yet, and the post-rally entry-price honesty.</p>
+<h3>Four shapes, one playbook — and one counter-example</h3>
+<p>Ahold Delhaize, DHL Group and Bayer each represent a different <strong>degree</strong> of the same activist pattern: a crown-jewel business held down by a structural encumbrance. Ahold is the <strong>simplest</strong> — a listing-venue arbitrage, no break-up required, friendly board environment. DHL is the <strong>most structurally analogous to ABB</strong> — a world-class franchise (Express) trapped inside a regulated German legacy (Post &amp; Parcel), with a five-year political process required to separate them. Bayer is the <strong>most extreme</strong> version — three separately valuable units, with the CEO publicly resistant to change and the litigation overhang providing political cover, but +94% off the lows, which compresses the entry-price case.</p>
+<p style="margin-top:10px;"><strong>Volkswagen is the deliberate exclusion.</strong> The asset-stacked-at-near-zero-stub is the textbook activist-SOTP setup, but the triple voting lock (Porsche SE + Lower Saxony + Qatar), the Chinese secular headwind, and the sub-cost-of-capital auto-OEM returns profile make it exactly the kind of name Cevian should be able to explain passing on. Being able to describe <em>why</em> VW is cheap — and why the reasons are uncorrectable by any activist, not just Cevian — is the single most useful thing to rehearse for the Fabian coffee chat.</p>
+<p style="margin-top:10px;"><strong>Coffee-chat strategy.</strong> Lead with <strong>Ahold Delhaize</strong> — the cleanest process and the most recent Cevian analogue (Akzo Nobel, Dutch). If the conversation goes structural, pivot to <strong>DHL Group</strong> — best illustration of where Cevian's collaborative style wins over Elliott's. <strong>Mention Bayer as a counter-point</strong> on the activist register (already Bluebell + Inclusive) and entry-price discipline. <strong>Have Volkswagen ready</strong> for the question "what's the cheapest European large-cap you considered and rejected?" — the answer there is the filter, and the ability to apply it is the hire. <strong>Hold ThyssenKrupp (TKAG) in reserve</strong> for the thematic conversation: if the discussion goes to German defence spending or the €500bn infrastructure fund, the TKAG post-TKMS-spin setup is the most Cevian-shaped expression of that theme — and Cevian's own prior engagement at the company is the single best credential to reference.</p>
 </div>
 </div>
 
 </div>
 </div>
 
-<!-- TAB 6: SOURCES -->
+<!-- TAB 8: SOURCES -->
 <div id="tab-sources" class="tab-panel">
 <div class="container">
 <div class="section">
@@ -1671,6 +2355,27 @@ No other activist has both playbooks in their portfolio. Elliott has done German
 <tr><td><strong>Public Technologies / BlackRock disclosure</strong><br><span style="font-size:10px;color:var(--text-dim)">"BlackRock raises Deutsche Post voting rights stake to 6.6%" (16 April 2026)</span></td><td>BlackRock 6.6%; KfW ~16% state development bank holding.</td></tr>
 <tr><td><strong>stattimes.com / Lightyear summary</strong><br><span style="font-size:10px;color:var(--text-dim)">(Nov 2025 &amp; Mar 2026 coverage)</span></td><td>De minimis tariff impact on Express volumes; Verdi wage dynamics; 2025 revenue -1.6% to €82.9bn; SAF supply deal with IAG Cargo (240m litres through 2030).</td></tr>
 <tr><td><strong>PitchBook / Yahoo Finance / TradingView</strong><br><span style="font-size:10px;color:var(--text-dim)">Live quote and comp data (Apr 2026)</span></td><td>Share €50.14, MC €57.7bn, EBITDA €10.9bn TTM. FedEx / UPS EV/EBITDA 10-11×. DSV 13×, Kuehne+Nagel 11×, GXO 12×, XPO 12-13×. PostNL 5-6×.</td></tr>
+
+<tr><td colspan="2" style="background:rgba(138,168,200,0.08); color:var(--vw-blue); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.15em;"><strong>VOLKSWAGEN GROUP (COUNTER-EXAMPLE)</strong></td></tr>
+<tr><td><strong>Volkswagen Corporate Filings</strong><br><span style="font-size:10px;color:var(--text-dim)">volkswagen-group.com investor relations; 2025 annual results release (10 March 2026)</span></td><td>FY2025 profit halved on tariffs and Chinese competition. Group revenue €326bn TTM; EBITDA €50.9bn (15.1% margin); operating cashflow. Q1 2026 deliveries -4% globally.</td></tr>
+<tr><td><strong>Yahoo Finance / Investing.com / CNBC</strong><br><span style="font-size:10px;color:var(--text-dim)">VOW3.DE live quote data (Apr 2026)</span></td><td>VOW3 €102.50, market cap €53.3bn, EV €177.8bn, EV/EBITDA 3.55×, trailing P/E 7.94, forward P/E 4.66. Analyst range €85-151, avg target €112.</td></tr>
+<tr><td><strong>Porsche AG (P911) quote &amp; filings</strong><br><span style="font-size:10px;color:var(--text-dim)">Yahoo Finance, Morningstar, Investing.com (Apr 2026)</span></td><td>P911 ~€43, market cap ~€38bn; 52-week range €35.62-€63.32 (low March 2026). 2025 op margin 1.1%, 2026 guide 5.5-7.5%. 2025 deliveries 279k, avg price €130k. China deliveries -28% in FY2025.</td></tr>
+<tr><td><strong>Seeking Alpha / Hidden Value Gems / OneFootBars Substack</strong><br><span style="font-size:10px;color:var(--text-dim)">VW SOTP analyses 2023-24</span></td><td>SOTP composition: VW holds 75.4% of Porsche AG, 87.5% of Traton, VW Financial Services book €40bn, Automotive net cash ~€27bn. Listed-subsidiary value alone approaches full VW market cap.</td></tr>
+<tr><td><strong>Transport Topics / Reuters</strong><br><span style="font-size:10px;color:var(--text-dim)">Traton stake sale (March 2025)</span></td><td>VW sold ~2% of Traton for €393m. VW stake reduced from 89.7% to ~87.5%. Stake sale financed by Bank of America, Citi, JPMorgan.</td></tr>
+<tr><td><strong>CNBC / Reuters — VW news coverage</strong><br><span style="font-size:10px;color:var(--text-dim)">Jan-Apr 2026</span></td><td>Xpeng software partnership (April 2026 — VW adopting Chinese tech rather than competing on it); Citi defense-pivot upgrade (March 2026); PowerCo battery venture taps Chinese know-how.</td></tr>
+<tr><td><strong>Wikipedia / VW Act statutes</strong></td><td>Ownership composition: Porsche SE 31.9% economic / 53.3% voting; Lower Saxony 20% with Volkswagen Act 1960 veto rights; Qatar Investment Authority 14.6%; free float ~30% economic / &lt;10% voting.</td></tr>
+
+<tr><td colspan="2" style="background:rgba(107,154,196,0.08); color:var(--nordic-blue); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.15em;"><strong>DEFENCE THEME &amp; THYSSENKRUPP</strong></td></tr>
+<tr><td><strong>Atlas Institute / Nordic Defence Review</strong><br><span style="font-size:10px;color:var(--text-dim)">Germany 2026 defence budget analysis (Dec 2025 / Feb 2026)</span></td><td>2026 regular budget €82.6bn (+€20.2bn vs 2025); total incl. Sondervermögen ~€108bn. Procurement +€16.8bn — largest category increase. €15bn allocated to ammunition. Luftwaffe priorities: F-35 onboarding 2026, CCA "loyal wingman" by 2029. Debt-brake exemption secured by Chancellor Merz.</td></tr>
+<tr><td><strong>Charles Schwab Research / German Ministry of Finance</strong><br><span style="font-size:10px;color:var(--text-dim)">Germany defence spend projections (Oct 2025)</span></td><td>Defence spend trajectory: €94bn 2025 → €119bn 2026 → €162bn 2029 (+72%). Government investment as % GDP rising from 1.3% (2024) to 2.8% (2026). €500bn Infrastructure Special Fund (2025-2035) separately provides for climate-neutrality and strategic infrastructure. MSCI EMU Aerospace &amp; Defence Index +78% YTD October 2025.</td></tr>
+<tr><td><strong>Goldman Sachs / CNBC coverage</strong><br><span style="font-size:10px;color:var(--text-dim)">Germany fiscal stimulus and defence execution (Feb 2026)</span></td><td>Defence spend expected to reach €109bn (2.4% GDP) in 2025. Pre-commitments for future procurement have risen substantially; Q4 2025 orders for defence-related industries picked up notably. BofA: Q4 2025 German factory orders +40% annualised including heavy machinery / arms / electronics. 74% of European fund managers expect growth to accelerate.</td></tr>
+<tr><td><strong>Atlantic Council</strong><br><span style="font-size:10px;color:var(--text-dim)">Analysis of €500bn Bundeswehr plan (Aug 2025)</span></td><td>Merz government's €500bn Bundeswehr plan (2025-2035) frames this as a "lasting military modernization." New entrants: Quantum Systems, ARX Robotics, STARK. Bundeswehr planning-and-procurement acceleration legislation. Target of 10,000 new soldiers in 2026.</td></tr>
+<tr><td><strong>Maritime Executive / TKMS Group IR</strong><br><span style="font-size:10px;color:var(--text-dim)">TKMS spin-off and market debut (August-October 2025)</span></td><td>TKMS spun off 20 October 2025 as AG &amp; Co. KGaA. ThyssenKrupp AG retained 51%; 49% distributed pro-rata to existing TKAG shareholders. Stock rose +50% on first day of trading — reached ~$7bn / ~€6.5bn market cap, higher than parent TKAG. Order backlog €18.6bn (Jun 2025). Medium-term targets: ~10% annual revenue growth, &gt;7% EBIT margin. World market leader in non-nuclear submarines.</td></tr>
+<tr><td><strong>TKMS contract activity</strong><br><span style="font-size:10px;color:var(--text-dim)">tkmsgroup.com news feed (Mar-Apr 2026)</span></td><td>MEKO-A 200 frigate purchase by Bundeswehr budget committee (Mar 2026). Submarine contract activity: Canada Patrol Submarine Project finalist (Jan 2026, vs Hanwha Ocean); India teaming agreements; Singapore reorder. Atlas Elektronik underwater-systems subsidiary.</td></tr>
+<tr><td><strong>ThyssenKrupp AG quote &amp; filings</strong><br><span style="font-size:10px;color:var(--text-dim)">Yahoo Finance, Stockopedia, Investing.com (Apr 2026)</span></td><td>TKA share price €8.00-9.26 (range April 2026); market cap €5.0-5.8bn; 52w range €5.96-€12.48. Revenue TTM €32.2bn. Analyst avg target €11.70 (+37% implied upside). Structure: Automotive Tech, Decarbon Tech, Materials Services, Steel Europe, + 51% of TKMS.</td></tr>
+<tr><td><strong>Reuters / CNBC — Jindal Steel offer</strong><br><span style="font-size:10px;color:var(--text-dim)">Steel Europe divestment (Sep 2025)</span></td><td>Jindal Steel &amp; Power submitted an offer for ThyssenKrupp's Steel Europe division — TKA shares jumped 4% on the news. Negotiations ongoing through 2026.</td></tr>
+<tr><td><strong>Airbus governance &amp; structure</strong><br><span style="font-size:10px;color:var(--text-dim)">Airbus SE investor relations; European Commission; French / German government filings</span></td><td>Airbus SE registered in the Netherlands, listed Paris/Frankfurt/Madrid. State shareholders: France ~11%, Germany (via KfW) ~11%, Spain ~4% — with special-rights shareholder pact blocking strategic changes. Market cap ~€130bn+. Defence &amp; Space division ~€12bn revenue, ~€700m EBIT historically.</td></tr>
+<tr><td><strong>European defence-name comp set</strong><br><span style="font-size:10px;color:var(--text-dim)">Yahoo Finance, Stockopedia (various, Apr 2026)</span></td><td>Rheinmetall ~€85bn MC (up ~10× since Feb 2022). Hensoldt ~€10bn. Renk ~€6bn (IPO 2024). MTU Aero Engines ~€25bn. Saab ~€15bn (Sweden, Wallenberg control). Kongsberg ~€30bn (Norwegian state 50.1%). Thales ~€55bn (French state 26%). Leonardo ~€35bn (Italian state 30%). Daimler Truck ~€30bn (German-listed, post-2022 spin from Mercedes-Benz Group).</td></tr>
 
 <tr><td colspan="2" style="background:rgba(201,168,76,0.08); color:var(--gold); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.15em;"><strong>CEVIAN CAPITAL</strong></td></tr>
 <tr><td><strong>cevian.com — portfolio page</strong></td><td>Current disclosed positions: ABB, Autoliv, CRH, Ericsson, Metso, Nordea, Pearson, Rexel, SKF, Smith+Nephew, UBS, Baloise, Vodafone, Akzo Nobel. Board-seat disclosure per holding.</td></tr>
