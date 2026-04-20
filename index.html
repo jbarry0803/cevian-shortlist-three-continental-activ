@@ -248,6 +248,61 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 .synth.dhl h3 { color: var(--dhl-amber); }
 .synth.vw h3 { color: var(--vw-blue); }
 .synth.theme h3 { color: var(--nordic-blue); }
+
+/* ===== CHART BLOCK STYLING ===== */
+.chart-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 16px;
+ margin-top: 16px;
+}
+.chart-box {
+ background: var(--surface);
+ border: 1px solid var(--border);
+ border-radius: 8px;
+ padding: 18px 20px 14px;
+ position: relative;
+}
+.chart-title {
+ font-family: 'IBM Plex Mono', monospace;
+ font-size: 9px;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+ color: var(--text-dim);
+ margin-bottom: 3px;
+}
+.chart-sub {
+ font-size: 10px;
+ color: var(--text-faint);
+ margin-bottom: 10px;
+}
+.chart-svg {
+ width: 100%;
+ height: auto;
+ display: block;
+ overflow: visible;
+}
+.chart-svg .grid-line { stroke: var(--border); stroke-width: 0.5; stroke-dasharray: 2,2; }
+.chart-svg .axis-label { fill: var(--text-faint); font-size: 9px; font-family: 'IBM Plex Mono', monospace; }
+.chart-svg .axis-val { fill: var(--text-dim); font-size: 9px; font-family: 'IBM Plex Mono', monospace; }
+.chart-svg .price-line { fill: none; stroke-width: 1.5; }
+.chart-svg .price-fill { opacity: 0.15; }
+.chart-svg .bar { opacity: 0.85; }
+.chart-svg .bar-label { fill: var(--text); font-size: 9px; font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
+.chart-svg .range-bar { opacity: 0.2; }
+.chart-svg .range-marker { stroke-width: 2; }
+.chart-svg .cycle-label { fill: var(--text-dim); font-size: 8.5px; font-family: 'IBM Plex Mono', monospace; }
+.chart-caption {
+ margin-top: 8px;
+ font-size: 10px;
+ color: var(--text-faint);
+ line-height: 1.5;
+ border-top: 1px solid var(--border);
+ padding-top: 8px;
+}
+@media (max-width: 768px) {
+ .chart-grid { grid-template-columns: 1fr; }
+}
 .synth p { color: var(--text); line-height: 1.7; margin-bottom: 8px; }
 .synth p:last-child { margin-bottom: 0; }
 
@@ -399,9 +454,9 @@ table.ct td:first-child { font-weight: 600; color: var(--text-bright); font-size
 <div class="tab-nav">
 <div class="tab-nav-inner">
  <button class="tab-btn active" onclick="switchTab(event,'exec')">① Executive Summary</button>
- <button class="tab-btn bayer" onclick="switchTab(event,'bayer')">② Bayer — Conglomerate Unlock</button>
- <button class="tab-btn ahold" onclick="switchTab(event,'ahold')">③ Ahold Delhaize — US Separation</button>
- <button class="tab-btn dhl" onclick="switchTab(event,'dhl')">④ DHL Group — Express Spin</button>
+ <button class="tab-btn ahold" onclick="switchTab(event,'ahold')">② Ahold Delhaize — US Separation</button>
+ <button class="tab-btn dhl" onclick="switchTab(event,'dhl')">③ DHL Group — Express Spin</button>
+ <button class="tab-btn bayer" onclick="switchTab(event,'bayer')">④ Bayer — Conglomerate Unlock</button>
  <button class="tab-btn vw" onclick="switchTab(event,'vw')">⑤ Volkswagen — SOTP Colossus</button>
  <button class="tab-btn theme" onclick="switchTab(event,'theme')">⑥ Defence Theme — ThyssenKrupp</button>
  <button class="tab-btn" onclick="switchTab(event,'fit')">⑦ Cevian Fit &amp; Ranking</button>
@@ -683,286 +738,12 @@ Four continental-European companies where the <span style="color:var(--gold)">ma
 </div>
 </div>
 
-<!-- TAB 2: BAYER -->
-<div id="tab-bayer" class="tab-panel">
-<div class="container">
-
-<div class="section">
-<div class="section-label bayer">§ 2.1 — The Setup</div>
-<h2 style="color:var(--bayer-teal);">Bayer — The Overhang Clears in 2026-27</h2>
-<div class="sub">Germany's great conglomerate turnaround. Three cash-generative businesses inside one battered holding company. The argument is no longer "is it cheap" — after a 94% rally from last year's lows, the argument is "does the break-up actually happen, and who forces it."</div>
-
-<div class="metric-strip grid-5" style="margin-bottom:16px;">
- <div class="metric-cell"><div class="mc-val" style="color:var(--bayer-teal)">€41.10</div><div class="mc-label">Share price (Apr 2026)</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€40.4bn</div><div class="mc-label">Market cap</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--gold)">€32.7bn</div><div class="mc-label">Net debt (Q3 2025)</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">~€10.0bn</div><div class="mc-label">FY2025 EBITDA (mid-guide)</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--bayer-teal)">7.3×</div><div class="mc-label">EV/EBITDA</div></div>
-</div>
-<div class="metric-strip grid-5">
- <div class="metric-cell"><div class="mc-val" style="color:var(--red)">€21.17</div><div class="mc-label">52w low (Jan 2026)</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--text-dim)">€143.88</div><div class="mc-label">All-time high (Apr 2015)</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--bayer-teal)">3</div><div class="mc-label">Operating divisions</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">~€46bn</div><div class="mc-label">FY2025 revenue (mid-guide)</div></div>
- <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">87,280</div><div class="mc-label">Employees</div></div>
-</div>
-</div>
-
-<div class="section">
-<div class="section-label bayer">§ 2.2 — What You Own</div>
-<h2>Three Businesses, Three Different Cycles</h2>
-<div class="sub">Bayer is not really one company — it is three operationally independent businesses that happen to share a balance sheet. Each has its own customer base, its own competitors, its own regulator, and its own capital cycle. The strategic logic for keeping them together is weak; the strategic logic for separating them is the entire thesis.</div>
-
-<div class="grid-3">
-
- <div class="card" style="border-top:3px solid var(--bayer-teal)">
- <div class="card-label" style="color:var(--bayer-teal)">Pharmaceuticals</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>~€18bn revenue · 24-26% EBITDA margin · ~€4.5bn EBITDA</strong><br><br>
- Specialty-heavy prescription pharma. The 2026 picture is defined by <strong>Xarelto patent cliff</strong> (the anticoagulant, Bayer's largest drug, off-patent outside the US by end 2026 — the company has publicly framed 2026 as the "final year" of the cliff) and <strong>two accelerating new products</strong> — Nubeqa (prostate cancer, +77% in H1 2025 currency-adjusted) and Kerendia (diabetic kidney disease, +86%). Beyond 2027 the pipeline includes elinzanetant (menopause vasomotor symptoms, FDA decision pending) and the Beyonttra launch.<br><br>
- <strong>Comparable:</strong> Sanofi trades at ~8× EV/EBITDA; Merck KGaA at ~12×; GSK at ~8-9×. A standalone Bayer Pharma, post-cliff and with a launched pipeline, should trade at 9-10×.
- </div>
- </div>
-
- <div class="card" style="border-top:3px solid var(--bayer-teal)">
- <div class="card-label" style="color:var(--bayer-teal)">Crop Science</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>~€23bn revenue · 18-20% EBITDA margin · ~€4.4bn EBITDA</strong><br><br>
- Inherited from the 2018 Monsanto acquisition ($63bn). <strong>#1 or #2 globally in seeds and traits, #1 in herbicides.</strong> Corn seed + traits grew +7% in Q3 2025. Seasonal, commodity-exposed via glyphosate prices, and still carries the Roundup litigation tail — but the price in that tail is <strong>recovering toward historical medians</strong> (per Bayer's own Q3 2025 commentary) as Chinese oversupply normalises.<br><br>
- <strong>Comparable:</strong> <span class="src">Corteva announced in early 2026 that it will separate Seed from Crop Protection by Q4 2026<span class="tip"><strong>Source:</strong> Corteva CEO Chuck Magro at Bank of America Global Agriculture Conference; TIKR reporting Feb 2026. Operating EBITDA guidance 2026: $4.0-4.2bn. Announced separation into two listed companies Q4 2026.</span></span> — EV/EBITDA around 14×. FMC at ~9×. Blended Crop Science multiple: 10-12× is defensible for Bayer's broader portfolio.
- </div>
- </div>
-
- <div class="card" style="border-top:3px solid var(--bayer-teal)">
- <div class="card-label" style="color:var(--bayer-teal)">Consumer Health</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>~€5.8bn revenue · 23-24% EBITDA margin · ~€1.4bn EBITDA</strong><br><br>
- The most separable and most acquirable of the three. Global OTC portfolio: <strong>Aspirin, Claritin, Berocca, Elevit, Bepanthen, Alka-Seltzer, Canesten.</strong> Category-leading brands in Dermatology, Digestive Health, Pain &amp; Cardio. Q3 2025 growth in Derma, Digestive and Pain/Cardio offsetting softness in Allergy &amp; Cold. Margin stable at 23-24%.<br><br>
- <strong>Comparable:</strong> Haleon (LSE) at <strong>14.9× EV/Adj. EBITDA</strong>; Kenvue at 14.1× — and Kenvue is being acquired by Kimberly-Clark (close H2 2026). Opella (ex-Sanofi CHC) sold 50% to CD&amp;R at ~14×. The Consumer Health multiple for a pure-play is firmly in the 13-15× zone.
- </div>
- </div>
-
-</div>
-
-<div class="synth bayer">
-<h3>The strategic contradiction</h3>
-<p>There is no operational logic connecting these three businesses. A corn farmer in Iowa, a cardiologist in Berlin, and a mother buying children's Claritin in Sydney share no procurement, no regulator, no technology stack. Combining them doesn't create scale economies — it creates <strong>coordination diseconomies</strong>. Bayer under the prior CEO had 12 layers of management; Anderson has compressed that significantly via Dynamic Shared Ownership, but the fundamental point stands: this is a holding company pretending to be an operating company.</p>
-</div>
-</div>
-
-<div class="section">
-<div class="section-label bayer">§ 2.3 — The Overhang Cascade</div>
-<h2>Why Now: Three Overhangs Clear Simultaneously</h2>
-
-<div class="table-wrap">
-<table class="ct">
-<thead><tr>
- <th style="width:160px">Overhang</th>
- <th>What It Is</th>
- <th style="width:180px">Resolution</th>
- <th style="width:110px">Status</th>
-</tr></thead>
-<tbody>
-<tr>
- <td>Roundup / glyphosate litigation</td>
- <td>Monsanto-era class actions alleging Roundup causes non-Hodgkin's lymphoma. Bayer has already paid <strong>more than $10bn in settlements</strong>. In April 2026, the CEO confirmed Bayer is "hoping to move past" the issue in 2026. The <strong>Trump administration has moved to back curbs on Roundup lawsuits</strong>; a Supreme Court case pending that experts expect Bayer to win (per Bill Anderson interview with Axios, April 2026). A $7.25bn further settlement is in place.</td>
- <td>Supreme Court ruling 2026; remaining liability provisions declining Q/Q.</td>
- <td class="cell-val" style="color:var(--ahold-green)">CLEARING</td>
-</tr>
-<tr>
- <td>Xarelto patent cliff</td>
- <td>The anticoagulant (Bayer's largest drug) lost exclusivity outside the US through 2024-25; the CFO previously projected a <strong>double-digit revenue decline</strong>. Q3 2025 data confirmed the decline is tracking as expected. Anderson has publicly described <strong>2026 as the final year</strong> of the pharma patent cliff.</td>
- <td>2026 is peak headwind; 2027 is net-new-launch-led growth.</td>
- <td class="cell-val" style="color:var(--dhl-amber)">FINAL YEAR</td>
-</tr>
-<tr>
- <td>Debt stack</td>
- <td>€32.7bn net debt (Q3 2025), legacy of the Monsanto acquisition. Dividend cut to legal minimum (~95% reduction) to fund deleveraging. Net debt is <strong>declining Q/Q</strong> (€34.3bn → €33.3bn → €32.7bn through 2025).</td>
- <td>Target net debt / EBITDA &lt;2.5× by 2027.</td>
- <td class="cell-val" style="color:var(--dhl-amber)">ON TRACK</td>
-</tr>
-<tr>
- <td>PCB (polychlorinated biphenyls)</td>
- <td>Secondary Monsanto-inherited litigation stream. EUR 530m in provisions raised in H1 2025.</td>
- <td>Contained; material already provisioned.</td>
- <td class="cell-val" style="color:var(--ahold-green)">PROVISIONED</td>
-</tr>
-<tr>
- <td>Crop Science — glyphosate price cycle</td>
- <td>Chinese overcapacity depressed glyphosate prices through 2023-24; Q3 2025 commentary notes prices "recovering toward historical medians."</td>
- <td>Normalising market; Q3 2025 Crop Science EBITDA +391% YoY off a weak base.</td>
- <td class="cell-val" style="color:var(--ahold-green)">RECOVERING</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="synth bayer">
-<h3>The 2027 inflection</h3>
-<p>Bill Anderson told CNBC-TV18 (March 2026) that 2026 is a "transition year" and that "stronger growth" begins in 2027 — driven by (a) pharma's new product cycle scaling as Xarelto tail runs off, and (b) Crop Science entering a new product cycle with several major launches. At the same time, the litigation tail is closing and deleveraging is progressing. <strong>This is the window where an activist case becomes maximally credible</strong>: management has done the hard work on restructuring (~2/3 of management layers removed via DSO), the overhangs are visibly lifting, and the remaining unlock is the portfolio structure itself — the one thing Anderson has explicitly said is not on the table "for now."</p>
-</div>
-</div>
-
-<div class="section">
-<div class="section-label bayer">§ 2.4 — Sum-of-the-Parts</div>
-<h2>Valuation by Division</h2>
-<div class="sub">Three separately valuable businesses at comparable-peer multiples. All multiples derived from public comps detailed in footnotes. EBITDA allocation from 2025 guidance ranges (sales × mid-point margin).</div>
-
-<div class="table-wrap">
-<table class="ct">
-<thead><tr>
- <th style="width:170px">Segment</th>
- <th style="text-align:right;width:100px">Revenue (est.)</th>
- <th style="text-align:right;width:90px">Margin</th>
- <th style="text-align:right;width:100px">EBITDA</th>
- <th style="width:130px">Comparable Set</th>
- <th style="text-align:right;width:100px">Multiple</th>
- <th style="text-align:right;width:130px;color:var(--bayer-teal)">Implied Value</th>
-</tr></thead>
-<tbody>
-<tr style="background:rgba(46,168,138,0.04)">
- <td><span class="badge badge-teal">PHARMA</span><br>Rx pharmaceuticals</td>
- <td style="text-align:right" class="cell-val">€18.0bn</td>
- <td style="text-align:right" class="cell-val">25%</td>
- <td style="text-align:right" class="cell-val">€4.5bn</td>
- <td>Sanofi 8× · GSK 8-9× · Merck KGaA 12×</td>
- <td style="text-align:right" class="cell-val">8-10×</td>
- <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:14px">€36-45bn</td>
-</tr>
-<tr style="background:rgba(46,168,138,0.04)">
- <td><span class="badge badge-teal">CROP SCIENCE</span><br>Seeds, traits, crop protection</td>
- <td style="text-align:right" class="cell-val">€23.0bn</td>
- <td style="text-align:right" class="cell-val">19%</td>
- <td style="text-align:right" class="cell-val">€4.4bn</td>
- <td>Corteva 14× · FMC 9×</td>
- <td style="text-align:right" class="cell-val">10-12×</td>
- <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:14px">€44-53bn</td>
-</tr>
-<tr style="background:rgba(46,168,138,0.04)">
- <td><span class="badge badge-teal">CONSUMER HEALTH</span><br>OTC &amp; brands</td>
- <td style="text-align:right" class="cell-val">€5.8bn</td>
- <td style="text-align:right" class="cell-val">23.5%</td>
- <td style="text-align:right" class="cell-val">€1.4bn</td>
- <td>Haleon 14.9× · Kenvue 14.1× · Opella ~14×</td>
- <td style="text-align:right" class="cell-val">12-14×</td>
- <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:14px">€17-19bn</td>
-</tr>
-<tr style="background:var(--surface2); border-top:2px solid var(--border-bright)">
- <td style="color:var(--gold)"><strong>TOTAL EV (SOTP)</strong></td>
- <td style="text-align:right" class="cell-val">€46.8bn</td>
- <td></td>
- <td style="text-align:right" class="cell-val">€10.3bn</td>
- <td></td>
- <td></td>
- <td style="text-align:right; color:var(--gold); font-weight:700; font-size:15px">€97-117bn</td>
-</tr>
-<tr style="background:rgba(212,68,68,0.05)">
- <td style="color:var(--red)">Less: net debt (Q3 2025)</td>
- <td colspan="5"></td>
- <td style="text-align:right; color:var(--red); font-weight:700;">(€32.7bn)</td>
-</tr>
-<tr style="background:rgba(212,68,68,0.05)">
- <td style="color:var(--red)">Less: remaining litigation provisions (est.)</td>
- <td colspan="5" style="color:var(--text-dim); font-size:10px;">Based on Q2 2025 addition of €1.2bn glyphosate + €0.5bn PCB, plus $7.25bn settlement in process. Precise figure moves with Supreme Court outcome.</td>
- <td style="text-align:right; color:var(--red); font-weight:700;">(€6-10bn)</td>
-</tr>
-<tr style="background:rgba(212,68,68,0.05)">
- <td style="color:var(--red)">Less: pension &amp; other</td>
- <td colspan="5"></td>
- <td style="text-align:right; color:var(--red); font-weight:700;">(€5bn)</td>
-</tr>
-<tr style="background:rgba(46,168,138,0.08)">
- <td style="color:var(--bayer-teal); font-size:13px"><strong>SOTP EQUITY VALUE</strong></td>
- <td colspan="5"></td>
- <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:16px">€53-73bn</td>
-</tr>
-<tr style="background:rgba(212,68,68,0.06)">
- <td style="color:var(--red)"><strong>CURRENT EQUITY VALUE</strong></td>
- <td colspan="5"></td>
- <td style="text-align:right; color:var(--red); font-weight:700; font-size:16px">€40.4bn</td>
-</tr>
-<tr style="background:rgba(46,168,138,0.08)">
- <td style="color:var(--bayer-teal); font-size:13px"><strong>SOTP UPSIDE</strong></td>
- <td colspan="5" style="color:var(--bayer-teal)">Implied equity gap <strong>€13-33bn</strong> · per-share: <strong>€54-74 (+30% to +80%)</strong> over 3-5 year horizon</td>
- <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:16px">+30% / +80%</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p style="margin-top:12px; font-size:10px; color:var(--text-faint);">EBITDA allocation based on Bayer's own 2025 guidance (segment margins 18-20% Crop, 24-26% Pharma, 23-24% CH). Multiples range-based from S&amp;P Capital IQ and company filings as of Apr 2026. Litigation provision range reflects uncertainty in Supreme Court outcome and remaining Monsanto tail. The lower bound of the multiple range is applied as the conservative case in the SOTP.</p>
-</div>
-
-<div class="section">
-<div class="section-label bayer">§ 2.5 — The Activist Unlock</div>
-<h2>What Cevian Can Actually Do</h2>
-
-<div class="grid-2">
- <div class="card" style="border-top:3px solid var(--bayer-teal)">
- <div class="card-label" style="color:var(--bayer-teal)">The Mechanism</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- Bayer is a <strong>Supervisory Board (Aufsichtsrat) company under German co-determination</strong>. Half the board is employee representatives; half is shareholder representatives. Cevian's historical playbook in Germany (ThyssenKrupp, Bilfinger) has been to <strong>engage on the shareholder side of the supervisory board</strong> — putting people around the table in nomination and strategy committees, not in the press.<br><br>
- The specific ask is <strong>not</strong> an immediate full three-way break-up. It is a <strong>credible, board-endorsed, publicly-timelined Consumer Health separation</strong> — the path of least resistance, least tax friction, and most obvious comparable (Haleon / Kenvue / Opella). Once that is announced and executed, Crop Science separation becomes a 2028-29 conversation from a position of strength.
- </div>
- </div>
- <div class="card" style="border-top:3px solid var(--bayer-teal)">
- <div class="card-label" style="color:var(--bayer-teal)">Why Consumer Health first</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>Four reasons.</strong> (1) Cleanest separation — no shared IP with Pharma, no shared manufacturing with Crop. (2) <strong>Clearest comp</strong> — Haleon / Kenvue / Opella set the multiple. (3) <strong>Anderson's stated objection</strong> (2024 earnings call: Consumer Health is "reliably generating cash flow") is exactly why it is most valuable <em>to someone else</em> — a pure-play CHC operator would pay up for predictable category cash flow. (4) <strong>Proceeds reduce Bayer net debt</strong> — an €18bn CHC sale at 13× EBITDA would close the deleveraging gap and remove the strategic argument against further separation.<br><br>
- Bluebell's 2023 letter and Inclusive Capital's subsequent position make this the <strong>publicly-understood</strong> activist ask. Cevian entering would not be a surprise attack — it would be a collaborative acceleration of a strategic review that is already in the board's inbox.
- </div>
- </div>
-</div>
-</div>
-
-<div class="section">
-<div class="section-label bayer">§ 2.6 — Key Risks &amp; Mitigants</div>
-
-<div class="grid-2">
- <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
- <div class="card-label" style="color:var(--red)">Risk — Supreme Court loses</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- If the Supreme Court rules against Bayer on Roundup, the litigation tail re-opens. <strong>Mitigant:</strong> Bayer has already provisioned $10bn+ and is currently structured to survive a loss — the $7.25bn settlement covers ~90% of known cases. A loss would hit sentiment but not solvency. Anderson's Axios interview (Apr 2026): "experts believe the company will win."
- </div>
- </div>
- <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
- <div class="card-label" style="color:var(--red)">Risk — CEO resistance hardens</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- Anderson continues to publicly defend the three-in-one structure (March 2026: "Amazon operates successfully across several distinct industries"). <strong>Mitigant:</strong> Supervisory Board composition is the mechanism. Co-determination slows change but does not prevent it — ThyssenKrupp proves this. Cevian's collaborative approach is specifically designed for this governance structure.
- </div>
- </div>
- <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
- <div class="card-label" style="color:var(--red)">Risk — Pharma pipeline disappoints</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- If Nubeqa / Kerendia / elinzanetant miss expectations, 2027 growth inflection gets pushed. <strong>Mitigant:</strong> Nubeqa and Kerendia are already launched and posting 70%+ growth. The pipeline risk is distribution, not discovery — and the Consumer Health / Crop Science separation case does not depend on Pharma growth.
- </div>
- </div>
- <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
- <div class="card-label" style="color:var(--red)">Risk — Already rallied hard</div>
- <div class="card-body" style="font-size:12px; line-height:1.75;">
- <strong>The biggest risk to the entry price.</strong> Stock is +94% off €21 lows. Much of the Roundup-clearing trade is now in the price. <strong>Mitigant:</strong> Pre-rally Bayer traded on "litigation discount + broken conglomerate." Post-rally it trades on "broken conglomerate only." The remaining gap is ~€15-30bn of equity — all of which closes through a break-up, not a re-rating. That's still a 5:1 risk/reward at current entry, which is within Cevian's published frame.
- </div>
- </div>
-</div>
-</div>
-
-<div class="section">
-<div class="section-label bayer">§ 2.7 — Why Cevian Specifically</div>
-<div class="card" style="background:var(--surface2); padding:20px 24px;">
-<div class="card-body" style="font-size:12.5px; line-height:1.8; color:var(--text);">
-Bayer is the kind of idea that <strong>only a handful of activists on earth can run</strong>: (a) cheque size — taking a meaningful stake in a €40bn company requires €2-4bn of capital allocation, above the reach of Bluebell or Petrus; (b) time horizon — a three-way break-up executes over 3-5 years, beyond the typical US activist patience; (c) governance familiarity — co-determination and the Aufsichtsrat system is where Cevian has spent the last 15 years (ThyssenKrupp, Bilfinger, RWE-era engagements); (d) credibility — Bluebell and Inclusive Capital have already done the press-release work; the board now needs a <strong>collaborative</strong> counterparty to <strong>execute</strong>, not another one to lecture. That's Cevian's sweet spot, and the reason the name sits at the top of this list despite the recent rally.
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- TAB 3: AHOLD DELHAIZE -->
+<!-- TAB 2: AHOLD DELHAIZE -->
 <div id="tab-ahold" class="tab-panel">
 <div class="container">
 
 <div class="section">
-<div class="section-label ahold">§ 3.1 — The Setup</div>
+<div class="section-label ahold">§ 2.1 — The Setup</div>
 <h2 style="color:var(--ahold-green);">Ahold Delhaize — The US Business Hiding Inside a Dutch Listing</h2>
 <div class="sub">A €36bn Dutch holding company that generates 60%+ of its revenue and EBITDA from a US grocery business most American investors have never heard of. Trades at a 14% discount to Kroger, a 70% discount to Costco, and a 25% discount to its own US peer group — all for a business whose biggest US brand (Food Lion) has posted <strong>53 consecutive quarters of comparable sales growth</strong>.</div>
 
@@ -983,7 +764,7 @@ Bayer is the kind of idea that <strong>only a handful of activists on earth can 
 </div>
 
 <div class="section">
-<div class="section-label ahold">§ 3.2 — What You Actually Own</div>
+<div class="section-label ahold">§ 2.2 — What You Actually Own</div>
 <h2>A US Company and a European Company Stapled Together</h2>
 <div class="sub">The group reports two operating segments: <strong>"The United States"</strong> and <strong>"Europe"</strong>. In reality, these are entirely separate businesses — different customers, different competitors, different supply chains, different regulators. They share a headquarters in Zaandam and very little else.</div>
 
@@ -1014,7 +795,7 @@ Bayer is the kind of idea that <strong>only a handful of activists on earth can 
 </div>
 
 <div class="section">
-<div class="section-label ahold">§ 3.3 — Where the Discount Comes From</div>
+<div class="section-label ahold">§ 2.3 — Where the Discount Comes From</div>
 <h2>Relative Valuation vs US Comp Set</h2>
 <div class="sub">Ahold Delhaize's blended group EV/EBITDA of 6.9× against the US grocery comp set. The gap is not a reflection of quality — Food Lion's growth track record is as good as any US comp — it is a reflection of <strong>where the stock is listed and who reads the research</strong>.</div>
 
@@ -1080,7 +861,7 @@ Bayer is the kind of idea that <strong>only a handful of activists on earth can 
 </div>
 
 <div class="section">
-<div class="section-label ahold">§ 3.4 — Sum-of-the-Parts</div>
+<div class="section-label ahold">§ 2.4 — Sum-of-the-Parts</div>
 <h2>What a Separate US Listing Unlocks</h2>
 <div class="sub">Two versions: (a) base case — group stays intact, margin expands to US peer level; (b) unlock case — dual listing / partial IPO of US business.</div>
 
@@ -1170,7 +951,7 @@ Bayer is the kind of idea that <strong>only a handful of activists on earth can 
 </div>
 
 <div class="section">
-<div class="section-label ahold">§ 3.5 — The Activist Unlock</div>
+<div class="section-label ahold">§ 2.5 — The Activist Unlock</div>
 <h2>What Cevian Can Actually Do</h2>
 
 <div class="grid-2">
@@ -1192,7 +973,7 @@ Bayer is the kind of idea that <strong>only a handful of activists on earth can 
 </div>
 
 <div class="section">
-<div class="section-label ahold">§ 3.6 — Key Risks &amp; Mitigants</div>
+<div class="section-label ahold">§ 2.6 — Key Risks &amp; Mitigants</div>
 
 <div class="grid-2">
  <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
@@ -1223,7 +1004,7 @@ Bayer is the kind of idea that <strong>only a handful of activists on earth can 
 </div>
 
 <div class="section">
-<div class="section-label ahold">§ 3.7 — Why Cevian Specifically</div>
+<div class="section-label ahold">§ 2.7 — Why Cevian Specifically</div>
 <div class="card" style="background:var(--surface2); padding:20px 24px;">
 <div class="card-body" style="font-size:12.5px; line-height:1.8; color:var(--text);">
 Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page from an activist process standpoint: no incumbent activist, no political complication, no litigation overhang, no CEO publicly entrenched in a position. What it needs is a counterparty with (a) <strong>Dutch governance fluency</strong> — which Cevian now has via Akzo Nobel; (b) <strong>US capital-markets credibility</strong> — which Cevian has via its co-investment history with Carl Icahn, its US-domiciled LPs, and its history at Autoliv (dual Swedish/US listing); (c) <strong>patience</strong> — the US dual-listing is a 2-3 year preparation, not a quarter. Cevian's 5-year horizon is exactly right.<br><br>
@@ -1232,15 +1013,80 @@ Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page f
 </div>
 </div>
 
+
+<div class="section">
+<div class="section-label ahold">§ 2.8 — Market, Cycle &amp; Capital Efficiency</div>
+<h2>Share Chart, Through-Cycle Multiple &amp; ROIC / ROCE</h2>
+<div class="sub">Five-year share-price trajectory, where today's EV/EBITDA sits inside the ten-year range, and the trajectory of returns on invested capital — all relative to the company's own history.</div>
+
+<div class="chart-grid">
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--ahold-green);">① Five-Year Share Price</div>
+<div class="chart-sub">Monthly closes. Apr 21 = base; most recent close today.</div>
+<svg class="chart-svg" viewBox="0 0 520 160" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="138.0" x2="508" y2="138.0"/><text class="axis-val" x="32.0" y="141.0" text-anchor="end">€24</text><line class="grid-line" x1="36" y1="107.0" x2="508" y2="107.0"/><text class="axis-val" x="32.0" y="110.0" text-anchor="end">€29</text><line class="grid-line" x1="36" y1="76.0" x2="508" y2="76.0"/><text class="axis-val" x="32.0" y="79.0" text-anchor="end">€34</text><line class="grid-line" x1="36" y1="45.0" x2="508" y2="45.0"/><text class="axis-val" x="32.0" y="48.0" text-anchor="end">€38</text><line class="grid-line" x1="36" y1="14.0" x2="508" y2="14.0"/><text class="axis-val" x="32.0" y="17.0" text-anchor="end">€43</text>
+      <path class="price-fill" d="M 36.0,129.6 L 44.0,125.6 L 52.0,127.6 L 60.0,123.0 L 68.0,118.3 L 76.0,114.4 L 84.0,116.4 L 92.0,111.1 L 100.0,105.8 L 108.0,108.4 L 116.0,107.1 L 124.0,103.2 L 132.0,101.2 L 140.0,98.5 L 148.0,96.6 L 156.0,99.2 L 164.0,101.8 L 172.0,105.1 L 180.0,107.8 L 188.0,109.8 L 196.0,113.7 L 204.0,117.0 L 212.0,114.4 L 220.0,112.4 L 228.0,109.8 L 236.0,111.1 L 244.0,113.7 L 252.0,118.3 L 260.0,121.0 L 268.0,123.0 L 276.0,124.3 L 284.0,121.7 L 292.0,119.0 L 300.0,117.0 L 308.0,114.4 L 316.0,113.1 L 324.0,116.4 L 332.0,118.3 L 340.0,120.3 L 348.0,122.3 L 356.0,117.7 L 364.0,112.4 L 372.0,107.1 L 380.0,103.2 L 388.0,98.5 L 396.0,93.2 L 404.0,88.0 L 412.0,83.3 L 420.0,79.4 L 428.0,72.1 L 436.0,64.8 L 444.0,59.6 L 452.0,53.6 L 460.0,48.3 L 468.0,45.0 L 476.0,41.1 L 484.0,37.1 L 492.0,33.1 L 500.0,29.8 L 508.0,27.5 L 508.0,138.0 L 36.0,138.0 Z" fill="#d4944a"/>
+      <path class="price-line" d="M 36.0,129.6 L 44.0,125.6 L 52.0,127.6 L 60.0,123.0 L 68.0,118.3 L 76.0,114.4 L 84.0,116.4 L 92.0,111.1 L 100.0,105.8 L 108.0,108.4 L 116.0,107.1 L 124.0,103.2 L 132.0,101.2 L 140.0,98.5 L 148.0,96.6 L 156.0,99.2 L 164.0,101.8 L 172.0,105.1 L 180.0,107.8 L 188.0,109.8 L 196.0,113.7 L 204.0,117.0 L 212.0,114.4 L 220.0,112.4 L 228.0,109.8 L 236.0,111.1 L 244.0,113.7 L 252.0,118.3 L 260.0,121.0 L 268.0,123.0 L 276.0,124.3 L 284.0,121.7 L 292.0,119.0 L 300.0,117.0 L 308.0,114.4 L 316.0,113.1 L 324.0,116.4 L 332.0,118.3 L 340.0,120.3 L 348.0,122.3 L 356.0,117.7 L 364.0,112.4 L 372.0,107.1 L 380.0,103.2 L 388.0,98.5 L 396.0,93.2 L 404.0,88.0 L 412.0,83.3 L 420.0,79.4 L 428.0,72.1 L 436.0,64.8 L 444.0,59.6 L 452.0,53.6 L 460.0,48.3 L 468.0,45.0 L 476.0,41.1 L 484.0,37.1 L 492.0,33.1 L 500.0,29.8 L 508.0,27.5" stroke="#d4944a"/>
+      <circle cx="508.0" cy="27.5" r="3" fill="#d4944a"/>
+      <text class="axis-label" x="36" y="154" text-anchor="start">Apr 21</text>
+      <text class="axis-label" x="508" y="154" text-anchor="end">Apr 26</text>
+      <text class="axis-val" x="508.0" y="19.5" text-anchor="end" fill="#d4944a" style="font-weight:700;">€40.95</text>
+    </svg>
+<div class="chart-caption">52-week range: €31.80 – €41.50.</div>
+</div>
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--ahold-green);">② Through-Cycle EV/EBITDA</div>
+<div class="chart-sub">10-year range vs where the stock trades today.</div>
+<svg class="chart-svg" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- range bar -->
+      <rect class="range-bar" x="50" y="50" width="420.0" height="20" fill="#d4944a" rx="3"/>
+      <!-- avg marker -->
+      <line class="range-marker" x1="254.0" y1="46" x2="254.0" y2="74" stroke="var(--text-dim)" stroke-dasharray="3,2"/>
+      <text class="cycle-label" x="254.0" y="42" text-anchor="middle">10y avg 7.2×</text>
+      <!-- current marker -->
+      <circle cx="218.0" cy="60.0" r="7" fill="#d4944a" stroke="var(--bg)" stroke-width="2"/>
+      <text class="axis-val" x="218.0" y="92" text-anchor="middle" fill="#d4944a" style="font-weight:700;">Now 6.9×</text>
+      <!-- min / max labels -->
+      <text class="axis-val" x="46" y="63.0" text-anchor="end">5.5×</text>
+      <text class="axis-val" x="474" y="63.0" text-anchor="start">9.0×</text>
+      <text class="cycle-label" x="46" y="92" text-anchor="end">10y low</text>
+      <text class="cycle-label" x="474" y="92" text-anchor="start">10y high</text>
+    </svg>
+<div class="chart-caption">10y range; avg since 2015. Currently mid-range, despite US business outperforming.</div>
+</div>
+
+</div>
+
+<div class="chart-box" style="margin-top:16px;">
+<div class="chart-title" style="color:var(--ahold-green);">③ ROIC &amp; ROCE — Five-Year Trend</div>
+<div class="chart-sub">Annual, %. ROIC solid, ROCE hollow. WACC for reference: ~6-8% depending on segment mix.</div>
+<svg class="chart-svg" viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="150.0" x2="508" y2="150.0"/><text class="axis-val" x="32.0" y="153.0" text-anchor="end">0%</text><line class="grid-line" x1="36" y1="101.7" x2="508" y2="101.7"/><text class="axis-val" x="32.0" y="104.7" text-anchor="end">5%</text><line class="grid-line" x1="36" y1="53.4" x2="508" y2="53.4"/><text class="axis-val" x="32.0" y="56.4" text-anchor="end">10%</text>
+      
+      
+      <rect x="36" y="6" width="10" height="10" fill="#d4944a"/>
+      <text class="axis-label" x="50" y="15">ROIC</text>
+      <rect x="96" y="6" width="10" height="10" fill="#d4944a" opacity="0.45"/>
+      <text class="axis-label" x="110" y="15">ROCE</text>
+    
+      <rect class="bar" x="39.0" y="81.4" width="36.3" height="68.6" fill="#d4944a"/><text class="bar-label" x="57.2" y="78.4" text-anchor="middle" fill="#d4944a">7.1</text><rect class="bar" x="77.3" y="59.2" width="36.3" height="90.8" fill="#d4944a" opacity="0.45"/><text class="bar-label" x="95.5" y="56.2" text-anchor="middle" fill="var(--text-dim)">9.4</text><text class="axis-label" x="75.3" y="170" text-anchor="middle">2020</text><rect class="bar" x="117.7" y="70.8" width="36.3" height="79.2" fill="#d4944a"/><text class="bar-label" x="135.8" y="67.8" text-anchor="middle" fill="#d4944a">8.2</text><rect class="bar" x="156.0" y="45.7" width="36.3" height="104.3" fill="#d4944a" opacity="0.45"/><text class="bar-label" x="174.2" y="42.7" text-anchor="middle" fill="var(--text-dim)">10.8</text><text class="axis-label" x="154.0" y="170" text-anchor="middle">2021</text><rect class="bar" x="196.3" y="84.3" width="36.3" height="65.7" fill="#d4944a"/><text class="bar-label" x="214.5" y="81.3" text-anchor="middle" fill="#d4944a">6.8</text><rect class="bar" x="234.7" y="63.0" width="36.3" height="87.0" fill="#d4944a" opacity="0.45"/><text class="bar-label" x="252.8" y="60.0" text-anchor="middle" fill="var(--text-dim)">9.0</text><text class="axis-label" x="232.7" y="170" text-anchor="middle">2022</text><rect class="bar" x="275.0" y="91.1" width="36.3" height="58.9" fill="#d4944a"/><text class="bar-label" x="293.2" y="88.1" text-anchor="middle" fill="#d4944a">6.1</text><rect class="bar" x="313.3" y="69.8" width="36.3" height="80.2" fill="#d4944a" opacity="0.45"/><text class="bar-label" x="331.5" y="66.8" text-anchor="middle" fill="var(--text-dim)">8.3</text><text class="axis-label" x="311.3" y="170" text-anchor="middle">2023</text><rect class="bar" x="353.7" y="94.0" width="36.3" height="56.0" fill="#d4944a"/><text class="bar-label" x="371.8" y="91.0" text-anchor="middle" fill="#d4944a">5.8</text><rect class="bar" x="392.0" y="73.7" width="36.3" height="76.3" fill="#d4944a" opacity="0.45"/><text class="bar-label" x="410.2" y="70.7" text-anchor="middle" fill="var(--text-dim)">7.9</text><text class="axis-label" x="390.0" y="170" text-anchor="middle">2024</text><rect class="bar" x="432.3" y="103.6" width="36.3" height="46.4" fill="#d4944a"/><text class="bar-label" x="450.5" y="100.6" text-anchor="middle" fill="#d4944a">4.8</text><rect class="bar" x="470.7" y="83.3" width="36.3" height="66.7" fill="#d4944a" opacity="0.45"/><text class="bar-label" x="488.8" y="80.3" text-anchor="middle" fill="var(--text-dim)">6.9</text><text class="axis-label" x="468.7" y="170" text-anchor="middle">2025e</text>
+    </svg>
+<div class="chart-caption">ROIC still above WACC (~6-7%). 2022-25 compression from inflation margin squeeze + IFRS-16 lease capitalisation.</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
-<!-- TAB 4: DHL GROUP -->
+<!-- TAB 3: DHL GROUP -->
 <div id="tab-dhl" class="tab-panel">
 <div class="container">
 
 <div class="section">
-<div class="section-label dhl">§ 4.1 — The Setup</div>
+<div class="section-label dhl">§ 3.1 — The Setup</div>
 <h2 style="color:var(--dhl-amber);">DHL Group — The Crown Jewel Trapped in the Postal Service</h2>
 <div class="sub">Germany's logistics conglomerate. <strong>DHL Express is one of three global integrated express carriers</strong> (with FedEx and UPS) earning an 11-12% EBIT margin. It sits inside a holding company that also includes declining German letter mail, cyclical freight forwarding, and an eCommerce business still earning its cost of capital. FedEx and UPS trade at 10-11× EV/EBITDA. DHL Group at 7.2×. The gap is the thesis.</div>
 
@@ -1261,7 +1107,7 @@ Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page f
 </div>
 
 <div class="section">
-<div class="section-label dhl">§ 4.2 — What You Actually Own</div>
+<div class="section-label dhl">§ 3.2 — What You Actually Own</div>
 <h2>Five Businesses — One Crown Jewel, One Run-off, Three in the Middle</h2>
 <div class="sub">The group reports five divisions. Their strategic situations are radically different: Express is a defended global duopoly (DHL-UPS outside the US; FedEx the third globally). Post &amp; Parcel Germany is regulated letter mail in structural run-off. The other three are stable but cyclical.</div>
 
@@ -1316,7 +1162,7 @@ Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page f
 </div>
 
 <div class="section">
-<div class="section-label dhl">§ 4.3 — Why Express Deserves the FedEx/UPS Multiple</div>
+<div class="section-label dhl">§ 3.3 — Why Express Deserves the FedEx/UPS Multiple</div>
 <h2>The Express Franchise</h2>
 
 <div class="grid-2">
@@ -1339,7 +1185,7 @@ Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page f
 </div>
 
 <div class="section">
-<div class="section-label dhl">§ 4.4 — Sum-of-the-Parts</div>
+<div class="section-label dhl">§ 3.4 — Sum-of-the-Parts</div>
 <h2>Segment Valuation at Peer Multiples</h2>
 
 <div class="table-wrap">
@@ -1440,7 +1286,7 @@ Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page f
 </div>
 
 <div class="section">
-<div class="section-label dhl">§ 4.5 — The Activist Unlock</div>
+<div class="section-label dhl">§ 3.5 — The Activist Unlock</div>
 <h2>What Cevian Can Actually Do</h2>
 
 <div class="grid-2">
@@ -1466,7 +1312,7 @@ Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page f
 </div>
 
 <div class="section">
-<div class="section-label dhl">§ 4.6 — Key Risks &amp; Mitigants</div>
+<div class="section-label dhl">§ 3.6 — Key Risks &amp; Mitigants</div>
 
 <div class="grid-2">
  <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
@@ -1497,7 +1343,7 @@ Ahold Delhaize is the <strong>cleanest of the three</strong> ideas on the page f
 </div>
 
 <div class="section">
-<div class="section-label dhl">§ 4.7 — Why Cevian Specifically</div>
+<div class="section-label dhl">§ 3.7 — Why Cevian Specifically</div>
 <div class="card" style="background:var(--surface2); padding:20px 24px;">
 <div class="card-body" style="font-size:12.5px; line-height:1.8; color:var(--text);">
 DHL is the <strong>highest-conviction fit with Cevian's direct operational precedent</strong>. Two specific templates apply:<br><br>
@@ -1506,6 +1352,410 @@ DHL is the <strong>highest-conviction fit with Cevian's direct operational prece
 No other activist has both playbooks in their portfolio. Elliott has done German activism (ThyssenKrupp elevator, GEA, Suez) but typically via sharper-elbowed tactics that would struggle with the KfW / Verdi stakeholder complexity here. <strong>This is a name where Cevian's reputation is the activist capital</strong>: the supervisory board will take the meeting precisely because Cevian is not Elliott.
 </div>
 </div>
+</div>
+
+
+<div class="section">
+<div class="section-label dhl">§ 3.8 — Market, Cycle &amp; Capital Efficiency</div>
+<h2>Share Chart, Through-Cycle Multiple &amp; ROIC / ROCE</h2>
+<div class="sub">Five-year share-price trajectory, where today's EV/EBITDA sits inside the ten-year range, and the trajectory of returns on invested capital — all relative to the company's own history.</div>
+
+<div class="chart-grid">
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--dhl-amber);">① Five-Year Share Price</div>
+<div class="chart-sub">Monthly closes. Apr 21 = base; most recent close today.</div>
+<svg class="chart-svg" viewBox="0 0 520 160" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="138.0" x2="508" y2="138.0"/><text class="axis-val" x="32.0" y="141.0" text-anchor="end">€30</text><line class="grid-line" x1="36" y1="107.0" x2="508" y2="107.0"/><text class="axis-val" x="32.0" y="110.0" text-anchor="end">€39</text><line class="grid-line" x1="36" y1="76.0" x2="508" y2="76.0"/><text class="axis-val" x="32.0" y="79.0" text-anchor="end">€47</text><line class="grid-line" x1="36" y1="45.0" x2="508" y2="45.0"/><text class="axis-val" x="32.0" y="48.0" text-anchor="end">€56</text><line class="grid-line" x1="36" y1="14.0" x2="508" y2="14.0"/><text class="axis-val" x="32.0" y="17.0" text-anchor="end">€64</text>
+      <path class="price-fill" d="M 36.0,59.0 L 44.0,46.9 L 52.0,44.0 L 60.0,48.7 L 68.0,54.6 L 76.0,38.5 L 84.0,32.9 L 92.0,27.8 L 100.0,25.2 L 108.0,30.4 L 116.0,35.2 L 124.0,48.4 L 132.0,58.7 L 140.0,71.1 L 148.0,86.6 L 156.0,98.7 L 164.0,107.1 L 172.0,114.8 L 180.0,123.3 L 188.0,128.1 L 196.0,132.1 L 204.0,118.5 L 212.0,109.0 L 220.0,102.4 L 228.0,104.2 L 236.0,100.2 L 244.0,97.6 L 252.0,94.6 L 260.0,95.4 L 268.0,96.9 L 276.0,99.8 L 284.0,102.0 L 292.0,98.7 L 300.0,92.8 L 308.0,88.8 L 316.0,86.6 L 324.0,95.4 L 332.0,101.3 L 340.0,107.1 L 348.0,111.2 L 356.0,108.2 L 364.0,102.4 L 372.0,96.5 L 380.0,92.4 L 388.0,90.2 L 396.0,98.7 L 404.0,106.4 L 412.0,112.3 L 420.0,107.5 L 428.0,102.4 L 436.0,95.4 L 444.0,89.1 L 452.0,84.0 L 460.0,77.8 L 468.0,73.3 L 476.0,70.0 L 484.0,68.2 L 492.0,67.1 L 500.0,66.4 L 508.0,65.9 L 508.0,138.0 L 36.0,138.0 Z" fill="#e5786c"/>
+      <path class="price-line" d="M 36.0,59.0 L 44.0,46.9 L 52.0,44.0 L 60.0,48.7 L 68.0,54.6 L 76.0,38.5 L 84.0,32.9 L 92.0,27.8 L 100.0,25.2 L 108.0,30.4 L 116.0,35.2 L 124.0,48.4 L 132.0,58.7 L 140.0,71.1 L 148.0,86.6 L 156.0,98.7 L 164.0,107.1 L 172.0,114.8 L 180.0,123.3 L 188.0,128.1 L 196.0,132.1 L 204.0,118.5 L 212.0,109.0 L 220.0,102.4 L 228.0,104.2 L 236.0,100.2 L 244.0,97.6 L 252.0,94.6 L 260.0,95.4 L 268.0,96.9 L 276.0,99.8 L 284.0,102.0 L 292.0,98.7 L 300.0,92.8 L 308.0,88.8 L 316.0,86.6 L 324.0,95.4 L 332.0,101.3 L 340.0,107.1 L 348.0,111.2 L 356.0,108.2 L 364.0,102.4 L 372.0,96.5 L 380.0,92.4 L 388.0,90.2 L 396.0,98.7 L 404.0,106.4 L 412.0,112.3 L 420.0,107.5 L 428.0,102.4 L 436.0,95.4 L 444.0,89.1 L 452.0,84.0 L 460.0,77.8 L 468.0,73.3 L 476.0,70.0 L 484.0,68.2 L 492.0,67.1 L 500.0,66.4 L 508.0,65.9" stroke="#e5786c"/>
+      <circle cx="508.0" cy="65.9" r="3" fill="#e5786c"/>
+      <text class="axis-label" x="36" y="154" text-anchor="start">Apr 21</text>
+      <text class="axis-label" x="508" y="154" text-anchor="end">Apr 26</text>
+      <text class="axis-val" x="508.0" y="57.9" text-anchor="end" fill="#e5786c" style="font-weight:700;">€50.14</text>
+    </svg>
+<div class="chart-caption">52-week range: €36.00 – €51.50.</div>
+</div>
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--dhl-amber);">② Through-Cycle EV/EBITDA</div>
+<div class="chart-sub">10-year range vs where the stock trades today.</div>
+<svg class="chart-svg" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- range bar -->
+      <rect class="range-bar" x="50" y="50" width="420.0" height="20" fill="#e5786c" rx="3"/>
+      <!-- avg marker -->
+      <line class="range-marker" x1="148.3" y1="46" x2="148.3" y2="74" stroke="var(--text-dim)" stroke-dasharray="3,2"/>
+      <text class="cycle-label" x="148.3" y="42" text-anchor="middle">10y avg 6.9×</text>
+      <!-- current marker -->
+      <circle cx="161.7" cy="60.0" r="7" fill="#e5786c" stroke="var(--bg)" stroke-width="2"/>
+      <text class="axis-val" x="161.7" y="92" text-anchor="middle" fill="#e5786c" style="font-weight:700;">Now 7.2×</text>
+      <!-- min / max labels -->
+      <text class="axis-val" x="46" y="63.0" text-anchor="end">4.7×</text>
+      <text class="axis-val" x="474" y="63.0" text-anchor="start">14.1×</text>
+      <text class="cycle-label" x="46" y="92" text-anchor="end">10y low</text>
+      <text class="cycle-label" x="474" y="92" text-anchor="start">10y high</text>
+    </svg>
+<div class="chart-caption">COVID 2020-21 peak (14×) was anomaly. Normalised avg ~6.9×. Current 7.2× at mid-cycle.</div>
+</div>
+
+</div>
+
+<div class="chart-box" style="margin-top:16px;">
+<div class="chart-title" style="color:var(--dhl-amber);">③ ROIC &amp; ROCE — Five-Year Trend</div>
+<div class="chart-sub">Annual, %. ROIC solid, ROCE hollow. WACC for reference: ~6-8% depending on segment mix.</div>
+<svg class="chart-svg" viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="150.0" x2="508" y2="150.0"/><text class="axis-val" x="32.0" y="153.0" text-anchor="end">0%</text><line class="grid-line" x1="36" y1="123.2" x2="508" y2="123.2"/><text class="axis-val" x="32.0" y="126.2" text-anchor="end">5%</text><line class="grid-line" x1="36" y1="96.5" x2="508" y2="96.5"/><text class="axis-val" x="32.0" y="99.5" text-anchor="end">10%</text><line class="grid-line" x1="36" y1="69.7" x2="508" y2="69.7"/><text class="axis-val" x="32.0" y="72.7" text-anchor="end">15%</text>
+      
+      
+      <rect x="36" y="6" width="10" height="10" fill="#e5786c"/>
+      <text class="axis-label" x="50" y="15">ROIC</text>
+      <rect x="96" y="6" width="10" height="10" fill="#e5786c" opacity="0.45"/>
+      <text class="axis-label" x="110" y="15">ROCE</text>
+    
+      <rect class="bar" x="39.0" y="105.6" width="36.3" height="44.4" fill="#e5786c"/><text class="bar-label" x="57.2" y="102.6" text-anchor="middle" fill="#e5786c">8.3</text><rect class="bar" x="77.3" y="92.2" width="36.3" height="57.8" fill="#e5786c" opacity="0.45"/><text class="bar-label" x="95.5" y="89.2" text-anchor="middle" fill="var(--text-dim)">10.8</text><text class="axis-label" x="75.3" y="170" text-anchor="middle">2020</text><rect class="bar" x="117.7" y="68.7" width="36.3" height="81.3" fill="#e5786c"/><text class="bar-label" x="135.8" y="65.7" text-anchor="middle" fill="#e5786c">15.2</text><rect class="bar" x="156.0" y="45.7" width="36.3" height="104.3" fill="#e5786c" opacity="0.45"/><text class="bar-label" x="174.2" y="42.7" text-anchor="middle" fill="var(--text-dim)">19.5</text><text class="axis-label" x="154.0" y="170" text-anchor="middle">2021</text><rect class="bar" x="196.3" y="74.5" width="36.3" height="75.5" fill="#e5786c"/><text class="bar-label" x="214.5" y="71.5" text-anchor="middle" fill="#e5786c">14.1</text><rect class="bar" x="234.7" y="52.1" width="36.3" height="97.9" fill="#e5786c" opacity="0.45"/><text class="bar-label" x="252.8" y="49.1" text-anchor="middle" fill="var(--text-dim)">18.3</text><text class="axis-label" x="232.7" y="170" text-anchor="middle">2022</text><rect class="bar" x="275.0" y="102.4" width="36.3" height="47.6" fill="#e5786c"/><text class="bar-label" x="293.2" y="99.4" text-anchor="middle" fill="#e5786c">8.9</text><rect class="bar" x="313.3" y="86.9" width="36.3" height="63.1" fill="#e5786c" opacity="0.45"/><text class="bar-label" x="331.5" y="83.9" text-anchor="middle" fill="var(--text-dim)">11.8</text><text class="axis-label" x="311.3" y="170" text-anchor="middle">2023</text><rect class="bar" x="353.7" y="106.1" width="36.3" height="43.9" fill="#e5786c"/><text class="bar-label" x="371.8" y="103.1" text-anchor="middle" fill="#e5786c">8.2</text><rect class="bar" x="392.0" y="90.1" width="36.3" height="59.9" fill="#e5786c" opacity="0.45"/><text class="bar-label" x="410.2" y="87.1" text-anchor="middle" fill="var(--text-dim)">11.2</text><text class="axis-label" x="390.0" y="170" text-anchor="middle">2024</text><rect class="bar" x="432.3" y="104.0" width="36.3" height="46.0" fill="#e5786c"/><text class="bar-label" x="450.5" y="101.0" text-anchor="middle" fill="#e5786c">8.6</text><rect class="bar" x="470.7" y="88.5" width="36.3" height="61.5" fill="#e5786c" opacity="0.45"/><text class="bar-label" x="488.8" y="85.5" text-anchor="middle" fill="var(--text-dim)">11.5</text><text class="axis-label" x="468.7" y="170" text-anchor="middle">2025e</text>
+    </svg>
+<div class="chart-caption">2021-22 were peak-cycle (freight-rate boom). Normalised ROIC through-cycle ~8-9% — above WACC of 7%.</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- TAB 4: BAYER -->
+<div id="tab-bayer" class="tab-panel">
+<div class="container">
+
+<div class="section">
+<div class="section-label bayer">§ 4.1 — The Setup</div>
+<h2 style="color:var(--bayer-teal);">Bayer — The Overhang Clears in 2026-27</h2>
+<div class="sub">Germany's great conglomerate turnaround. Three cash-generative businesses inside one battered holding company. The argument is no longer "is it cheap" — after a 94% rally from last year's lows, the argument is "does the break-up actually happen, and who forces it."</div>
+
+<div class="metric-strip grid-5" style="margin-bottom:16px;">
+ <div class="metric-cell"><div class="mc-val" style="color:var(--bayer-teal)">€41.10</div><div class="mc-label">Share price (Apr 2026)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">€40.4bn</div><div class="mc-label">Market cap</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--gold)">€32.7bn</div><div class="mc-label">Net debt (Q3 2025)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">~€10.0bn</div><div class="mc-label">FY2025 EBITDA (mid-guide)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--bayer-teal)">7.3×</div><div class="mc-label">EV/EBITDA</div></div>
+</div>
+<div class="metric-strip grid-5">
+ <div class="metric-cell"><div class="mc-val" style="color:var(--red)">€21.17</div><div class="mc-label">52w low (Jan 2026)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-dim)">€143.88</div><div class="mc-label">All-time high (Apr 2015)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--bayer-teal)">3</div><div class="mc-label">Operating divisions</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">~€46bn</div><div class="mc-label">FY2025 revenue (mid-guide)</div></div>
+ <div class="metric-cell"><div class="mc-val" style="color:var(--text-bright)">87,280</div><div class="mc-label">Employees</div></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label bayer">§ 4.2 — What You Own</div>
+<h2>Three Businesses, Three Different Cycles</h2>
+<div class="sub">Bayer is not really one company — it is three operationally independent businesses that happen to share a balance sheet. Each has its own customer base, its own competitors, its own regulator, and its own capital cycle. The strategic logic for keeping them together is weak; the strategic logic for separating them is the entire thesis.</div>
+
+<div class="grid-3">
+
+ <div class="card" style="border-top:3px solid var(--bayer-teal)">
+ <div class="card-label" style="color:var(--bayer-teal)">Pharmaceuticals</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ <strong>~€18bn revenue · 24-26% EBITDA margin · ~€4.5bn EBITDA</strong><br><br>
+ Specialty-heavy prescription pharma. The 2026 picture is defined by <strong>Xarelto patent cliff</strong> (the anticoagulant, Bayer's largest drug, off-patent outside the US by end 2026 — the company has publicly framed 2026 as the "final year" of the cliff) and <strong>two accelerating new products</strong> — Nubeqa (prostate cancer, +77% in H1 2025 currency-adjusted) and Kerendia (diabetic kidney disease, +86%). Beyond 2027 the pipeline includes elinzanetant (menopause vasomotor symptoms, FDA decision pending) and the Beyonttra launch.<br><br>
+ <strong>Comparable:</strong> Sanofi trades at ~8× EV/EBITDA; Merck KGaA at ~12×; GSK at ~8-9×. A standalone Bayer Pharma, post-cliff and with a launched pipeline, should trade at 9-10×.
+ </div>
+ </div>
+
+ <div class="card" style="border-top:3px solid var(--bayer-teal)">
+ <div class="card-label" style="color:var(--bayer-teal)">Crop Science</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ <strong>~€23bn revenue · 18-20% EBITDA margin · ~€4.4bn EBITDA</strong><br><br>
+ Inherited from the 2018 Monsanto acquisition ($63bn). <strong>#1 or #2 globally in seeds and traits, #1 in herbicides.</strong> Corn seed + traits grew +7% in Q3 2025. Seasonal, commodity-exposed via glyphosate prices, and still carries the Roundup litigation tail — but the price in that tail is <strong>recovering toward historical medians</strong> (per Bayer's own Q3 2025 commentary) as Chinese oversupply normalises.<br><br>
+ <strong>Comparable:</strong> <span class="src">Corteva announced in early 2026 that it will separate Seed from Crop Protection by Q4 2026<span class="tip"><strong>Source:</strong> Corteva CEO Chuck Magro at Bank of America Global Agriculture Conference; TIKR reporting Feb 2026. Operating EBITDA guidance 2026: $4.0-4.2bn. Announced separation into two listed companies Q4 2026.</span></span> — EV/EBITDA around 14×. FMC at ~9×. Blended Crop Science multiple: 10-12× is defensible for Bayer's broader portfolio.
+ </div>
+ </div>
+
+ <div class="card" style="border-top:3px solid var(--bayer-teal)">
+ <div class="card-label" style="color:var(--bayer-teal)">Consumer Health</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ <strong>~€5.8bn revenue · 23-24% EBITDA margin · ~€1.4bn EBITDA</strong><br><br>
+ The most separable and most acquirable of the three. Global OTC portfolio: <strong>Aspirin, Claritin, Berocca, Elevit, Bepanthen, Alka-Seltzer, Canesten.</strong> Category-leading brands in Dermatology, Digestive Health, Pain &amp; Cardio. Q3 2025 growth in Derma, Digestive and Pain/Cardio offsetting softness in Allergy &amp; Cold. Margin stable at 23-24%.<br><br>
+ <strong>Comparable:</strong> Haleon (LSE) at <strong>14.9× EV/Adj. EBITDA</strong>; Kenvue at 14.1× — and Kenvue is being acquired by Kimberly-Clark (close H2 2026). Opella (ex-Sanofi CHC) sold 50% to CD&amp;R at ~14×. The Consumer Health multiple for a pure-play is firmly in the 13-15× zone.
+ </div>
+ </div>
+
+</div>
+
+<div class="synth bayer">
+<h3>The strategic contradiction</h3>
+<p>There is no operational logic connecting these three businesses. A corn farmer in Iowa, a cardiologist in Berlin, and a mother buying children's Claritin in Sydney share no procurement, no regulator, no technology stack. Combining them doesn't create scale economies — it creates <strong>coordination diseconomies</strong>. Bayer under the prior CEO had 12 layers of management; Anderson has compressed that significantly via Dynamic Shared Ownership, but the fundamental point stands: this is a holding company pretending to be an operating company.</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label bayer">§ 4.3 — The Overhang Cascade</div>
+<h2>Why Now: Three Overhangs Clear Simultaneously</h2>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:160px">Overhang</th>
+ <th>What It Is</th>
+ <th style="width:180px">Resolution</th>
+ <th style="width:110px">Status</th>
+</tr></thead>
+<tbody>
+<tr>
+ <td>Roundup / glyphosate litigation</td>
+ <td>Monsanto-era class actions alleging Roundup causes non-Hodgkin's lymphoma. Bayer has already paid <strong>more than $10bn in settlements</strong>. In April 2026, the CEO confirmed Bayer is "hoping to move past" the issue in 2026. The <strong>Trump administration has moved to back curbs on Roundup lawsuits</strong>; a Supreme Court case pending that experts expect Bayer to win (per Bill Anderson interview with Axios, April 2026). A $7.25bn further settlement is in place.</td>
+ <td>Supreme Court ruling 2026; remaining liability provisions declining Q/Q.</td>
+ <td class="cell-val" style="color:var(--ahold-green)">CLEARING</td>
+</tr>
+<tr>
+ <td>Xarelto patent cliff</td>
+ <td>The anticoagulant (Bayer's largest drug) lost exclusivity outside the US through 2024-25; the CFO previously projected a <strong>double-digit revenue decline</strong>. Q3 2025 data confirmed the decline is tracking as expected. Anderson has publicly described <strong>2026 as the final year</strong> of the pharma patent cliff.</td>
+ <td>2026 is peak headwind; 2027 is net-new-launch-led growth.</td>
+ <td class="cell-val" style="color:var(--dhl-amber)">FINAL YEAR</td>
+</tr>
+<tr>
+ <td>Debt stack</td>
+ <td>€32.7bn net debt (Q3 2025), legacy of the Monsanto acquisition. Dividend cut to legal minimum (~95% reduction) to fund deleveraging. Net debt is <strong>declining Q/Q</strong> (€34.3bn → €33.3bn → €32.7bn through 2025).</td>
+ <td>Target net debt / EBITDA &lt;2.5× by 2027.</td>
+ <td class="cell-val" style="color:var(--dhl-amber)">ON TRACK</td>
+</tr>
+<tr>
+ <td>PCB (polychlorinated biphenyls)</td>
+ <td>Secondary Monsanto-inherited litigation stream. EUR 530m in provisions raised in H1 2025.</td>
+ <td>Contained; material already provisioned.</td>
+ <td class="cell-val" style="color:var(--ahold-green)">PROVISIONED</td>
+</tr>
+<tr>
+ <td>Crop Science — glyphosate price cycle</td>
+ <td>Chinese overcapacity depressed glyphosate prices through 2023-24; Q3 2025 commentary notes prices "recovering toward historical medians."</td>
+ <td>Normalising market; Q3 2025 Crop Science EBITDA +391% YoY off a weak base.</td>
+ <td class="cell-val" style="color:var(--ahold-green)">RECOVERING</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="synth bayer">
+<h3>The 2027 inflection</h3>
+<p>Bill Anderson told CNBC-TV18 (March 2026) that 2026 is a "transition year" and that "stronger growth" begins in 2027 — driven by (a) pharma's new product cycle scaling as Xarelto tail runs off, and (b) Crop Science entering a new product cycle with several major launches. At the same time, the litigation tail is closing and deleveraging is progressing. <strong>This is the window where an activist case becomes maximally credible</strong>: management has done the hard work on restructuring (~2/3 of management layers removed via DSO), the overhangs are visibly lifting, and the remaining unlock is the portfolio structure itself — the one thing Anderson has explicitly said is not on the table "for now."</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label bayer">§ 4.4 — Sum-of-the-Parts</div>
+<h2>Valuation by Division</h2>
+<div class="sub">Three separately valuable businesses at comparable-peer multiples. All multiples derived from public comps detailed in footnotes. EBITDA allocation from 2025 guidance ranges (sales × mid-point margin).</div>
+
+<div class="table-wrap">
+<table class="ct">
+<thead><tr>
+ <th style="width:170px">Segment</th>
+ <th style="text-align:right;width:100px">Revenue (est.)</th>
+ <th style="text-align:right;width:90px">Margin</th>
+ <th style="text-align:right;width:100px">EBITDA</th>
+ <th style="width:130px">Comparable Set</th>
+ <th style="text-align:right;width:100px">Multiple</th>
+ <th style="text-align:right;width:130px;color:var(--bayer-teal)">Implied Value</th>
+</tr></thead>
+<tbody>
+<tr style="background:rgba(46,168,138,0.04)">
+ <td><span class="badge badge-teal">PHARMA</span><br>Rx pharmaceuticals</td>
+ <td style="text-align:right" class="cell-val">€18.0bn</td>
+ <td style="text-align:right" class="cell-val">25%</td>
+ <td style="text-align:right" class="cell-val">€4.5bn</td>
+ <td>Sanofi 8× · GSK 8-9× · Merck KGaA 12×</td>
+ <td style="text-align:right" class="cell-val">8-10×</td>
+ <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:14px">€36-45bn</td>
+</tr>
+<tr style="background:rgba(46,168,138,0.04)">
+ <td><span class="badge badge-teal">CROP SCIENCE</span><br>Seeds, traits, crop protection</td>
+ <td style="text-align:right" class="cell-val">€23.0bn</td>
+ <td style="text-align:right" class="cell-val">19%</td>
+ <td style="text-align:right" class="cell-val">€4.4bn</td>
+ <td>Corteva 14× · FMC 9×</td>
+ <td style="text-align:right" class="cell-val">10-12×</td>
+ <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:14px">€44-53bn</td>
+</tr>
+<tr style="background:rgba(46,168,138,0.04)">
+ <td><span class="badge badge-teal">CONSUMER HEALTH</span><br>OTC &amp; brands</td>
+ <td style="text-align:right" class="cell-val">€5.8bn</td>
+ <td style="text-align:right" class="cell-val">23.5%</td>
+ <td style="text-align:right" class="cell-val">€1.4bn</td>
+ <td>Haleon 14.9× · Kenvue 14.1× · Opella ~14×</td>
+ <td style="text-align:right" class="cell-val">12-14×</td>
+ <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:14px">€17-19bn</td>
+</tr>
+<tr style="background:var(--surface2); border-top:2px solid var(--border-bright)">
+ <td style="color:var(--gold)"><strong>TOTAL EV (SOTP)</strong></td>
+ <td style="text-align:right" class="cell-val">€46.8bn</td>
+ <td></td>
+ <td style="text-align:right" class="cell-val">€10.3bn</td>
+ <td></td>
+ <td></td>
+ <td style="text-align:right; color:var(--gold); font-weight:700; font-size:15px">€97-117bn</td>
+</tr>
+<tr style="background:rgba(212,68,68,0.05)">
+ <td style="color:var(--red)">Less: net debt (Q3 2025)</td>
+ <td colspan="5"></td>
+ <td style="text-align:right; color:var(--red); font-weight:700;">(€32.7bn)</td>
+</tr>
+<tr style="background:rgba(212,68,68,0.05)">
+ <td style="color:var(--red)">Less: remaining litigation provisions (est.)</td>
+ <td colspan="5" style="color:var(--text-dim); font-size:10px;">Based on Q2 2025 addition of €1.2bn glyphosate + €0.5bn PCB, plus $7.25bn settlement in process. Precise figure moves with Supreme Court outcome.</td>
+ <td style="text-align:right; color:var(--red); font-weight:700;">(€6-10bn)</td>
+</tr>
+<tr style="background:rgba(212,68,68,0.05)">
+ <td style="color:var(--red)">Less: pension &amp; other</td>
+ <td colspan="5"></td>
+ <td style="text-align:right; color:var(--red); font-weight:700;">(€5bn)</td>
+</tr>
+<tr style="background:rgba(46,168,138,0.08)">
+ <td style="color:var(--bayer-teal); font-size:13px"><strong>SOTP EQUITY VALUE</strong></td>
+ <td colspan="5"></td>
+ <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:16px">€53-73bn</td>
+</tr>
+<tr style="background:rgba(212,68,68,0.06)">
+ <td style="color:var(--red)"><strong>CURRENT EQUITY VALUE</strong></td>
+ <td colspan="5"></td>
+ <td style="text-align:right; color:var(--red); font-weight:700; font-size:16px">€40.4bn</td>
+</tr>
+<tr style="background:rgba(46,168,138,0.08)">
+ <td style="color:var(--bayer-teal); font-size:13px"><strong>SOTP UPSIDE</strong></td>
+ <td colspan="5" style="color:var(--bayer-teal)">Implied equity gap <strong>€13-33bn</strong> · per-share: <strong>€54-74 (+30% to +80%)</strong> over 3-5 year horizon</td>
+ <td style="text-align:right; color:var(--bayer-teal); font-weight:700; font-size:16px">+30% / +80%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:12px; font-size:10px; color:var(--text-faint);">EBITDA allocation based on Bayer's own 2025 guidance (segment margins 18-20% Crop, 24-26% Pharma, 23-24% CH). Multiples range-based from S&amp;P Capital IQ and company filings as of Apr 2026. Litigation provision range reflects uncertainty in Supreme Court outcome and remaining Monsanto tail. The lower bound of the multiple range is applied as the conservative case in the SOTP.</p>
+</div>
+
+<div class="section">
+<div class="section-label bayer">§ 4.5 — The Activist Unlock</div>
+<h2>What Cevian Can Actually Do</h2>
+
+<div class="grid-2">
+ <div class="card" style="border-top:3px solid var(--bayer-teal)">
+ <div class="card-label" style="color:var(--bayer-teal)">The Mechanism</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ Bayer is a <strong>Supervisory Board (Aufsichtsrat) company under German co-determination</strong>. Half the board is employee representatives; half is shareholder representatives. Cevian's historical playbook in Germany (ThyssenKrupp, Bilfinger) has been to <strong>engage on the shareholder side of the supervisory board</strong> — putting people around the table in nomination and strategy committees, not in the press.<br><br>
+ The specific ask is <strong>not</strong> an immediate full three-way break-up. It is a <strong>credible, board-endorsed, publicly-timelined Consumer Health separation</strong> — the path of least resistance, least tax friction, and most obvious comparable (Haleon / Kenvue / Opella). Once that is announced and executed, Crop Science separation becomes a 2028-29 conversation from a position of strength.
+ </div>
+ </div>
+ <div class="card" style="border-top:3px solid var(--bayer-teal)">
+ <div class="card-label" style="color:var(--bayer-teal)">Why Consumer Health first</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ <strong>Four reasons.</strong> (1) Cleanest separation — no shared IP with Pharma, no shared manufacturing with Crop. (2) <strong>Clearest comp</strong> — Haleon / Kenvue / Opella set the multiple. (3) <strong>Anderson's stated objection</strong> (2024 earnings call: Consumer Health is "reliably generating cash flow") is exactly why it is most valuable <em>to someone else</em> — a pure-play CHC operator would pay up for predictable category cash flow. (4) <strong>Proceeds reduce Bayer net debt</strong> — an €18bn CHC sale at 13× EBITDA would close the deleveraging gap and remove the strategic argument against further separation.<br><br>
+ Bluebell's 2023 letter and Inclusive Capital's subsequent position make this the <strong>publicly-understood</strong> activist ask. Cevian entering would not be a surprise attack — it would be a collaborative acceleration of a strategic review that is already in the board's inbox.
+ </div>
+ </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label bayer">§ 4.6 — Key Risks &amp; Mitigants</div>
+
+<div class="grid-2">
+ <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
+ <div class="card-label" style="color:var(--red)">Risk — Supreme Court loses</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ If the Supreme Court rules against Bayer on Roundup, the litigation tail re-opens. <strong>Mitigant:</strong> Bayer has already provisioned $10bn+ and is currently structured to survive a loss — the $7.25bn settlement covers ~90% of known cases. A loss would hit sentiment but not solvency. Anderson's Axios interview (Apr 2026): "experts believe the company will win."
+ </div>
+ </div>
+ <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
+ <div class="card-label" style="color:var(--red)">Risk — CEO resistance hardens</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ Anderson continues to publicly defend the three-in-one structure (March 2026: "Amazon operates successfully across several distinct industries"). <strong>Mitigant:</strong> Supervisory Board composition is the mechanism. Co-determination slows change but does not prevent it — ThyssenKrupp proves this. Cevian's collaborative approach is specifically designed for this governance structure.
+ </div>
+ </div>
+ <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
+ <div class="card-label" style="color:var(--red)">Risk — Pharma pipeline disappoints</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ If Nubeqa / Kerendia / elinzanetant miss expectations, 2027 growth inflection gets pushed. <strong>Mitigant:</strong> Nubeqa and Kerendia are already launched and posting 70%+ growth. The pipeline risk is distribution, not discovery — and the Consumer Health / Crop Science separation case does not depend on Pharma growth.
+ </div>
+ </div>
+ <div class="card" style="border-left:3px solid var(--red); padding-left:20px;">
+ <div class="card-label" style="color:var(--red)">Risk — Already rallied hard</div>
+ <div class="card-body" style="font-size:12px; line-height:1.75;">
+ <strong>The biggest risk to the entry price.</strong> Stock is +94% off €21 lows. Much of the Roundup-clearing trade is now in the price. <strong>Mitigant:</strong> Pre-rally Bayer traded on "litigation discount + broken conglomerate." Post-rally it trades on "broken conglomerate only." The remaining gap is ~€15-30bn of equity — all of which closes through a break-up, not a re-rating. That's still a 5:1 risk/reward at current entry, which is within Cevian's published frame.
+ </div>
+ </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-label bayer">§ 4.7 — Why Cevian Specifically</div>
+<div class="card" style="background:var(--surface2); padding:20px 24px;">
+<div class="card-body" style="font-size:12.5px; line-height:1.8; color:var(--text);">
+Bayer is the kind of idea that <strong>only a handful of activists on earth can run</strong>: (a) cheque size — taking a meaningful stake in a €40bn company requires €2-4bn of capital allocation, above the reach of Bluebell or Petrus; (b) time horizon — a three-way break-up executes over 3-5 years, beyond the typical US activist patience; (c) governance familiarity — co-determination and the Aufsichtsrat system is where Cevian has spent the last 15 years (ThyssenKrupp, Bilfinger, RWE-era engagements); (d) credibility — Bluebell and Inclusive Capital have already done the press-release work; the board now needs a <strong>collaborative</strong> counterparty to <strong>execute</strong>, not another one to lecture. That's Cevian's sweet spot, and the reason the name sits at the top of this list despite the recent rally.
+</div>
+</div>
+</div>
+
+
+<div class="section">
+<div class="section-label bayer">§ 4.8 — Market, Cycle &amp; Capital Efficiency</div>
+<h2>Share Chart, Through-Cycle Multiple &amp; ROIC / ROCE</h2>
+<div class="sub">Five-year share-price trajectory, where today's EV/EBITDA sits inside the ten-year range, and the trajectory of returns on invested capital — all relative to the company's own history.</div>
+
+<div class="chart-grid">
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--bayer-teal);">① Five-Year Share Price</div>
+<div class="chart-sub">Monthly closes. Apr 21 = base; most recent close today.</div>
+<svg class="chart-svg" viewBox="0 0 520 160" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="138.0" x2="508" y2="138.0"/><text class="axis-val" x="32.0" y="141.0" text-anchor="end">€18</text><line class="grid-line" x1="36" y1="107.0" x2="508" y2="107.0"/><text class="axis-val" x="32.0" y="110.0" text-anchor="end">€30</text><line class="grid-line" x1="36" y1="76.0" x2="508" y2="76.0"/><text class="axis-val" x="32.0" y="79.0" text-anchor="end">€41</text><line class="grid-line" x1="36" y1="45.0" x2="508" y2="45.0"/><text class="axis-val" x="32.0" y="48.0" text-anchor="end">€52</text><line class="grid-line" x1="36" y1="14.0" x2="508" y2="14.0"/><text class="axis-val" x="32.0" y="17.0" text-anchor="end">€64</text>
+      <path class="price-fill" d="M 36.0,40.2 L 44.0,44.0 L 52.0,46.5 L 60.0,42.4 L 68.0,37.8 L 76.0,33.1 L 84.0,29.3 L 92.0,25.8 L 100.0,22.3 L 108.0,26.9 L 116.0,31.0 L 124.0,37.2 L 132.0,41.3 L 140.0,39.4 L 148.0,37.5 L 156.0,40.5 L 164.0,43.7 L 172.0,46.7 L 180.0,50.3 L 188.0,54.6 L 196.0,59.2 L 204.0,63.1 L 212.0,69.3 L 220.0,75.6 L 228.0,82.6 L 236.0,90.0 L 244.0,97.3 L 252.0,103.8 L 260.0,110.1 L 268.0,113.9 L 276.0,116.1 L 284.0,117.4 L 292.0,119.9 L 300.0,121.8 L 308.0,123.7 L 316.0,125.6 L 324.0,127.5 L 332.0,129.1 L 340.0,130.8 L 348.0,132.4 L 356.0,133.8 L 364.0,135.4 L 372.0,134.6 L 380.0,132.9 L 388.0,131.0 L 396.0,129.1 L 404.0,130.0 L 412.0,130.0 L 420.0,121.5 L 428.0,112.0 L 436.0,102.8 L 444.0,95.7 L 452.0,91.1 L 460.0,86.4 L 468.0,82.9 L 476.0,80.2 L 484.0,78.6 L 492.0,77.2 L 500.0,76.4 L 508.0,75.8 L 508.0,138.0 L 36.0,138.0 Z" fill="#5fb98c"/>
+      <path class="price-line" d="M 36.0,40.2 L 44.0,44.0 L 52.0,46.5 L 60.0,42.4 L 68.0,37.8 L 76.0,33.1 L 84.0,29.3 L 92.0,25.8 L 100.0,22.3 L 108.0,26.9 L 116.0,31.0 L 124.0,37.2 L 132.0,41.3 L 140.0,39.4 L 148.0,37.5 L 156.0,40.5 L 164.0,43.7 L 172.0,46.7 L 180.0,50.3 L 188.0,54.6 L 196.0,59.2 L 204.0,63.1 L 212.0,69.3 L 220.0,75.6 L 228.0,82.6 L 236.0,90.0 L 244.0,97.3 L 252.0,103.8 L 260.0,110.1 L 268.0,113.9 L 276.0,116.1 L 284.0,117.4 L 292.0,119.9 L 300.0,121.8 L 308.0,123.7 L 316.0,125.6 L 324.0,127.5 L 332.0,129.1 L 340.0,130.8 L 348.0,132.4 L 356.0,133.8 L 364.0,135.4 L 372.0,134.6 L 380.0,132.9 L 388.0,131.0 L 396.0,129.1 L 404.0,130.0 L 412.0,130.0 L 420.0,121.5 L 428.0,112.0 L 436.0,102.8 L 444.0,95.7 L 452.0,91.1 L 460.0,86.4 L 468.0,82.9 L 476.0,80.2 L 484.0,78.6 L 492.0,77.2 L 500.0,76.4 L 508.0,75.8" stroke="#5fb98c"/>
+      <circle cx="508.0" cy="75.8" r="3" fill="#5fb98c"/>
+      <text class="axis-label" x="36" y="154" text-anchor="start">Apr 21</text>
+      <text class="axis-label" x="508" y="154" text-anchor="end">Apr 26</text>
+      <text class="axis-val" x="508.0" y="67.8" text-anchor="end" fill="#5fb98c" style="font-weight:700;">€41.10</text>
+    </svg>
+<div class="chart-caption">52-week range: €21.17 – €49.78.</div>
+</div>
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--bayer-teal);">② Through-Cycle EV/EBITDA</div>
+<div class="chart-sub">10-year range vs where the stock trades today.</div>
+<svg class="chart-svg" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- range bar -->
+      <rect class="range-bar" x="50" y="50" width="420.0" height="20" fill="#5fb98c" rx="3"/>
+      <!-- avg marker -->
+      <line class="range-marker" x1="201.2" y1="46" x2="201.2" y2="74" stroke="var(--text-dim)" stroke-dasharray="3,2"/>
+      <text class="cycle-label" x="201.2" y="42" text-anchor="middle">10y avg 9.2×</text>
+      <!-- current marker -->
+      <circle cx="94.8" cy="60.0" r="7" fill="#5fb98c" stroke="var(--bg)" stroke-width="2"/>
+      <text class="axis-val" x="94.8" y="92" text-anchor="middle" fill="#5fb98c" style="font-weight:700;">Now 7.3×</text>
+      <!-- min / max labels -->
+      <text class="axis-val" x="46" y="63.0" text-anchor="end">6.5×</text>
+      <text class="axis-val" x="474" y="63.0" text-anchor="start">14.0×</text>
+      <text class="cycle-label" x="46" y="92" text-anchor="end">10y low</text>
+      <text class="cycle-label" x="474" y="92" text-anchor="start">10y high</text>
+    </svg>
+<div class="chart-caption">10y range dominated by 2016-18 peak (pre-Monsanto) at 12-14×. Post-acquisition compressed.</div>
+</div>
+
+</div>
+
+<div class="chart-box" style="margin-top:16px;">
+<div class="chart-title" style="color:var(--bayer-teal);">③ ROIC &amp; ROCE — Five-Year Trend</div>
+<div class="chart-sub">Annual, %. ROIC solid, ROCE hollow. WACC for reference: ~6-8% depending on segment mix.</div>
+<svg class="chart-svg" viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="133.8" x2="508" y2="133.8"/><text class="axis-val" x="32.0" y="136.8" text-anchor="end">0%</text><line class="grid-line" x1="36" y1="88.6" x2="508" y2="88.6"/><text class="axis-val" x="32.0" y="91.6" text-anchor="end">5%</text><line class="grid-line" x1="36" y1="43.5" x2="508" y2="43.5"/><text class="axis-val" x="32.0" y="46.5" text-anchor="end">10%</text>
+      <line class="grid-line" x1="36" y1="133.8" x2="508" y2="133.8" stroke="var(--border-bright)" stroke-dasharray="none"/>
+      
+      <rect x="36" y="6" width="10" height="10" fill="#5fb98c"/>
+      <text class="axis-label" x="50" y="15">ROIC</text>
+      <rect x="96" y="6" width="10" height="10" fill="#5fb98c" opacity="0.45"/>
+      <text class="axis-label" x="110" y="15">ROCE</text>
+    
+      <rect class="bar" x="39.0" y="104.9" width="36.3" height="28.9" fill="#5fb98c"/><text class="bar-label" x="57.2" y="101.9" text-anchor="middle" fill="#5fb98c">3.2</text><rect class="bar" x="77.3" y="96.8" width="36.3" height="37.0" fill="#5fb98c" opacity="0.45"/><text class="bar-label" x="95.5" y="93.8" text-anchor="middle" fill="var(--text-dim)">4.1</text><text class="axis-label" x="75.3" y="170" text-anchor="middle">2020</text><rect class="bar" x="117.7" y="87.7" width="36.3" height="46.0" fill="#5fb98c"/><text class="bar-label" x="135.8" y="84.7" text-anchor="middle" fill="#5fb98c">5.1</text><rect class="bar" x="156.0" y="72.4" width="36.3" height="61.4" fill="#5fb98c" opacity="0.45"/><text class="bar-label" x="174.2" y="69.4" text-anchor="middle" fill="var(--text-dim)">6.8</text><text class="axis-label" x="154.0" y="170" text-anchor="middle">2021</text><rect class="bar" x="196.3" y="81.4" width="36.3" height="52.3" fill="#5fb98c"/><text class="bar-label" x="214.5" y="78.4" text-anchor="middle" fill="#5fb98c">5.8</text><rect class="bar" x="234.7" y="65.2" width="36.3" height="68.6" fill="#5fb98c" opacity="0.45"/><text class="bar-label" x="252.8" y="62.2" text-anchor="middle" fill="var(--text-dim)">7.6</text><text class="axis-label" x="232.7" y="170" text-anchor="middle">2022</text><rect class="bar" x="275.0" y="114.8" width="36.3" height="18.9" fill="#5fb98c"/><text class="bar-label" x="293.2" y="111.8" text-anchor="middle" fill="#5fb98c">2.1</text><rect class="bar" x="313.3" y="107.6" width="36.3" height="26.2" fill="#5fb98c" opacity="0.45"/><text class="bar-label" x="331.5" y="104.6" text-anchor="middle" fill="var(--text-dim)">2.9</text><text class="axis-label" x="311.3" y="170" text-anchor="middle">2023</text><rect class="bar" x="353.7" y="133.8" width="36.3" height="7.2" fill="#5fb98c"/><text class="bar-label" x="371.8" y="130.8" text-anchor="middle" fill="#5fb98c">-0.8</text><rect class="bar" x="392.0" y="133.8" width="36.3" height="9.9" fill="#5fb98c" opacity="0.45"/><text class="bar-label" x="410.2" y="130.8" text-anchor="middle" fill="var(--text-dim)">-1.1</text><text class="axis-label" x="390.0" y="170" text-anchor="middle">2024</text><rect class="bar" x="432.3" y="133.8" width="36.3" height="12.6" fill="#5fb98c"/><text class="bar-label" x="450.5" y="130.8" text-anchor="middle" fill="#5fb98c">-1.4</text><rect class="bar" x="470.7" y="133.8" width="36.3" height="16.2" fill="#5fb98c" opacity="0.45"/><text class="bar-label" x="488.8" y="130.8" text-anchor="middle" fill="var(--text-dim)">-1.8</text><text class="axis-label" x="468.7" y="170" text-anchor="middle">2025e</text>
+    </svg>
+<div class="chart-caption">ROIC destroyed by Monsanto impairment ($5bn+ goodwill writedowns 2023-25). Needs break-up to crystallise.</div>
+</div>
+
 </div>
 
 </div>
@@ -1754,6 +2004,71 @@ If Fabian asks <em>"what about Volkswagen — that's cheap, surely that's an act
 <em>"I looked at it. The SOTP gap is the largest on the European large-cap board and it's superficially a Cevian idea, but it fails three of your stated filters simultaneously. One: the voting register is locked — Porsche SE controls 53% voting with the family, Lower Saxony has veto rights under the VW Act, and Qatar has 14.6% — that combination means no minority shareholder has ever secured a supervisory-board seat. Two: China is structurally adverse rather than opportunistic — BYD and the domestic EV ecosystem have taken material share and VW's response, the Xpeng partnership, is defensive. That's a Chinese-commoditisation story in all but name, which Nikola flagged as an explicit exclusion. Three: auto OEMs earn below cost of capital through the cycle and Cevian's portfolio reflects that — Autoliv is the closest you come to auto and that's a component supplier. Put the three together and VW is cheap for reasons a Cevian stake cannot fix. The thing to own is the discipline of passing."</em>
 </div>
 </div>
+</div>
+
+
+<div class="section">
+<div class="section-label vw">§ 5.7 — Market, Cycle &amp; Capital Efficiency</div>
+<h2>Share Chart, Through-Cycle Multiple &amp; ROIC / ROCE</h2>
+<div class="sub">Five-year share-price trajectory, where today's EV/EBITDA sits inside the ten-year range, and the trajectory of returns on invested capital — all relative to the company's own history.</div>
+
+<div class="chart-grid">
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--vw-blue);">① Five-Year Share Price</div>
+<div class="chart-sub">Monthly closes. Apr 21 = base; most recent close today.</div>
+<svg class="chart-svg" viewBox="0 0 520 160" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="138.0" x2="508" y2="138.0"/><text class="axis-val" x="32.0" y="141.0" text-anchor="end">€81</text><line class="grid-line" x1="36" y1="107.0" x2="508" y2="107.0"/><text class="axis-val" x="32.0" y="110.0" text-anchor="end">€127</text><line class="grid-line" x1="36" y1="76.0" x2="508" y2="76.0"/><text class="axis-val" x="32.0" y="79.0" text-anchor="end">€173</text><line class="grid-line" x1="36" y1="45.0" x2="508" y2="45.0"/><text class="axis-val" x="32.0" y="48.0" text-anchor="end">€220</text><line class="grid-line" x1="36" y1="14.0" x2="508" y2="14.0"/><text class="axis-val" x="32.0" y="17.0" text-anchor="end">€266</text>
+      <path class="price-fill" d="M 36.0,41.3 L 44.0,32.3 L 52.0,25.7 L 60.0,22.5 L 68.0,30.1 L 76.0,37.0 L 84.0,47.9 L 92.0,59.0 L 100.0,69.9 L 108.0,77.8 L 116.0,85.6 L 124.0,92.8 L 132.0,101.1 L 140.0,108.1 L 148.0,112.6 L 156.0,114.9 L 164.0,116.0 L 172.0,111.8 L 180.0,107.3 L 188.0,103.6 L 196.0,100.4 L 204.0,101.5 L 212.0,105.7 L 220.0,110.0 L 228.0,112.8 L 236.0,110.5 L 244.0,108.2 L 252.0,104.7 L 260.0,106.3 L 268.0,108.5 L 276.0,110.8 L 284.0,112.7 L 292.0,114.9 L 300.0,116.5 L 308.0,118.1 L 316.0,119.6 L 324.0,120.7 L 332.0,121.9 L 340.0,122.8 L 348.0,123.7 L 356.0,125.2 L 364.0,126.8 L 372.0,128.3 L 380.0,129.3 L 388.0,130.4 L 396.0,132.1 L 404.0,133.7 L 412.0,135.2 L 420.0,132.9 L 428.0,130.1 L 436.0,127.7 L 444.0,125.6 L 452.0,124.1 L 460.0,123.2 L 468.0,123.0 L 476.0,122.8 L 484.0,123.0 L 492.0,123.2 L 500.0,123.3 L 508.0,123.4 L 508.0,138.0 L 36.0,138.0 Z" fill="#8aa8c8"/>
+      <path class="price-line" d="M 36.0,41.3 L 44.0,32.3 L 52.0,25.7 L 60.0,22.5 L 68.0,30.1 L 76.0,37.0 L 84.0,47.9 L 92.0,59.0 L 100.0,69.9 L 108.0,77.8 L 116.0,85.6 L 124.0,92.8 L 132.0,101.1 L 140.0,108.1 L 148.0,112.6 L 156.0,114.9 L 164.0,116.0 L 172.0,111.8 L 180.0,107.3 L 188.0,103.6 L 196.0,100.4 L 204.0,101.5 L 212.0,105.7 L 220.0,110.0 L 228.0,112.8 L 236.0,110.5 L 244.0,108.2 L 252.0,104.7 L 260.0,106.3 L 268.0,108.5 L 276.0,110.8 L 284.0,112.7 L 292.0,114.9 L 300.0,116.5 L 308.0,118.1 L 316.0,119.6 L 324.0,120.7 L 332.0,121.9 L 340.0,122.8 L 348.0,123.7 L 356.0,125.2 L 364.0,126.8 L 372.0,128.3 L 380.0,129.3 L 388.0,130.4 L 396.0,132.1 L 404.0,133.7 L 412.0,135.2 L 420.0,132.9 L 428.0,130.1 L 436.0,127.7 L 444.0,125.6 L 452.0,124.1 L 460.0,123.2 L 468.0,123.0 L 476.0,122.8 L 484.0,123.0 L 492.0,123.2 L 500.0,123.3 L 508.0,123.4" stroke="#8aa8c8"/>
+      <circle cx="508.0" cy="123.4" r="3" fill="#8aa8c8"/>
+      <text class="axis-label" x="36" y="154" text-anchor="start">Apr 21</text>
+      <text class="axis-label" x="508" y="154" text-anchor="end">Apr 26</text>
+      <text class="axis-val" x="508.0" y="115.4" text-anchor="end" fill="#8aa8c8" style="font-weight:700;">€102.50</text>
+    </svg>
+<div class="chart-caption">52-week range: €85.00 – €151.00.</div>
+</div>
+
+<div class="chart-box">
+<div class="chart-title" style="color:var(--vw-blue);">② Through-Cycle EV/EBITDA</div>
+<div class="chart-sub">10-year range vs where the stock trades today.</div>
+<svg class="chart-svg" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- range bar -->
+      <rect class="range-bar" x="50" y="50" width="420.0" height="20" fill="#8aa8c8" rx="3"/>
+      <!-- avg marker -->
+      <line class="range-marker" x1="172.5" y1="46" x2="172.5" y2="74" stroke="var(--text-dim)" stroke-dasharray="3,2"/>
+      <text class="cycle-label" x="172.5" y="42" text-anchor="middle">10y avg 4.3×</text>
+      <!-- current marker -->
+      <circle cx="85.0" cy="60.0" r="7" fill="#8aa8c8" stroke="var(--bg)" stroke-width="2"/>
+      <text class="axis-val" x="85.0" y="92" text-anchor="middle" fill="#8aa8c8" style="font-weight:700;">Now 3.6×</text>
+      <!-- min / max labels -->
+      <text class="axis-val" x="46" y="63.0" text-anchor="end">3.3×</text>
+      <text class="axis-val" x="474" y="63.0" text-anchor="start">6.9×</text>
+      <text class="cycle-label" x="46" y="92" text-anchor="end">10y low</text>
+      <text class="cycle-label" x="474" y="92" text-anchor="start">10y high</text>
+    </svg>
+<div class="chart-caption">Structurally lowest multiple in sector. Current 3.6× near 10y low — a permanent value trap.</div>
+</div>
+
+</div>
+
+<div class="chart-box" style="margin-top:16px;">
+<div class="chart-title" style="color:var(--vw-blue);">③ ROIC &amp; ROCE — Five-Year Trend</div>
+<div class="chart-sub">Annual, %. ROIC solid, ROCE hollow. WACC for reference: ~6-8% depending on segment mix.</div>
+<svg class="chart-svg" viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+      <line class="grid-line" x1="36" y1="150.0" x2="508" y2="150.0"/><text class="axis-val" x="32.0" y="153.0" text-anchor="end">0%</text><line class="grid-line" x1="36" y1="97.8" x2="508" y2="97.8"/><text class="axis-val" x="32.0" y="100.8" text-anchor="end">5%</text><line class="grid-line" x1="36" y1="45.7" x2="508" y2="45.7"/><text class="axis-val" x="32.0" y="48.7" text-anchor="end">10%</text>
+      
+      
+      <rect x="36" y="6" width="10" height="10" fill="#8aa8c8"/>
+      <text class="axis-label" x="50" y="15">ROIC</text>
+      <rect x="96" y="6" width="10" height="10" fill="#8aa8c8" opacity="0.45"/>
+      <text class="axis-label" x="110" y="15">ROCE</text>
+    
+      <rect class="bar" x="39.0" y="110.3" width="36.3" height="39.7" fill="#8aa8c8"/><text class="bar-label" x="57.2" y="107.3" text-anchor="middle" fill="#8aa8c8">3.8</text><rect class="bar" x="77.3" y="98.9" width="36.3" height="51.1" fill="#8aa8c8" opacity="0.45"/><text class="bar-label" x="95.5" y="95.9" text-anchor="middle" fill="var(--text-dim)">4.9</text><text class="axis-label" x="75.3" y="170" text-anchor="middle">2020</text><rect class="bar" x="117.7" y="82.2" width="36.3" height="67.8" fill="#8aa8c8"/><text class="bar-label" x="135.8" y="79.2" text-anchor="middle" fill="#8aa8c8">6.5</text><rect class="bar" x="156.0" y="61.3" width="36.3" height="88.7" fill="#8aa8c8" opacity="0.45"/><text class="bar-label" x="174.2" y="58.3" text-anchor="middle" fill="var(--text-dim)">8.5</text><text class="axis-label" x="154.0" y="170" text-anchor="middle">2021</text><rect class="bar" x="196.3" y="74.9" width="36.3" height="75.1" fill="#8aa8c8"/><text class="bar-label" x="214.5" y="71.9" text-anchor="middle" fill="#8aa8c8">7.2</text><rect class="bar" x="234.7" y="53.0" width="36.3" height="97.0" fill="#8aa8c8" opacity="0.45"/><text class="bar-label" x="252.8" y="50.0" text-anchor="middle" fill="var(--text-dim)">9.3</text><text class="axis-label" x="232.7" y="170" text-anchor="middle">2022</text><rect class="bar" x="275.0" y="89.5" width="36.3" height="60.5" fill="#8aa8c8"/><text class="bar-label" x="293.2" y="86.5" text-anchor="middle" fill="#8aa8c8">5.8</text><rect class="bar" x="313.3" y="71.7" width="36.3" height="78.3" fill="#8aa8c8" opacity="0.45"/><text class="bar-label" x="331.5" y="68.7" text-anchor="middle" fill="var(--text-dim)">7.5</text><text class="axis-label" x="311.3" y="170" text-anchor="middle">2023</text><rect class="bar" x="353.7" y="109.3" width="36.3" height="40.7" fill="#8aa8c8"/><text class="bar-label" x="371.8" y="106.3" text-anchor="middle" fill="#8aa8c8">3.9</text><rect class="bar" x="392.0" y="97.8" width="36.3" height="52.2" fill="#8aa8c8" opacity="0.45"/><text class="bar-label" x="410.2" y="94.8" text-anchor="middle" fill="var(--text-dim)">5.0</text><text class="axis-label" x="390.0" y="170" text-anchor="middle">2024</text><rect class="bar" x="432.3" y="123.9" width="36.3" height="26.1" fill="#8aa8c8"/><text class="bar-label" x="450.5" y="120.9" text-anchor="middle" fill="#8aa8c8">2.5</text><rect class="bar" x="470.7" y="116.6" width="36.3" height="33.4" fill="#8aa8c8" opacity="0.45"/><text class="bar-label" x="488.8" y="113.6" text-anchor="middle" fill="var(--text-dim)">3.2</text><text class="axis-label" x="468.7" y="170" text-anchor="middle">2025e</text>
+    </svg>
+<div class="chart-caption">ROIC below WACC (~8%) across the cycle. 2021-22 were China-profit peak. Trajectory unambiguously down.</div>
+</div>
+
 </div>
 
 </div>
@@ -2108,7 +2423,7 @@ The more sophisticated answer to "why not buy defence" is: <em>"because the most
 </div>
 </div>
 
-<!-- TAB 5: CEVIAN FIT -->
+<!-- TAB 7: CEVIAN FIT -->
 <div id="tab-fit" class="tab-panel">
 <div class="container">
 
